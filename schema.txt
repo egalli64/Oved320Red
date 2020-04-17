@@ -1,0 +1,43 @@
+users
+
+user_id		birth		nick_name	f_name		l_name		email		phone_number 		address		certificate	subscr_date	password
+
+===================================================================================
+
+users_courses	
+
+user_id 	course_id
+
+===================================================================================
+
+courses
+
+course_id	course_name		frequence	kind_id		cost
+
+===================================================================================
+
+REGISTRO 	
+
+user_id		lesson_id
+
+===================================================================================
+
+lessons
+
+lesson_id	course_id	duration	instructor_id	URL
+
+===================================================================================
+
+employees
+
+employee_id	birth		f_name		l_name		email		phone_number 		address		certificate	hire_date	IBAN	salary 	job_id	manager_id
+
+===================================================================================
+
+jobs
+
+job_id		min_salary	max_salary	job_title
+
+===================================================================================
+
+
