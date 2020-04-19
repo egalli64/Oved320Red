@@ -4,15 +4,15 @@ import java.sql.Date;
 
 public class User {
 	
-	private int userID;		      //or String?
+	private int userID;		        //or String?
 	private Date birthDate;		
 	private String userName;	
     private String firstName;	   
     private String lastName;
-    private String email; 	
+    private String email; 		    //				
     private int phoneNumber; 	
     private String streetAddress;		
-//  private certificate; ??       //che tipo si usa? 
+    private boolean certificate;    //giusto per verificare si o no. // come salvare il documento se salvare il documento?
     private Date subscrDate;	
     private String password;
     
