@@ -21,6 +21,10 @@ public class User {
     	
     }
     
+    public User(String userName) {
+    	this.userName = userName;
+    }
+    
    // costruttore generale contenente tutti i dati della tabella
 	public User(int userID, LocalDate birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, LocalDate subscrDate, String password) {
@@ -68,6 +72,8 @@ public class User {
 		this.streetAddress = streetAddress;
 		this.password = password;
 	}
+	
+	
 
 	
 	public int getUserID() {
