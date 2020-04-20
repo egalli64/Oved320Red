@@ -48,6 +48,17 @@ public class User {
 	// costruttore senza user_id e senza certificato (uso fino a quando decideremo cosa fare col certificato)
 	public User(LocalDate birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, LocalDate subscrDate, String password) {
+		this(birthDate, userName, firstName, lastName, email,
+				phoneNumber,  streetAddress, password);
+		this.subscrDate = subscrDate;
+	}
+	 
+	/*
+	 * costruttore senza user_id, usato per creare utenti da inserire nel database senza
+	 * user_id, certificato o subscribe date (generata con curdate())
+	 */
+	public User(LocalDate birthDate, String userName, String firstName, String lastName, String email,
+			String phoneNumber, String streetAddress, String password) {
 		this.birthDate = birthDate;
 		this.userName = userName;
 		this.firstName = firstName;
@@ -55,10 +66,8 @@ public class User {
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.streetAddress = streetAddress;
-		this.subscrDate = subscrDate;
 		this.password = password;
 	}
-	
 
 	
 	public int getUserID() {

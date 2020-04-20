@@ -26,7 +26,7 @@ public class UserDao implements Closeable {
 
 	private static final String SET_USER = "INSERT INTO users (birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw) values(?, ?, ?, ?, ?, "
-			+ "?, ?, ?, ?, ?)";
+			+ "?, ?, ?, CURDATE(), ?)";
 
 	private Connection conn;
 
@@ -92,10 +92,10 @@ public class UserDao implements Closeable {
 	}
 
 /*
- * aofskghj
+ * uso il costruttore senza certificato, per il momento non sappiamo come trattarlo
  */
 	public void setUser(Date birthDate, String userName, String firstName, String lastName, String email,
-			String phoneNumber, String streetAddress, String certificate, Date subscrDate, String password) {
+			String phoneNumber, String streetAddress, String certificate, String password) {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER)) {
 			prepStmt.setDate(1, birthDate);
@@ -106,8 +106,7 @@ public class UserDao implements Closeable {
 			prepStmt.setString(6, phoneNumber);
 			prepStmt.setString(7, streetAddress);
 			prepStmt.setString(8, certificate);
-			prepStmt.setDate(9, subscrDate);
-			prepStmt.setString(10, password);
+			prepStmt.setString(9, password);
 			
 			prepStmt.executeQuery();
 		} catch (SQLException se) {
