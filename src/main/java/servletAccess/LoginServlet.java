@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 				
 				request.setAttribute("user", matchingUser);  
 				
-				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");  
+				RequestDispatcher rdright = request.getRequestDispatcher("./jsp/jspAccess/userpage.jsp");  
 				rdright.forward(request, response);
 				
 				
