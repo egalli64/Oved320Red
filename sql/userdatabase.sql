@@ -1,4 +1,4 @@
-drop user 'red'@'localhost';
+drop user if exists 'red'@'localhost';
 drop database red;
 
 create database red;

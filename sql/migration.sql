@@ -106,7 +106,13 @@ URL varchar(100),
 foreign key(course_id) references courses(course_id),
 foreign key(staff_id) references staff(staff_id));
 
-
+insert into lessons (course_id,duration,staff_id,URL)
+values (1,80,3,"https://www.youtube.com/watch?v=OJoExsA7884&list=PLJcOFqZkViHOGnIzPAYsfLM9-WuS0pbee&index=2"),
+(4,40,3,"https://www.youtube.com/watch?v=Q1Piq_vMh5g"),
+(5,50,6,"https://www.youtube.com/watch?v=AuIdv9Q7MTc"),
+(3,80,2,"https://www.youtube.com/watch?v=k5HJASj97nA"),
+(6,60,1,"https://www.youtube.com/watch?v=noCrzvAxmew&list=PLJcOFqZkViHMYoUt_zNJn42_GvFWPTP69&index=2"),
+(5,25,5,"https://www.youtube.com/watch?v=BcXZ49__fKc");
 
 -- XXXXXXXXXXXXXXXXXXXXXXXXXXXX    MIDDLE TABS    XXXXXXXXXXXXXXXXXX
 
