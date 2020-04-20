@@ -18,8 +18,13 @@ hr {
 }
 
 .script {
+	margin: auto;
+	width: 90%;
 	font-family: Arial;
 	text-align: justify;
+	background-color: white;
+	padding: 5%;
+	border-radius: 25px;
 }
 
 .reglink {
@@ -36,6 +41,7 @@ hr {
 	font-weight: bold;
 }
 
+
 a.menu:link, a.menu:visited {
 	color: #ffffff;
 	text-align: center;
@@ -46,7 +52,19 @@ a.menu:hover, a.menu:active {
 	background-color: white;
 	color: #d9534f;
 	padding: 7%;
-	border-radius: 7%;
+	border-radius: 5px;
+}
+
+a:link, a:visited {
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	background-color: white;
+	color: #d9534f;
+	border-radius: 5px;
 }
 
 .warning {
