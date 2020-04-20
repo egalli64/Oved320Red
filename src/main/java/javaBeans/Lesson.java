@@ -11,14 +11,14 @@ public class Lesson {
 	private String URL;
 	
 	
-	public Lesson(int lessonID, int courseID, String lessonName, int instructorID, Time duration, String uRL) {
+	public Lesson(int lessonID, int courseID, String lessonName, int instructorID, Time duration, String URL) {
 		super();
 		this.lessonID = lessonID;
 		this.courseID = courseID;
 		this.lessonName = lessonName;
 		this.instructorID = instructorID;
 		this.duration = duration;
-		URL = uRL;
+		this.URL = URL;
 	}
 
 
@@ -77,8 +77,8 @@ public class Lesson {
 	}
 
 
-	public void setURL(String uRL) {
-		URL = uRL;
+	public void setURL(String URL) {
+		this.URL = URL;
 	}
 	
 	

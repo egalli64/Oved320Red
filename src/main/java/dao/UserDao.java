@@ -68,21 +68,6 @@ public class UserDao implements Closeable {
 
 		return results;
 	}
-	
-	public List<User> getAllUserNames() {
-		List<User> results = new ArrayList<>();
-
-		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(GET_ALLUSERNAMES)) {
-			while (rs.next()) {
-				User user = new User(rs.getString(1));
-				results.add(user);
-			}
-		} catch (SQLException se) {
-			se.printStackTrace();
-		}
-
-		return results;
-	}
 
 	public User getUser(String name) {
 		User results = new User();
