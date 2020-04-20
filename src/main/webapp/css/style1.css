@@ -41,7 +41,6 @@ hr {
 	font-weight: bold;
 }
 
-
 a.menu:link, a.menu:visited {
 	color: #ffffff;
 	text-align: center;
@@ -49,6 +48,26 @@ a.menu:link, a.menu:visited {
 }
 
 a.menu:hover, a.menu:active {
+	background-color: white;
+	color: #d9534f;
+	padding: 7%;
+	border-radius: 5px;
+}
+
+.menu1 {
+	text-align: center;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+a.menu1:link, a.menu1:visited {
+	background-color: white;
+	color: #d9534f;
+	padding: 7%;
+	border-radius: 5px;
+}
+
+a.menu1:hover, a.menu1:active {
 	background-color: white;
 	color: #d9534f;
 	padding: 7%;
