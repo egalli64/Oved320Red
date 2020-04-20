@@ -7,8 +7,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.sql.DataSource;
-
 import javaBeans.User;
+
+//@Resource(name="jdbc/red")
+//DataSource ds; 
 
 public class UserDao implements Closeable{
 	
