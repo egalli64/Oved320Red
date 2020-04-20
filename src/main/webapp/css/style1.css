@@ -1,22 +1,46 @@
+  
+@charset "UTF-8";
+
+body {
+	background-color: #d9534f;
+}
+
+hr {
+	border: 2px solid #ffffff;
+}
+
 #logo {
 	width: 100%;
 	height: auto;
-}
-
-.logbt {
-	position: absolute;
-	top: 1%;
-	right: 1%;
-	background-color: #ffffff;
-	color: #d9534f;
-
-}
-
-.logbt:hover {
-	color: #000000;
 }
 
 .script {
 	font-family: Arial;
 	text-align: justify;
 }
+
+.reglink{
+	color: #d9534f;
+}
+
+.reglink:hover{
+	color: orange;
+}
+
+.menu {
+	text-align: center;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+a.menu:link, a.menu:visited {
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+}
+
+a.menu:hover, a.menu:active {
+	background-color: white;
+	color: #d9534f;
+}
+

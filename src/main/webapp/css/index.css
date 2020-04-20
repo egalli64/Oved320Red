@@ -1,0 +1,15 @@
+.logbt {
+	position: absolute;
+	top: 1%;
+	right: 1%;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	font-weight: bold;
+
+}
+
+.logbt:hover {
+	background: #ffffff;
+	color: #d9534f;
+	font-weight: bold;
+}
