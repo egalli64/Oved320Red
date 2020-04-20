@@ -5,13 +5,49 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="./css/Login.css" />
+	
 <meta charset="UTF-8">
 <title>Login</title>
 </head>
 
 <body>
 
-<h1 class="m-3"> Welcome to the Online Registry</h1>
+<h1 class="m-3 text-center lgn"> Log into your account. </h1>
+
+<div class="container m-5">
+		<div class="row">
+		
+			<div class="col-3"></div>
+
+			<div
+				class="col-6 rounded shadow p-3 mb-5 bg-white border border-danger">
+				
+				<h5 class='m-3 text-center'> Welcome Back! </h5>
+				<div class="row m-3">
+				
+					<div class="col"></div>
+					<div class="col-8">
+						<form action='./DBInteract/login-student' method='post'>
+							<div class="form-group">
+								<label for='stud-usrn'> Username </label> <input id='stud-usrn' name='studUsrn' class="form-control">
+							</div>
+							<div class="form-group">
+								<label for='stud-pswd'>Password</label> <input type="password" id='stud-pswd' name='studPswd'class="form-control">
+							</div>
+							<div class='text-center m-3'>							<button type="submit" class="btn btn-danger">Login</button>
+							</div>
+						</form>
+						<p > <i>Don't have an account? <a class='reglink' href="DBInteract/RegisterStud.html">Register here.</a></i> </p>
+					</div>
+					<div class="col"></div>
+				</div>
+
+			</div>
+
+			<div class="col-3"></div>
+	</div>
+</div>
 
 
 </body>
