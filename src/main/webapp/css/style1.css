@@ -12,6 +12,11 @@
 
 }
 
-.btn:hover {
+.logbt:hover {
 	color: #000000;
+}
+
+.script {
+	font-family: Arial;
+	text-align: justify;
 }

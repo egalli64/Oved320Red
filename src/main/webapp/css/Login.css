@@ -1,13 +1,10 @@
+  
 @charset "UTF-8";
 
 body {
 	background-color: #d9534f;
 }
 
-.lgn{
-	color: white;
-	text-align: center;
-}
 .reglink{
 	color: #d9534f;
 }
