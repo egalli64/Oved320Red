@@ -91,7 +91,9 @@ public class UserDao implements Closeable {
 		return results;
 	}
 
-
+/*
+ * aofskghj
+ */
 	public void setUser(int userID, Date birthDate, String userName, String firstname, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, Date subscrDate, String password) {
 
