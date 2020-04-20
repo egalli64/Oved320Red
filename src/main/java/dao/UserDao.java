@@ -70,17 +70,21 @@ public class UserDao implements Closeable {
 	public User getUser(String name) {
 		User results = new User();
 
-		try (PreparedStatement prepStmt = conn.prepareStatement(GET_USER); ResultSet rs = prepStmt.executeQuery()) {
+		try (PreparedStatement prepStmt = conn.prepareStatement(GET_USER)) {
 			prepStmt.setString(1, name);
-			while (rs.next()) {
-				LocalDate birthDate = rs.getDate(2).toLocalDate();
-				LocalDate subscrDate = rs.getDate(10).toLocalDate();
-				results = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
-						rs.getString(11));
-			}
+			
+	        try (ResultSet rs = prepStmt.executeQuery()) {
+				while (rs.next()) {
+					LocalDate birthDate = rs.getDate(2).toLocalDate();
+					LocalDate subscrDate = rs.getDate(10).toLocalDate();
+					results = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
+							rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
+							rs.getString(11));;
+	            }
+	        }
 		} catch (SQLException se) {
 			se.printStackTrace();
+			
 		}
 
 		return results;
@@ -89,7 +93,7 @@ public class UserDao implements Closeable {
 	public void setUser(int userID, Date birthDate, String userName, String firstname, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, Date subscrDate, String password) {
 
-		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER); ResultSet rs = prepStmt.executeQuery()) {
+		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER)) {
 			prepStmt.setInt(1, userID);
 			prepStmt.setDate(2, birthDate);
 			prepStmt.setString(3, userName);
@@ -101,6 +105,8 @@ public class UserDao implements Closeable {
 			prepStmt.setString(9, certificate);
 			prepStmt.setDate(10, subscrDate);
 			prepStmt.setString(11, password);
+			
+			prepStmt.executeQuery();
 		} catch (SQLException se) {
 			se.printStackTrace();
 		}
