@@ -21,7 +21,7 @@ public class UserDao implements Closeable {
 	private static final String GET_ALL = "SELECT user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users";
 	private static final String GET_USER = "SELECT user_id, birth_date, user_name, first_name, "
-			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users"
+			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users "
 			+ "where user_name = ?";
 
 	private static final String SET_USER = "INSERT INTO users (user_id, birth_date, user_name, first_name, "
