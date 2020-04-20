@@ -1,0 +1,17 @@
+			Home
+			
+			 Register    		 Login
+				 /           	   \
+				/             	    \
+			Nome			 	 username
+			Cognome           	 password
+			Data nascita			 |
+			...					in Java verifico se c'è
+			Password				 |
+			SUBMIT				login e pagina utente
+			   |
+			   |
+			 Java
+	inserimento nuovo utente
+			   |
+	restituisco username a utente
