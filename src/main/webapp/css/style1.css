@@ -3,19 +3,15 @@
 	height: auto;
 }
 
-.btn {
+.logbt {
 	position: absolute;
 	top: 1%;
 	right: 1%;
 	background-color: #ffffff;
-	color: black;
-	font-size: 12px;
-	border: 1px solid #d4d4d4;
-	cursor: pointer;
-	border-radius: 5px;
-	text-align: center;
+	color: #d9534f;
+
 }
 
 .btn:hover {
-	color: #ff0000;
+	color: #000000;
 }
