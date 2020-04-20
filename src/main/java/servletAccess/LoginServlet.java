@@ -1,8 +1,6 @@
 package servletAccess;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
@@ -29,25 +27,26 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("usrn");
 		String password = request.getParameter("pswd");
 
-		UserDao dao = new UserDao(ds);
-		User matchingUser = dao.getUser(username); // controlla metodo uguale nel dao
+		try (UserDao dao = new UserDao(ds)) {
+			User matchingUser = dao.getUser(username); // controlla metodo uguale nel dao
 
-		if (matchingUser.getUserName() == null) { // check dao
-			RequestDispatcher rdwrong = request.getRequestDispatcher("wrongLogin.html");
-			rdwrong.forward(request, response);
-
-		} else {
-			if (matchingUser.getPassword().equals(password)) { // login successful
-
-				request.setAttribute("user", matchingUser);
-
-				RequestDispatcher rdright = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
-
-				rdright.forward(request, response);
-
-			} else {
+			if (matchingUser.getUserName() == null) { // check dao
 				RequestDispatcher rdwrong = request.getRequestDispatcher("wrongLogin.html");
 				rdwrong.forward(request, response);
+
+			} else {
+				if (matchingUser.getPassword().equals(password)) { // login successful
+
+					request.setAttribute("user", matchingUser);
+
+					RequestDispatcher rdright = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
+
+					rdright.forward(request, response);
+
+				} else {
+					RequestDispatcher rdwrong = request.getRequestDispatcher("wrongLogin.html");
+					rdwrong.forward(request, response);
+				}
 			}
 		}
 	}
