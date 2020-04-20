@@ -7,7 +7,6 @@
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../css/style1.css" />
-<link rel="stylesheet" type="text/css" href="../css/Login.css" />
 
 <title>Register</title>
 </head>
@@ -15,12 +14,15 @@
 	<div id="top">
 		<a href='../index.html'><img id='logo' src='../img/logo.png'></a>
 	</div>
-	
-<div class="warning">
-<hr class="hr1">
-<p>Registration NOT successful! <br>The second password differs from the first one. Plaese type again.</p>
-<hr class="hr1">
-</div>
+
+	<div class="warning">
+		<hr class="hr1">
+		<p>
+			Registration NOT successful! <br>The second password differs
+			from the first one. Plaese type again.
+		</p>
+		<hr class="hr1">
+	</div>
 
 	<div class="container m-5">
 		<div class="row">
@@ -38,43 +40,43 @@
 						<form action='Register' method='post'>
 							<div class="form-group">
 								<label for='usrn'> Username </label> <input id='usrn'
-									name='usrn' class="form-control">
+									value='${userName}' name='usrn' class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='firstName'> First Name</label> <input id='firstName'
-									name='firstName' class="form-control">
+									value='${firstName}' name='firstName' class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='lastName'> Last Name</label> <input id='lastName'
-									name='lastName' class="form-control">
+									value='${lastName}' name='lastName' class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='email'> Email</label> <input id='email' name='email'
-									class="form-control">
+									value='${email}' class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='phone'> Phone Number</label> <input id='phone'
-									name='phone' class="form-control">
+									value='${phone}' name='phone' class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='address'> Address </label> <input id='address'
-									name='address' class="form-control">
+									value='${address}' name='address' class="form-control">
 							</div>
 
-							<div>
-								<label for='inputGroupFile04'> Medical Certificate </label>
-								<div class="input-group">
-									<div class="custom-file">
-										<input type="file" class="custom-file-input"
-											id="inputGroupFile04"> <label
-											class="custom-file-label" for="inputGroupFile04">Choose
-											file</label>
-									</div>
-									<div class="input-group-append">
-										<button class="btn btn-outline-secondary " type="button">Upload</button>
-									</div>
-								</div>
-							</div>
+							<!-- 							<div> -->
+							<!-- 								<label for='inputGroupFile04'> Medical Certificate </label> -->
+							<!-- 								<div class="input-group"> -->
+							<!-- 									<div class="custom-file"> -->
+							<!-- 										<input type="file" class="custom-file-input" -->
+							<!-- 											id="inputGroupFile04"> <label -->
+							<!-- 											class="custom-file-label" for="inputGroupFile04">Choose -->
+							<!-- 											file</label> -->
+							<!-- 									</div> -->
+							<!-- 									<div class="input-group-append"> -->
+							<!-- 										<button class="btn btn-outline-secondary " type="button">Upload</button> -->
+							<!-- 									</div> -->
+							<!-- 								</div> -->
+							<!-- 							</div> -->
 
 							<br>
 

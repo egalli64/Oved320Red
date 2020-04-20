@@ -43,15 +43,26 @@ public class RegisterServlet extends HttpServlet {
 			User matchingUser = dao.getUser(userName);
 
 			if (matchingUser.getUserName() != null) {
-				RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/wrongRegisterName.jsp");
-				rdwrong.forward(request, response);
+				request.setAttribute("firstName", firstName);
+				request.setAttribute("lastName", lastName);
+				request.setAttribute("email", email);
+				request.setAttribute("phone", phone);
+				request.setAttribute("address", address);
+				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/wrongRegisterName.jsp");
+				rd.forward(request, response);
 			} else if (matchingUser.getUserName() == null && !password.equals(password2)) {
-				RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/wrongRegisterPass.jsp");
-				rdwrong.forward(request, response);
+				request.setAttribute("userName", userName);
+				request.setAttribute("firstName", firstName);
+				request.setAttribute("lastName", lastName);
+				request.setAttribute("email", email);
+				request.setAttribute("phone", phone);
+				request.setAttribute("address", address);
+				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/wrongRegisterPass.jsp");
+				rd.forward(request, response);
 			} else if (matchingUser.getUserName() == null && password.equals(password2)) {
 				dao.setUser(birthDate, userName, firstName, lastName, email, phone, address, password);
-				RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
-				rdwrong.forward(request, response);
+				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
+				rd.forward(request, response);
 			}
 		}
 

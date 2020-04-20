@@ -31,7 +31,8 @@ public class LoginServlet extends HttpServlet {
 			User matchingUser = dao.getUser(username); // controlla metodo uguale nel dao
 
 			if (matchingUser.getUserName() == null) { // check dao
-				RequestDispatcher rdwrong = request.getRequestDispatcher("wrongLogin.html");
+				request.setAttribute("userName", username);
+				RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/wrongLogin.jsp");
 				rdwrong.forward(request, response);
 
 			} else {
@@ -44,7 +45,8 @@ public class LoginServlet extends HttpServlet {
 					rdright.forward(request, response);
 
 				} else {
-					RequestDispatcher rdwrong = request.getRequestDispatcher("wrongLogin.html");
+					request.setAttribute("userName", username);
+					RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/wrongLogin.jsp");
 					rdwrong.forward(request, response);
 				}
 			}

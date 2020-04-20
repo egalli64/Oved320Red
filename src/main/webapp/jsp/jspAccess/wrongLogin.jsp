@@ -38,7 +38,7 @@
 						<form action='Login' method='post'>
 							<div class="form-group">
 								<label for='usrn'> Username </label> <input id='usrn'
-									name='usrn' class="form-control">
+									value='${userName}' name='usrn' class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='pswd'>Password</label> <input type="password"
