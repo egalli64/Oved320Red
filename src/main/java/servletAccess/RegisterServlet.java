@@ -50,9 +50,16 @@ public class RegisterServlet extends HttpServlet {
 				rdwrong.forward(request, response);
 			} else if (matchingUser.getUserName() == null && password.equals(password2)) {
 				dao.setUser(birthDate, userName, firstName, lastName, email, phone, address, password);
+				RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
+				rdwrong.forward(request, response);
 			}
 		}
 
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

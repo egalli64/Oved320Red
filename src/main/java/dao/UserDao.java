@@ -108,7 +108,7 @@ public class UserDao implements Closeable {
 			prepStmt.setString(7, streetAddress);
 			prepStmt.setString(8, password);
 			
-			prepStmt.executeQuery();
+			prepStmt.executeUpdate();
 		} catch (SQLException se) {
 			se.printStackTrace();
 		}
