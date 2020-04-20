@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<p> Congratulation, you are connected! </p>
 
 </body>
 </html>
