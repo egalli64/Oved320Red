@@ -1,0 +1,21 @@
+#logo {
+	width: 100%;
+	height: auto;
+}
+
+.btn {
+	position: absolute;
+	top: 1%;
+	right: 1%;
+	background-color: #ffffff;
+	color: black;
+	font-size: 12px;
+	border: 1px solid #d4d4d4;
+	cursor: pointer;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.btn:hover {
+	color: #ff0000;
+}
