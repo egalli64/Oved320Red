@@ -21,13 +21,23 @@ public class User {
     	
     }
     
+   // costruttore generale contenente tutti i dati della tabella
 	public User(int userID, LocalDate birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, LocalDate subscrDate, String password) {
 		this(userID, birthDate, userName, firstName, lastName, email,
+				phoneNumber,  streetAddress,  subscrDate, password);
+		this.certificate = certificate;
+	}
+	
+	// costruttore senza user_id, usato per creare utenti da inserire nel database se è fornito anche il certificato
+	public User(LocalDate birthDate, String userName, String firstName, String lastName, String email,
+			String phoneNumber, String streetAddress, String certificate, LocalDate subscrDate, String password) {
+		this(birthDate, userName, firstName, lastName, email,
 				phoneNumber, streetAddress, subscrDate, password);
 		this.certificate = certificate;
 	}
 	
+	// costruttore con user_id senza certificato
 	public User(int userID, LocalDate birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, LocalDate subscrDate, String password) {
 		this(birthDate, userName, firstName, lastName, email,
@@ -35,6 +45,7 @@ public class User {
 		this.userID = userID;
 	}
 	
+	// costruttore senza user_id e senza certificato (uso fino a quando decideremo cosa fare col certificato)
 	public User(LocalDate birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, LocalDate subscrDate, String password) {
 		this.birthDate = birthDate;

@@ -24,8 +24,8 @@ public class UserDao implements Closeable {
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users "
 			+ "where user_name = ?";
 
-	private static final String SET_USER = "INSERT INTO users (user_id, birth_date, user_name, first_name, "
-			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw) values(?, ?, ?, ?, ?, ?, "
+	private static final String SET_USER = "INSERT INTO users (birth_date, user_name, first_name, "
+			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw) values(?, ?, ?, ?, ?, "
 			+ "?, ?, ?, ?, ?)";
 
 	private Connection conn;
@@ -94,21 +94,20 @@ public class UserDao implements Closeable {
 /*
  * aofskghj
  */
-	public void setUser(int userID, Date birthDate, String userName, String firstName, String lastName, String email,
+	public void setUser(Date birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, Date subscrDate, String password) {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER)) {
-			prepStmt.setInt(1, userID);
-			prepStmt.setDate(2, birthDate);
-			prepStmt.setString(3, userName);
-			prepStmt.setString(4, firstName);
-			prepStmt.setString(5, lastName);
-			prepStmt.setString(6, email);
-			prepStmt.setString(7, phoneNumber);
-			prepStmt.setString(8, streetAddress);
-			prepStmt.setString(9, certificate);
-			prepStmt.setDate(10, subscrDate);
-			prepStmt.setString(11, password);
+			prepStmt.setDate(1, birthDate);
+			prepStmt.setString(2, userName);
+			prepStmt.setString(3, firstName);
+			prepStmt.setString(4, lastName);
+			prepStmt.setString(5, email);
+			prepStmt.setString(6, phoneNumber);
+			prepStmt.setString(7, streetAddress);
+			prepStmt.setString(8, certificate);
+			prepStmt.setDate(9, subscrDate);
+			prepStmt.setString(10, password);
 			
 			prepStmt.executeQuery();
 		} catch (SQLException se) {
