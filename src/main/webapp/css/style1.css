@@ -42,5 +42,7 @@ a.menu:link, a.menu:visited {
 a.menu:hover, a.menu:active {
 	background-color: white;
 	color: #d9534f;
+	padding: 7%;
+	border-radius: 7%;
 }
 
