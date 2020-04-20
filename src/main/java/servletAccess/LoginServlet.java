@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +16,7 @@ import javax.sql.DataSource;
 import dao.UserDao;
 import javaBeans.User;
 
-
+@WebServlet("/htmlAccess/Login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -31,18 +32,20 @@ public class LoginServlet extends HttpServlet {
 		User matchingUser = dao.getUser(username);  //controlla metodo uguale nel dao
 		
 		
-		//controlla che l'username esista
 		if (matchingUser.getUserName()==null) {         			//check dao
 			RequestDispatcher rdwrong = request.getRequestDispatcher("wronglogin.html");
 			rdwrong.forward(request, response);
 		
-			
-		
-		//se esiste
 		}else {
 			if(matchingUser.getPassword().equals(password)) { //login successful
-				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");   //aggiungi pagina
+			
+				
+				request.setAttribute("user", matchingUser);  
+				
+				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");  
 				rdright.forward(request, response);
+				
+				
 			}else {
 				RequestDispatcher rdwrong = request.getRequestDispatcher("wronglogin.html");
 				rdwrong.forward(request, response);
