@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 
 import javaBeans.User;
 
+
 public class UserDao implements Closeable {
 	private static final String GET_ALL = "SELECT user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users";
@@ -89,6 +90,7 @@ public class UserDao implements Closeable {
 
 		return results;
 	}
+
 
 	public void setUser(int userID, Date birthDate, String userName, String firstname, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, Date subscrDate, String password) {
