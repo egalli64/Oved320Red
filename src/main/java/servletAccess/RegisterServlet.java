@@ -35,7 +35,9 @@ public class RegisterServlet extends HttpServlet {
 		String password = request.getParameter("pswd");
 		String password2 = request.getParameter("pswd2");
 		
-		UserDao dao = new UserDao(ds);
+		UserDao dao = new UserDao(ds);		
+		User matchingUser = dao.getUser(userName);
+		
 		//devo mettere un if per controllare che non esista già userName
 		//se esiste già rimando a una pagina register.jsp in cui tengo salvati i dati inseriti a parte username e password
 		//se non esiste controllo che pass=pass2 e se sono uguali faccio setUser
