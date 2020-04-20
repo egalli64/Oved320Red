@@ -37,7 +37,9 @@ public class UserDao implements Closeable{
 //		
 //	}
 	
-	
+//	public User getUser(String userName) {
+//		
+//	}
 	
 //	public void insertUser(User user) {
 //		
