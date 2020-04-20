@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		
 		
 		if (matchingUser.getUserName()==null) {         			//check dao
-			RequestDispatcher rdwrong = request.getRequestDispatcher("wronglogin.html");
+			RequestDispatcher rdwrong = request.getRequestDispatcher("wrongLogin.html");
 			rdwrong.forward(request, response);
 		
 		}else {
@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 				
 				
 			}else {
-				RequestDispatcher rdwrong = request.getRequestDispatcher("wronglogin.html");
+				RequestDispatcher rdwrong = request.getRequestDispatcher("wrongLogin.html");
 				rdwrong.forward(request, response);
 			}
 		}
