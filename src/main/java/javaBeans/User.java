@@ -23,6 +23,13 @@ public class User {
     
 	public User(int userID, LocalDate birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, LocalDate subscrDate, String password) {
+		this(userID, birthDate, userName, firstName, lastName, email,
+				phoneNumber, streetAddress, subscrDate, password);
+		this.certificate = certificate;
+	}
+	
+	public User(int userID, LocalDate birthDate, String userName, String firstName, String lastName, String email,
+			String phoneNumber, String streetAddress, LocalDate subscrDate, String password) {
 		super();
 		this.userID = userID;
 		this.birthDate = birthDate;

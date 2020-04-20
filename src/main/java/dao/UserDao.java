@@ -19,7 +19,7 @@ import javaBeans.User;
 
 public class UserDao implements Closeable {
 	private static final String GET_ALL = "SELECT user_id, birth_date, user_name, first_name, "
-			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users";
+			+ "last_name, e_mail, phone_number, address, subscr_date, passw FROM users";
 	private static final String GET_USER = "SELECT user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users "
 			+ "where user_name = ?";
@@ -57,7 +57,7 @@ public class UserDao implements Closeable {
 				LocalDate birthDate = rs.getDate(2).toLocalDate();
 				LocalDate subscrDate = rs.getDate(10).toLocalDate();
 				User user = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
+						rs.getString(6), rs.getString(7), rs.getString(8), subscrDate,
 						rs.getString(11));
 				results.add(user);
 			}
@@ -94,14 +94,14 @@ public class UserDao implements Closeable {
 /*
  * aofskghj
  */
-	public void setUser(int userID, Date birthDate, String userName, String firstname, String lastName, String email,
+	public void setUser(int userID, Date birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, String certificate, Date subscrDate, String password) {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER)) {
 			prepStmt.setInt(1, userID);
 			prepStmt.setDate(2, birthDate);
 			prepStmt.setString(3, userName);
-			prepStmt.setString(4, firstname);
+			prepStmt.setString(4, firstName);
 			prepStmt.setString(5, lastName);
 			prepStmt.setString(6, email);
 			prepStmt.setString(7, phoneNumber);
