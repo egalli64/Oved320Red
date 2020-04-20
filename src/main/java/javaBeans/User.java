@@ -30,8 +30,13 @@ public class User {
 	
 	public User(int userID, LocalDate birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, LocalDate subscrDate, String password) {
-		super();
+		this(birthDate, userName, firstName, lastName, email,
+				phoneNumber,  streetAddress,  subscrDate, password);
 		this.userID = userID;
+	}
+	
+	public User(LocalDate birthDate, String userName, String firstName, String lastName, String email,
+			String phoneNumber, String streetAddress, LocalDate subscrDate, String password) {
 		this.birthDate = birthDate;
 		this.userName = userName;
 		this.firstName = firstName;
@@ -42,6 +47,9 @@ public class User {
 		this.subscrDate = subscrDate;
 		this.password = password;
 	}
+	
+
+	
 	public int getUserID() {
 		return userID;
 	}
