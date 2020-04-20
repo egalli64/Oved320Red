@@ -3,6 +3,7 @@ package dao;
 import java.io.Closeable;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
+
 import javaBeans.User;
 
 public class UserDao implements Closeable {
@@ -20,7 +22,6 @@ public class UserDao implements Closeable {
 	private static final String GET_USER = "SELECT user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users"
 			+ "where user_name = ?";
-
 
 	private static final String SET_USER = "INSERT INTO users (user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw) values(?, ?, ?, ?, ?, ?, "
@@ -67,7 +68,7 @@ public class UserDao implements Closeable {
 	}
 
 	public User getUser(String name) {
-		User results= new User();
+		User results = new User();
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_USER); ResultSet rs = prepStmt.executeQuery()) {
 			prepStmt.setString(1, name);
@@ -81,16 +82,13 @@ public class UserDao implements Closeable {
 		} catch (SQLException se) {
 			se.printStackTrace();
 		}
-		
+
 		return results;
 	}
-	
-	public User setUser(int userID, LocalDate birthDate, String userName, String firstname, String lastName, String email,
-			String phoneNumber, String streetAddress, String certificate, LocalDate subscrDate, String password) {
-		User results= new User();
-		
-		Date birthDate = 
- 
+
+	public void setUser(int userID, Date birthDate, String userName, String firstname, String lastName, String email,
+			String phoneNumber, String streetAddress, String certificate, Date subscrDate, String password) {
+
 		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER); ResultSet rs = prepStmt.executeQuery()) {
 			prepStmt.setInt(1, userID);
 			prepStmt.setDate(2, birthDate);
@@ -101,21 +99,12 @@ public class UserDao implements Closeable {
 			prepStmt.setString(7, phoneNumber);
 			prepStmt.setString(8, streetAddress);
 			prepStmt.setString(9, certificate);
-			prepStmt.setString(10, subscrDate);
+			prepStmt.setDate(10, subscrDate);
 			prepStmt.setString(11, password);
-			while (rs.next()) {
-				LocalDate birthDate = rs.getDate(2).toLocalDate();
-				LocalDate subscrDate = rs.getDate(10).toLocalDate();
-				results = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
-						rs.getString(11));
-			}
 		} catch (SQLException se) {
 			se.printStackTrace();
 		}
-		
-		return results;
+		return;
 	}
-
 
 }
