@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 import javaBeans.Category;
 import javaBeans.Course;
 
-public class CategoryDao implements Closeable{
+public class CategoryDao implements Closeable {
 	private static final String GET_ALL = "SELECT category_id, category_name FROM categories";
 	private static final String GET_ALL_CATEGORY_COURSES = "SELECT course_id, course_name, category_id, price "
 			+ "FROM categories JOIN courses USING(category_id) where course_name = ?";
@@ -63,33 +63,31 @@ public class CategoryDao implements Closeable{
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_CATEGORY_COURSES)) {
 			prepStmt.setString(1, categoryName);
-			
-	        try (ResultSet rs = prepStmt.executeQuery()) {
+
+			try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
 					results.add(new Course(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
-	            }
-	        }
+				}
+			}
 		} catch (SQLException se) {
 			se.printStackTrace();
-			
+
 		}
 
 		return results;
 	}
-	
 
 	public void setCategory(String categoryID, String categoryName) {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(SET_CATEGORY)) {
 			prepStmt.setString(1, categoryID);
 			prepStmt.setString(2, categoryName);
-			
+
 			prepStmt.executeUpdate();
 		} catch (SQLException se) {
 			se.printStackTrace();
 		}
 		return;
 	}
-
 
 }
