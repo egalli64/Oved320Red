@@ -22,9 +22,9 @@ public class LessonDao implements Closeable {
 			+ "FROM lessons";
 	private static final String GET_ALL_LESSON_USERS = "SELECT user_id, birth_date, user_name, first_name, " 
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw "
-			+ "FROM users JOIN users_lessons USING(user_id) JOIN lessons USING(lesson_id) where lesson_name = ?";
+			+ "FROM users JOIN users_lessons USING(user_id) JOIN lessons USING(lesson_id) where lesson_id = ?";
 	private static final String GET_LESSON_INSTRUCTOR = "SELECT user_name, first_name, last_name, job_name, email FROM staff JOIN lessons USING(staff_id)"
-			+ "JOIN jobs USING(job_id) WHERE lesson_name = ?";
+			+ "JOIN jobs USING(job_id) WHERE lesson_id = ?";
 	
 	private static final String SET_LESSON = "INSERT INTO courses (course_id, duration, staff_id, URL"
 			+ ") values(?, ?, ?, ?)";
@@ -88,11 +88,11 @@ public class LessonDao implements Closeable {
 		return results;
 	}
 	
-	public Staff getLessonStaff(String lesson_name) { // K
+	public Staff getLessonStaff(String lessonID) { // K
 		Staff results = new Staff();
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_LESSON_INSTRUCTOR)) {
-			prepStmt.setString(1, lesson_name);
+			prepStmt.setString(1, lessonID);
 			
 	        try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
