@@ -1,27 +1,21 @@
 package javaBeans;
 
-import java.sql.Time;
 
 public class Lesson {
 	private int lessonID;       //or String?
 	private int courseID;	    //or String?
 	private String lessonName;	
 	private int instructorID;	//or String?
-	private Time duration;
+	private int duration;
 	private String URL;
 	
 	
-	public Lesson(int lessonID, int courseID, String lessonName, int instructorID, Time duration, String URL) {
+	public Lesson(int lessonID, int courseID, String lessonName, int instructorID, int duration, String URL) {
+		this(courseID, lessonName, instructorID, duration, URL);
 		this.lessonID = lessonID;
-		this.courseID = courseID;
-		this.lessonName = lessonName;
-		this.instructorID = instructorID;
-		this.duration = duration;
-		this.URL = URL;
 	}
 
-	public Lesson(int courseID, String lessonName, int instructorID, Time duration, String URL) {
-		this.lessonID = lessonID;
+	public Lesson(int courseID, String lessonName, int instructorID, int duration, String URL) {
 		this.courseID = courseID;
 		this.lessonName = lessonName;
 		this.instructorID = instructorID;
@@ -69,12 +63,12 @@ public class Lesson {
 	}
 
 
-	public Time getDuration() {
+	public int getDuration() {
 		return duration;
 	}
 
 
-	public void setDuration(Time duration) {
+	public void setDuration(int duration) {
 		this.duration = duration;
 	}
 

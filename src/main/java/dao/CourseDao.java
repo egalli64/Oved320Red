@@ -53,7 +53,7 @@ public class CourseDao implements Closeable {
 
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(GET_ALL)) {
 			while (rs.next()) {
-				Course course = new Course(rs.getInt(1), rs.getString(2), rs.getInt(3) , rs.getInt(4), rs.getInt(5));
+				Course course = new Course(rs.getInt(1), rs.getString(2), rs.getString(3) , rs.getInt(4));
 				results.add(course);
 			}
 		} catch (SQLException se) {
@@ -87,11 +87,11 @@ public class CourseDao implements Closeable {
 	}
 	
 
-	public void setCourse(String course_name, int categoryID, int price) {
+	public void setCourse(String course_name, String categoryID, int price) {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(SET_COURSE)) {
 			prepStmt.setString(1, course_name);
-			prepStmt.setInt(2, categoryID);
+			prepStmt.setString(2, categoryID);
 			prepStmt.setInt(3, price);
 			
 			prepStmt.executeUpdate();
