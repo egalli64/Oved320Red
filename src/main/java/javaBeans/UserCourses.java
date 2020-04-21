@@ -8,7 +8,6 @@ public class UserCourses {
 	}
 	
 	public UserCourses(int userID, int courseID) {
-		super();
 		this.userID = userID;
 		this.courseID = courseID;
 	}
