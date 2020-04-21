@@ -13,7 +13,6 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import javaBeans.Course;
 import javaBeans.Lesson;
 import javaBeans.User;
 
