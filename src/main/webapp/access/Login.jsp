@@ -62,6 +62,7 @@
 						</p>
 						<div>
 							<a class="reglink" href="../index.html"><i>Back to Home</i></a>
+							<a class="reglink" href="../space.html"><i>Back to Space</i></a>
 						</div>
 
 						<!-- Back to homepage -->
