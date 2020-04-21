@@ -10,12 +10,12 @@
     
     <error-page>
         <error-code>404</error-code>
-        <location>/ErrorPages/404.jsp</location>
+        <location>/errorpages/404.jsp</location>
     </error-page>
     
     <error-page>
         <error-code>505</error-code>
-        <location>/ErrorPages/505.jsp</location>
+        <location>/errorpages/505.jsp</location>
     </error-page>
     
     <context-param>
