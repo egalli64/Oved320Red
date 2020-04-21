@@ -95,3 +95,7 @@ a.menu1:hover, a.menu1:active {
 	font-size: 18px;
 	color: #d9534f;
 }
+
+.error{
+	color: white;
+}

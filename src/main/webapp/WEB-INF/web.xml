@@ -7,4 +7,20 @@
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorPages/404.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>505</error-code>
+        <location>/ErrorPages/505.jsp</location>
+    </error-page>
+    
+    <context-param>
+        <param-name>admin</param-name>   
+        <param-value>The Red Team</param-value>  
+    </context-param>
+    
 </web-app>
