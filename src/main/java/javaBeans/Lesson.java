@@ -2,23 +2,24 @@ package javaBeans;
 
 
 public class Lesson {
-	private int lessonID;       //or String?
-	private int courseID;	    //or String?
-	private String lessonName;	
-	private int instructorID;	//or String?
+	private int lessonID;      
+	private int courseID;	   	
+	private int staffID;	
 	private int duration;
 	private String URL;
 	
+	public Lesson() {
+		
+	}
 	
-	public Lesson(int lessonID, int courseID, String lessonName, int instructorID, int duration, String URL) {
-		this(courseID, lessonName, instructorID, duration, URL);
+	public Lesson(int lessonID, int courseID, int staffID, int duration, String URL) {
+		this(courseID, staffID, duration, URL);
 		this.lessonID = lessonID;
 	}
 
-	public Lesson(int courseID, String lessonName, int instructorID, int duration, String URL) {
+	public Lesson(int courseID, int staffID, int duration, String URL) {
 		this.courseID = courseID;
-		this.lessonName = lessonName;
-		this.instructorID = instructorID;
+		this.staffID = staffID;
 		this.duration = duration;
 		this.URL = URL;
 	}
@@ -37,29 +38,17 @@ public class Lesson {
 		return courseID;
 	}
 
-
 	public void setCourseID(int courseID) {
 		this.courseID = courseID;
 	}
 
-
-	public String getLessonName() {
-		return lessonName;
+	public int getStaffID() {
+		return staffID;
 	}
 
 
-	public void setLessonName(String lessonName) {
-		this.lessonName = lessonName;
-	}
-
-
-	public int getInstructorID() {
-		return instructorID;
-	}
-
-
-	public void setInstructorID(int instructorID) {
-		this.instructorID = instructorID;
+	public void setInstructorID(int staffID) {
+		this.staffID = staffID;
 	}
 
 
