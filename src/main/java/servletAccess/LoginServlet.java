@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
 
 		try (UserDao dao = new UserDao(ds)) {
 			User matchingUser = dao.getUser(username); // controlla metodo uguale nel dao
-
+			String error = "";
 			if (matchingUser.getUserName() != null && matchingUser.getPassword().equals(password)) { // login successful
 				request.setAttribute("user", matchingUser);
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
@@ -38,8 +38,8 @@ public class LoginServlet extends HttpServlet {
 
 			} else {
 				request.setAttribute("userName", username);
-				String error = "Login NOT succesful. <br> Wrong Username or Password.";
-				request.setAttribute("retrunError", error);
+				error = "Login NOT succesful. <br> Wrong Username or Password.";
+				request.setAttribute("returnError", error);
 				RequestDispatcher rdwrong = request.getRequestDispatcher("Login.jsp");
 				rdwrong.forward(request, response);
 

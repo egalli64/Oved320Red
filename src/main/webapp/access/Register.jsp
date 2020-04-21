@@ -6,7 +6,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="../../css/style1.css" />
+<link rel="stylesheet" type="text/css" href="../css/style1.css" />
 <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>Register</title>
 </head>
@@ -103,7 +103,7 @@
 						</form>
 						<div class="text-center">
 							<p>
-								<i> <a class='reglink m-2' href="./Login.html">Back to
+								<i> <a class='reglink m-2' href="./Login.jsp">Back to
 										Login</a></i> or <i><a class="reglink m-2" href="../index.html">
 										Back to Home</a></i>
 							</p>
