@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 			String error = "";
 			if (matchingUser.getUserName() != null && matchingUser.getPassword().equals(password)) { // login successful
 				request.setAttribute("user", matchingUser);
+				request.setAttribute("userCourses", dao.getAllUserCourses(username));
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
 				rdright.forward(request, response);
 				return;
