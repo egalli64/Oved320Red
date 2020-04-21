@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import dao.UserDao;
 import javaBeans.User;
 
-@WebServlet("/htmlAccess/Login")
+@WebServlet("/access/Login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,25 +30,19 @@ public class LoginServlet extends HttpServlet {
 		try (UserDao dao = new UserDao(ds)) {
 			User matchingUser = dao.getUser(username); // controlla metodo uguale nel dao
 
-			if (matchingUser.getUserName() == null) { // check dao
-				request.setAttribute("userName", username);
-				RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/wrongLogin.jsp");
-				rdwrong.forward(request, response);
+			if (matchingUser.getUserName() != null && matchingUser.getPassword().equals(password)) { // login successful
+				request.setAttribute("user", matchingUser);
+				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
+				rdright.forward(request, response);
+				return;
 
 			} else {
-				if (matchingUser.getPassword().equals(password)) { // login successful
+				request.setAttribute("userName", username);
+				String error = "Login NOT succesful. <br> Wrong Username or Password.";
+				request.setAttribute("retrunError", error);
+				RequestDispatcher rdwrong = request.getRequestDispatcher("Login.jsp");
+				rdwrong.forward(request, response);
 
-					request.setAttribute("user", matchingUser);
-
-					RequestDispatcher rdright = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
-
-					rdright.forward(request, response);
-
-				} else {
-					request.setAttribute("userName", username);
-					RequestDispatcher rdwrong = request.getRequestDispatcher("../jsp/jspAccess/wrongLogin.jsp");
-					rdwrong.forward(request, response);
-				}
 			}
 		}
 	}

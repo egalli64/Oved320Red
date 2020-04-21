@@ -46,9 +46,9 @@ public class RegisterServlet extends HttpServlet {
 
 			if (matchingUser.getUserName() != null) {
 				userName = "";
-				error = "Registration NOT successful!\n Username already existing";
+				error = "Registration NOT successful! <br> Username already existing";
 			} else if (matchingUser.getUserName() == null && !password.equals(password2)) {
-				error = "Registration NOT successful!\n The second password differs from the first one. Plaese type again.";
+				error = "Registration NOT successful! <br> The second password differs from the first one. Plaese type again.";
 			} else if (matchingUser.getUserName() == null && password.equals(password2)) {
 				dao.setUser(birthDate, userName, firstName, lastName, email, phone, address, password);
 				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
