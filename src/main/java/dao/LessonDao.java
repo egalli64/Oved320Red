@@ -18,14 +18,14 @@ import javaBeans.Lesson;
 import javaBeans.User;
 
 public class LessonDao implements Closeable {
-	private static final String GET_ALL = "SELECT course_id, course_name, category_id, price "
-			+ "FROM courses";
+	private static final String GET_ALL = "SELECT lesson_id, course_id, duration, staff_id, URL "
+			+ "FROM lessons";
 	private static final String GET_ALL_LESSON_USERS = "SELECT user_id, birth_date, user_name, first_name, " 
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw "
 			+ "FROM users JOIN users_lessons USING(user_id) JOIN lessons USING(lesson_id) where lesson_name = ?";
 
-	private static final String SET_COURSE = "INSERT INTO courses (course_name, category_id, price"
-			+ ") values(?, ?, ?)";
+	private static final String SET_LESSON = "INSERT INTO courses (course_id, duration, staff_id, URL"
+			+ ") values(?, ?, ?, ?)";
 
 	private Connection conn;
 
@@ -87,12 +87,13 @@ public class LessonDao implements Closeable {
 	}
 	
 
-	public void setLesson(String course_name, int categoryID, int price) {
+	public void setLesson(int courseID, int duration, int staffID, String URL) {
 
-		try (PreparedStatement prepStmt = conn.prepareStatement(SET_COURSE)) {
-			prepStmt.setString(1, course_name);
-			prepStmt.setInt(2, categoryID);
-			prepStmt.setInt(3, price);
+		try (PreparedStatement prepStmt = conn.prepareStatement(SET_LESSON)) {
+			prepStmt.setInt(1, courseID);
+			prepStmt.setInt(2, duration);
+			prepStmt.setInt(3, staffID);
+			prepStmt.setString(4, URL);
 			
 			prepStmt.executeUpdate();
 		} catch (SQLException se) {
