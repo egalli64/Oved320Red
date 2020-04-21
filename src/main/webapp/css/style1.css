@@ -99,3 +99,7 @@ a.menu1:hover, a.menu1:active {
 .error{
 	color: white;
 }
+
+.coursetablehover{
+	color:  #d9534f;
+}

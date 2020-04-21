@@ -99,7 +99,6 @@ public class UserDao implements Closeable {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_USER_COURSES)) {
 			prepStmt.setString(1, userName);
-			System.out.println(prepStmt.toString());
 			try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
 					Course course = new Course(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
