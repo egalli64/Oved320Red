@@ -17,7 +17,6 @@ import javaBeans.Lesson;
 
 @WebServlet("/access/UserCourses")
 public class UserCoursesServlet extends HttpServlet{
-	
 	private static final long serialVersionUID = 1L;
 	
 	@Resource(name = "jdbc/red")
@@ -31,11 +30,11 @@ public class UserCoursesServlet extends HttpServlet{
 		try (CourseDao dao = new CourseDao(ds)) {
 			//versione base senza controlli sulla correttezza del nome del corso
 			//serve aggiungere get course by name per inserire il controllo sul fatto che il corso esista
-			
+								
 			List<Lesson> results = dao.getAllCourseLessons(courseName);
 			
 			request.setAttribute("courseLessons", results);
-			RequestDispatcher rd = request.getRequestDispatcher("userLesson.jsp"); //come si chiama?
+			RequestDispatcher rd = request.getRequestDispatcher("../loggedin/coursesummary.jsp"); 
 			rd.forward(request, response);
 
 			

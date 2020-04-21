@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import dao.UserDao;
@@ -38,7 +39,10 @@ public class LoginServlet extends HttpServlet {
 				
 				List<Course> courses = dao.getAllUserCourses(username);
 				request.setAttribute("userCourses", courses);
-				
+//				
+//				HttpSession session = request.getSession();
+//				session.setAttribute(courses, );
+			
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
 				rdright.forward(request, response);
 				return;

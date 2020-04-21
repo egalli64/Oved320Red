@@ -17,7 +17,7 @@
 	<div id="top">
 		<a href='../index.html'><img id='logo' src='../img/logo.png'></a>
 	</div>
-
+	
 	<c:if test='${returnError != null}'>
 		<div class="warning">
 			<hr class="hr1">

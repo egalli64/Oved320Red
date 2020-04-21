@@ -71,8 +71,8 @@
 <!-- 		</thead> -->
 		<tbody>
 			<c:forEach var="course" items="${userCourses}">
-				<tr id='courserow' class="">
-					<td>${course.courseName}</td>
+				<tr id='courserow' class="" >
+					<td><a href="UserCourses?courseName=${course.courseName}">${course.courseName}</a></td> 
 				</tr>
 			</c:forEach>
 		</tbody>
