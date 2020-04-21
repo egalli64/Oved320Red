@@ -50,7 +50,13 @@
 	<h2 class="text-center text-danger text-bold">My Courses</h2>
 	<hr class='hr1'>
 	<br>
+
 	<p>cosa hai pagato</p>
+	
+  <fieldset>
+	<legend>Course</legend>
+
+  </fieldset>
 
 </div>
 <br>
