@@ -55,7 +55,7 @@ public class UserCourseDao implements Closeable {
 	}
 
 	public void deleteCourse(int userID, int courseID) {
-		try (PreparedStatement pstmt = conn.prepareStatement(SET_COURSE);) {
+		try (PreparedStatement pstmt = conn.prepareStatement(DELETE_COURSE);) {
 			pstmt.setInt(1, userID);
 			pstmt.setInt(2, courseID);
 			pstmt.executeUpdate();
