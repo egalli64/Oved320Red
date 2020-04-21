@@ -34,13 +34,13 @@
 						<form action='./Login' method='post'>
 							<div class="form-group">
 								<label for='usrn'> Username </label> <input id='usrn'
-									placeholder="DireWolf" name='usrn' required class="form-control">
+									placeholder="Enter Username" name='usrn' required class="form-control">
 									
 							</div>
 							<div class="form-group">
 								<label for='pswd'>Password</label> <input type="password"
 									id='pswd' placeholder="Password" name='pswd' required class="form-control"> <input
-									type="checkbox" onclick="Toggle()"> <i>Show</i>
+									type="checkbox" onclick="toggle()"> <i>Show</i>
 							</div>
 							<div class='text-center m-3'>
 								<button type="submit" class="btn btn-danger">Login</button>
@@ -69,7 +69,7 @@
 	
 <!-- 	va spostato in un documento javascript -->
 	<script>
-		function Toggle() {
+		function toggle() {
 			var temp = document.getElementById("pswd");
 			if (temp.type === "password") {
 				temp.type = "text";
