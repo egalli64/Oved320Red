@@ -4,18 +4,9 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-import javaBeans.User;
-import javaBeans.UserCourses;
 
 public class UserCourseDao implements Closeable {
 	private static final String SET_COURSE = "INSERT INTO users_courses (user_id, course_id) values(?, ?)";
