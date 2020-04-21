@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -13,22 +14,22 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import javaBeans.Course;
 import javaBeans.User;
 
-public class CourseDao {
+public class CourseDao implements Closeable {
 	private static final String GET_ALL = "SELECT course_id, course_name, category_id, price "
 			+ "FROM courses";
-	private static final String GET_USER = "SELECT user_id, birth_date, user_name, first_name, "
-			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users "
-			+ "where user_name = ?";
+	private static final String GET_ALL_COURSE_USERS = "SELECT user_id, birth_date, user_name, first_name, " 
+			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw "
+			+ "FROM users JOIN users_courses USING(user_id) JOIN courses USING(course_id) where course_name = ?";
 
-	private static final String SET_USER = "INSERT INTO users (birth_date, user_name, first_name, "
-			+ "last_name, e_mail, phone_number, address, subscr_date, passw) values(?, ?, ?, ?, ?, "
-			+ "?, ?, CURDATE(), ?)";
+	private static final String SET_COURSE = "INSERT INTO courses (course_name, category_id, price"
+			+ ") values(?, ?, ?)";
 
 	private Connection conn;
 
-	public UserDao(DataSource ds) {
+	public CourseDao(DataSource ds) {
 		try {
 			this.conn = ds.getConnection();
 		} catch (SQLException se) {
@@ -47,17 +48,13 @@ public class CourseDao {
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX QUERY METHODS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-	public List<User> getAll() {
-		List<User> results = new ArrayList<>();
+	public List<Course> getAll() { // K
+		List<Course> results = new ArrayList<>();
 
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(GET_ALL)) {
 			while (rs.next()) {
-				LocalDate birthDate = rs.getDate(2).toLocalDate();
-				LocalDate subscrDate = rs.getDate(10).toLocalDate();
-				User user = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), subscrDate,
-						rs.getString(11));
-				results.add(user);
+				Course course = new Course(rs.getInt(1), rs.getString(2), rs.getInt(3) , rs.getInt(4), rs.getInt(5));
+				results.add(course);
 			}
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -66,19 +63,19 @@ public class CourseDao {
 		return results;
 	}
 
-	public User getUser(String name) {
-		User results = new User();
+	public List<User> getAllCourseUsers(String courseName) { // K
+		List<User> results = new ArrayList<>();
 
-		try (PreparedStatement prepStmt = conn.prepareStatement(GET_USER)) {
-			prepStmt.setString(1, name);
+		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_COURSE_USERS)) {
+			prepStmt.setString(1, courseName);
 			
 	        try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
 					LocalDate birthDate = rs.getDate(2).toLocalDate();
 					LocalDate subscrDate = rs.getDate(10).toLocalDate();
-					results = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
+					results.add(new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
 							rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
-							rs.getString(11));;
+							rs.getString(11)));
 	            }
 	        }
 		} catch (SQLException se) {
@@ -90,21 +87,12 @@ public class CourseDao {
 	}
 	
 
-/*
- * uso il costruttore senza certificato, per il momento non sappiamo come trattarlo
- */
-	public void setUser(Date birthDate, String userName, String firstName, String lastName, String email,
-			String phoneNumber, String streetAddress, String password) {
+	public void setCourse(String course_name, int categoryID, int price) {
 
-		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER)) {
-			prepStmt.setDate(1, birthDate);
-			prepStmt.setString(2, userName);
-			prepStmt.setString(3, firstName);
-			prepStmt.setString(4, lastName);
-			prepStmt.setString(5, email);
-			prepStmt.setString(6, phoneNumber);
-			prepStmt.setString(7, streetAddress);
-			prepStmt.setString(8, password);
+		try (PreparedStatement prepStmt = conn.prepareStatement(SET_COURSE)) {
+			prepStmt.setString(1, course_name);
+			prepStmt.setInt(2, categoryID);
+			prepStmt.setInt(3, price);
 			
 			prepStmt.executeUpdate();
 		} catch (SQLException se) {
