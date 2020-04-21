@@ -111,3 +111,31 @@ a.menu1:hover, a.menu1:active {
   margin-left: auto;
   margin-right: auto;
 }
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  position: absolute;
+  top: 12%;
+  right: 1%;
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: right;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  position: absolute;
+  top: 22%;
+  right: 1%;
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: right;
+  text-decoration: none;
+  border-radius: 50%;
+}
