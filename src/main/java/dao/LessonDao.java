@@ -23,7 +23,7 @@ public class LessonDao implements Closeable {
 	private static final String GET_ALL_LESSON_USERS = "SELECT user_id, birth_date, user_name, first_name, " 
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw "
 			+ "FROM users JOIN users_lessons USING(user_id) JOIN lessons USING(lesson_id) where lesson_name = ?";
-	private static final String GET_LESSON_INSTRUCTOR = "SELECT user_name, first_name, last_name, job_name FROM staff JOIN lessons USING(staff_id)"
+	private static final String GET_LESSON_INSTRUCTOR = "SELECT user_name, first_name, last_name, job_name, email FROM staff JOIN lessons USING(staff_id)"
 			+ "JOIN jobs USING(job_id) WHERE lesson_name = ?";
 	
 	private static final String SET_LESSON = "INSERT INTO courses (course_id, duration, staff_id, URL"
@@ -99,7 +99,7 @@ public class LessonDao implements Closeable {
 					/*
 					 * N.B. nel job_id è contenuto il job_name per comodità
 					 */
-					results = new Staff(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+					results = new Staff(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 	            }
 	        }
 		} catch (SQLException se) {

@@ -50,11 +50,11 @@ public class Staff {
 
 	}
 	
-	public Staff(String userName, String firstName, String lastName, String jobID) {
+	public Staff(String userName, String firstName, String lastName, String jobID, String email) {
 		this.userName = userName;
 		this.firstName = firstName;
-		this.firstName = jobID;
-		
+		this.jobID = jobID;
+		this.email = email;		
 	}
 	
 	public int getStaffID() {
