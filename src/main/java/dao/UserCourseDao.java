@@ -18,9 +18,8 @@ import javaBeans.User;
 import javaBeans.UserCourses;
 
 public class UserCourseDao implements Closeable {
-	private static final String GET_ALL = "SELECT user_id, course_id FROM users_courses";
 	private static final String SET_COURSE = "INSERT INTO users_courses (user_id, course_id) values(?, ?)";
-
+	private static final String DELETE_COURSE = "DELETE from users_courses WHERE user_id = ? and course_id = ?";
 	private Connection conn;
 
 	public UserCourseDao(DataSource ds) {
@@ -40,39 +39,30 @@ public class UserCourseDao implements Closeable {
 		}
 	}
 
-	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX QUERY METHODS
+	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX QUERY METHODS //
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-//	public List<UserCourses> getAll() {
-//		List<UserCourses> results = new ArrayList<>();
-//
-//		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(GET_ALL)) {
-//			while (rs.next()) {
-//				UserCourses usercourses = new UserCourses(rs.getInt(1), rs.getInt(2));
-//				results.add(usercourses);
-//			}
-//		} catch (SQLException se) {
-//			se.printStackTrace();
-//		}
-//
-//		return results;
-//	}
+	public void setCourse(int userID, int courseID) {
 
-	
-//	
-//	public List<UserCourses> setCourse(int userID, int courseID) {
-//		List<UserCourses> results = new ArrayList<>();
-//
-//		try (PreparedStatement pstmt = conn.prepareStatement(SET_COURSE);) {
-//			pstmt.setInt(1, userID);
-//			pstmt.setInt(2, courseID);
-//		    pstmt.execute();  
-//			
-//		} catch (SQLException se) {
-//			se.printStackTrace();
-//
-//		}
-//		return results;
-//	}
-//
+		try (PreparedStatement pstmt = conn.prepareStatement(SET_COURSE);) {
+			pstmt.setInt(1, userID);
+			pstmt.setInt(2, courseID);
+			pstmt.executeUpdate();
+		} catch (SQLException se) {
+			se.printStackTrace();
+
+		}
+	}
+
+	public void deleteCourse(int userID, int courseID) {
+		try (PreparedStatement pstmt = conn.prepareStatement(SET_COURSE);) {
+			pstmt.setInt(1, userID);
+			pstmt.setInt(2, courseID);
+			pstmt.executeUpdate();
+		} catch (SQLException se) {
+			se.printStackTrace();
+
+		}
+	}
+
 }
