@@ -32,19 +32,23 @@
 						<form action='Register' method='post'>
 							<div class="form-group">
 								<label for='usrn'> Username </label> <input id='usrn'
-									placeholder="DireWolf" name='usrn' required class="form-control">
+									placeholder="DireWolf" name='usrn' required
+									class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='firstName'> First Name</label> <input id='firstName'
-									placeholder="Jon" name='firstName' required class="form-control">
+									placeholder="Jon" name='firstName' required
+									class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='lastName'> Last Name</label> <input id='lastName'
-									placeholder="Snow" name='lastName' required class="form-control">
+									placeholder="Snow" name='lastName' required
+									class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='email'> Email</label> <input id='email' name='email'
-									placeholder="Jon.Snow@example.org" required class="form-control">
+									placeholder="Jon.Snow@example.org" required
+									class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='phone'> Phone Number</label> <input id='phone'
@@ -52,36 +56,44 @@
 							</div>
 							<div class="form-group">
 								<label for='address'> Address </label> <input id='address'
-									placeholder="221B Baker Street" name='address' class="form-control">
+									placeholder="221B Baker Street" name='address'
+									class="form-control">
 							</div>
+							<div>
+								<label for='birthdate'> Date of Birth </label> <input
+									id='birthdate' type="date" name='birthdate'
+									class="form-control">
 
-<!-- 							<div> -->
-<!-- 								<label for='inputGroupFile04'> Medical Certificate </label> -->
-<!-- 								<div class="input-group"> -->
-<!-- 									<div class="custom-file"> -->
-<!-- 										<input type="file" class="custom-file-input" -->
-<!-- 											id="inputGroupFile04"> <label -->
-<!-- 											class="custom-file-label" for="inputGroupFile04">Choose -->
-<!-- 											file</label> -->
-<!-- 									</div> -->
-<!-- 									<div class="input-group-append"> -->
-<!-- 										<button class="btn btn-outline-secondary " type="button">Upload</button> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+							</div>
+							<!-- 							<div> -->
+							<!-- 								<label for='inputGroupFile04'> Medical Certificate </label> -->
+							<!-- 								<div class="input-group"> -->
+							<!-- 									<div class="custom-file"> -->
+							<!-- 										<input type="file" class="custom-file-input" -->
+							<!-- 											id="inputGroupFile04"> <label -->
+							<!-- 											class="custom-file-label" for="inputGroupFile04">Choose -->
+							<!-- 											file</label> -->
+							<!-- 									</div> -->
+							<!-- 									<div class="input-group-append"> -->
+							<!-- 										<button class="btn btn-outline-secondary " type="button">Upload</button> -->
+							<!-- 									</div> -->
+							<!-- 								</div> -->
+							<!-- 							</div> -->
 
 							<br>
 
 							<div class="form-group">
 								<label for='pswd'>Password</label> <input type="password"
-									placeholder="Choose a Password" id='pswd' name='pswd' class="form-control">
-									<input type="checkbox" onclick="Toggle1()"> <i>Show</i>
+									placeholder="Choose a Password" id='pswd' name='pswd'
+									class="form-control"> <input type="checkbox"
+									onclick="Toggle1()"> <i>Show</i>
 							</div>
 
 							<div class="form-group">
-								<label for='pswd2'>Confirm Password</label> <input type="password"
-									placeholder="Confirm your Password" id='pswd2' name='pswd2' class="form-control">
-									<input type="checkbox" onclick="Toggle2()"> <i>Show</i>
+								<label for='pswd2'>Confirm Password</label> <input
+									type="password" placeholder="Confirm your Password" id='pswd2'
+									name='pswd2' class="form-control"> <input
+									type="checkbox" onclick="Toggle2()"> <i>Show</i>
 							</div>
 
 							<div class='text-center m-3'>
@@ -104,9 +116,9 @@
 			<div class="col-1"></div>
 		</div>
 	</div>
-	
-	
-<!-- 	Da spostare in documento javascript -->
+
+
+	<!-- 	Da spostare in documento javascript -->
 	<script>
 		function Toggle1() {
 			var temp = document.getElementById("pswd");
