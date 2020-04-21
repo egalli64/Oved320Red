@@ -33,9 +33,10 @@ public class RegisterServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		
-		@SuppressWarnings("deprecation")
-		Date birthDate = new Date(2000, 0, 1);
+//		@SuppressWarnings("deprecation")
+//		Date birthDate = new Date(2000, 0, 1);
 		
+		Date birthDate = Date.valueOf(request.getParameter("birthdate"));
 		String password = request.getParameter("pswd");
 		String password2 = request.getParameter("pswd2");
 

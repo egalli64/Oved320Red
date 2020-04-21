@@ -59,6 +59,12 @@
 								<label for='address'> Address </label> <input id='address'
 									value='${address}'name='address' class="form-control">
 							</div>
+							<div>
+								<label for='birthdate'> Date of Birth </label> <input
+									id='birthdate' type="date" name='birthdate'
+									class="form-control">
+
+							</div>
 
 <!-- 							<div> -->
 <!-- 								<label for='inputGroupFile04'> Medical Certificate </label> -->

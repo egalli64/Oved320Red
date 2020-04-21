@@ -1,3 +1,5 @@
+use red;
+
 drop table if exists users_lessons;
 drop table if exists users_courses;
 drop table if exists lessons;
