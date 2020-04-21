@@ -10,8 +10,11 @@ public class Course {
 	private int cost;
 	
 	public Course(int courseID, String courseName, int frequency, int categoryID, int cost) {
-		super();
+		this(courseName, frequency, categoryID, cost);
 		this.courseID = courseID;
+	}
+	
+	public Course(String courseName, int frequency, int categoryID, int cost) {
 		this.courseName = courseName;
 		this.frequency = frequency;
 		this.categoryID = categoryID;
