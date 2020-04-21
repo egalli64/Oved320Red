@@ -76,14 +76,41 @@ public class UserCourseDao implements Closeable {
 		}
 		return results;
 	}
-//
-//	@Resource(name = "jdbc/red")
-//	private DataSource ds;
-//
-////	public List<UserCourses> getCoursesByUsername(String username) {
-////		UserDao userdao = new UserDao(ds);
-////		int user_id = userdao.getUser(username).getUserID();
-////
-////	}
-////
+
+	@Resource(name = "jdbc/red")
+	private DataSource ds;
+
+	public List<UserCourses> getCoursesByUsername(String username) {
+		List<UserCourses> nullresult = new ArrayList<>();      
+
+		try (UserDao userdao = new UserDao(ds);) {  
+			int user_id = userdao.getUser(username).getUserID();
+			List<UserCourses> results = getCoursesByUserID(user_id);
+			return results;
+
+		} catch (IOException se) {
+			se.printStackTrace();
+		}
+
+		return nullresult;
+	}
+
+	public List<UserCourses> setCourse(int userID, int courseID) {
+		List<UserCourses> results = new ArrayList<>();
+
+		try (PreparedStatement pstmt = conn.prepareStatement(GET_USER);) {
+			pstmt.setInt(1, userID);
+
+			try (ResultSet rs = pstmt.executeQuery();) {
+				while (rs.next()) {
+					results.add(new UserCourses(rs.getInt(1), rs.getInt(2)));
+				}
+			}
+		} catch (SQLException se) {
+			se.printStackTrace();
+
+		}
+		return results;
+	}
+
 }
