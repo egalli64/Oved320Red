@@ -1,6 +1,8 @@
 package servletAccess;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import dao.UserDao;
+import javaBeans.Course;
 import javaBeans.User;
 
 @WebServlet("/access/Login")
@@ -32,7 +35,14 @@ public class LoginServlet extends HttpServlet {
 			String error = "";
 			if (matchingUser.getUserName() != null && matchingUser.getPassword().equals(password)) { // login successful
 				request.setAttribute("user", matchingUser);
-				request.setAttribute("userCourses", dao.getAllUserCourses(username));
+				
+				List<Course> courses = dao.getAllUserCourses(username);
+//						new ArrayList<>();
+//				courses.add(new Course(1, "Danza", "dnz", 60));
+//				courses.add(new Course(2, "Tennis", "tns", 80));
+				
+				request.setAttribute("userCourses", courses);
+				
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
 				rdright.forward(request, response);
 				return;

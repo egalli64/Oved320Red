@@ -136,6 +136,19 @@ foreign key(user_id) references users(user_id));
 alter table users_courses
 add constraint primary key(user_id, course_id);
 
+insert into users_courses (user_id, course_id)
+values (1, 1), 
+(1, 3),
+(1, 4),
+(2, 2),
+(2, 5),
+(3, 4),
+(4, 1),
+(4, 2),
+(4, 3),
+(4, 4),
+(4, 5);
+
 
 create table users_lessons (
 user_id integer,

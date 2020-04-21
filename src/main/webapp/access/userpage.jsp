@@ -10,10 +10,12 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../css/style1.css" />
 <link rel="stylesheet" type="text/css" href="../css/index.css" />
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <title>Personal Page</title>
-
 
 </head>
 <body>
@@ -44,39 +46,34 @@
 			<a class='menu' href="#MyINstructor">My Instructors</a>
 		</div>
 		<div class="col-sm">
+			<a class='menu' href="#contact">Explore</a>
+		</div>
+		<div class="col-sm">
 			<a class='menu' href="#contact">Contacts</a>
 		</div>
 	</div>
 	<hr>
 
 	<br>
-	<br>
-	<div class="script">
-		<h2 class="text-center text-danger text-bold">Explore</h2>
-		<hr class='hr1'>
-		<br>
-		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
-		<div class="dropdown">
-			<button class="btn btn-danger dropdown-toggle" type="button"
-				id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Course Category</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="#">Danza Classica </a> 
-				<a class="dropdown-item" href="#">Danza Contemporanea</a> 
-				<a class="dropdown-item" href="#">Boxe</a>
-				<a class="dropdown-item" href="#">Funzionale</a>
-				<a class="dropdown-item" href="#">GAG</a>
-			</div>
-		</div>
-		
-	</div>
-
-	<br>
+	
 	<div class="script">
 		<h2 class="text-center text-danger text-bold">My Courses</h2>
 		<hr class='hr1'>
 		<br>
-		<p>cosa hai pagato</p>
+		 <table class="table">
+		 <thead class="thead-dark">
+			<tr>
+				<th scope="col">#</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="course" items="${userCourses}">
+				<tr>
+					<td>${course.courseName}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 
 	</div>
 	<br>
@@ -89,13 +86,25 @@
 	</div>
 	<br>
 
+	<div class="script">
+		<h2 class="text-center text-danger text-bold">Explore</h2>                  
+		<hr class='hr1'>
+		<br>
+		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
+		<div class="dropdown">
+			<button class="btn btn-danger dropdown-toggle" type="button"
+				id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Course Category</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">        
+				<a class="dropdown-item" href="#">Aerobica</a> 
+				<a class="dropdown-item" href="#">Danza</a> 
+				<a class="dropdown-item" href="#">Arti Marziali</a>
+				<a class="dropdown-item" href="#">Powerlifting</a>
+			</div>
+		</div>
+	</div>
 
-
-
-
-
-
-
+	<br>
 
 
 	<hr>

@@ -26,6 +26,7 @@ public class UserDao implements Closeable {
 	private static final String SET_USER = "INSERT INTO users (birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, subscr_date, passw) values(?, ?, ?, ?, ?, "
 			+ "?, ?, CURDATE(), ?)";
+	
 	private static final String GET_ALL_USER_COURSES = "select course_id, course_name, category_id, price "
 			+ "from courses join users_courses using (course_id) join users using (user_id) where user_name = ?";
 
@@ -98,7 +99,7 @@ public class UserDao implements Closeable {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_USER_COURSES)) {
 			prepStmt.setString(1, userName);
-
+			System.out.println(prepStmt.toString());
 			try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
 					Course course = new Course(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
