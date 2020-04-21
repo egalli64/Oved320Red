@@ -45,9 +45,9 @@
 		<div class="col-sm">
 			<a class='menu' href="#MyCourses">My Courses</a>
 		</div>
-		<div class="col-sm">
-			<a class='menu' href="#MyINstructor">My Instructors</a>
-		</div>
+<!-- 		<div class="col-sm"> -->
+<!-- 			<a class='menu' href="#MyINstructor">My Instructors</a> -->
+<!-- 		</div> -->
 		<div class="col-sm">
 			<a class='menu' href="#contact">Explore</a>
 		</div>
@@ -71,7 +71,7 @@
 <!-- 		</thead> -->
 		<tbody>
 			<c:forEach var="course" items="${userCourses}">
-				<tr id='courserow' class="" >
+				<tr id='courserow' class="">
 					<td><a href="UserCourses?courseName=${course.courseName}">${course.courseName}</a></td> 
 				</tr>
 			</c:forEach>
@@ -80,14 +80,14 @@
 
 	</div>
 	<br>
-	<div class="script">
-		<h2 class="text-center text-danger text-bold">My Instructors</h2>
-		<hr class='hr1'>
-		<br>
-		<p>call me if you have a problem</p>
+<!-- 	<div class="script"> -->
+<!-- 		<h2 class="text-center text-danger text-bold">My Instructors</h2> -->
+<!-- 		<hr class='hr1'> -->
+<!-- 		<br> -->
+<!-- 		<p>call me if you have a problem</p> -->
 
-	</div>
-	<br>
+<!-- 	</div> -->
+<!-- 	<br> -->
 
 	<div class="script">
 		<h2 class="text-center text-danger text-bold">Explore</h2>                  

@@ -160,4 +160,4 @@ foreign key(user_id) references users(user_id));
 alter table users_lessons
 add constraint primary key(user_id, lesson_id);
 
-
+commit;
