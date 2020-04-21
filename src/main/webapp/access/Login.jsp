@@ -21,7 +21,7 @@
 	<c:if test='${returnError != null}'>
 		<div class="warning">
 			<hr class="hr1">
-			<p>Login NOT successful! <br> Wrong Username or Password</p>
+			<p>${returnError}</p>
 			<hr class="hr1">
 		</div>
 	</c:if>
