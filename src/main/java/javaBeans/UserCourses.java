@@ -4,9 +4,10 @@ public class UserCourses {
 	private int userID;		      //or String?
 	private int courseID;
 
+	public UserCourses() {
+	}
 	
 	public UserCourses(int userID, int courseID) {
-		super();
 		this.userID = userID;
 		this.courseID = courseID;
 	}
