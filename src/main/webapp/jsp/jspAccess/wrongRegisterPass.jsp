@@ -18,8 +18,7 @@
 	<div class="warning">
 		<hr class="hr1">
 		<p>
-			Registration NOT successful! <br>The second password differs
-			from the first one. Plaese type again.
+			Registration NOT successful! <br>${error}
 		</p>
 		<hr class="hr1">
 	</div>

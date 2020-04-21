@@ -6,21 +6,24 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="../css/style1.css" />
+<link rel="stylesheet" type="text/css" href="../../css/style1.css" />
+<link rel="stylesheet" type="text/css" href="../../css/Login.css" />
+<%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <title>Register</title>
 </head>
 <body>
 	<div id="top">
-		<a href='../index.html'><img id='logo' src='../img/logo.png'></a>
+		<a href='../index.html'><img id='logo' src='../../img/logo.png'></a>
 	</div>
-
+	
+<c:if test = '${returnError != null}'>
 <div class="warning">
 <hr class="hr1">
-
-<p>Registration NOT successful! <br>${error}</p>
+	<p>${returnError}</p>
 <hr class="hr1">
 </div>
+</c:if>
 
 	<div class="container m-5">
 		<div class="row">
@@ -38,32 +41,32 @@
 						<form action='Register' method='post'>
 							<div class="form-group">
 								<label for='usrn'> Username </label> <input id='usrn'
-									name='usrn' class="form-control">
+									value='${userName}' name='usrn' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='firstName'> First Name</label> <input id='firstName'
-									value='${firstName}' name='firstName' class="form-control">
+									value='${firstName}' name='firstName' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='lastName'> Last Name</label> <input id='lastName'
-									value='${lastName}' name='lastName' class="form-control">
+									value='${lastName}' name='lastName' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='email'> Email</label> <input id='email' name='email'
-									value='${email}' class="form-control">
+									value='${email}' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='phone'> Phone Number</label> <input id='phone'
-									value='${phone}'name='phone' class="form-control">
+									value='${phone}'name='phone' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='address'> Address </label> <input id='address'
-									value='${address}'name='address' class="form-control">
+									value='${address}' name='address' required class="form-control">
 							</div>
 							<div>
 								<label for='birthdate'> Date of Birth </label> <input
 									id='birthdate' type="date" name='birthdate'
-									class="form-control">
+									value='${birthdata}' required class="form-control">
 
 							</div>
 
@@ -86,12 +89,13 @@
 
 							<div class="form-group">
 								<label for='pswd'>Password</label> <input type="password"
-									id='pswd' name='pswd' class="form-control">
-							</div>
+									placeholder="Password" id='pswd' name='pswd' class="form-control">
+									<input type="checkbox" onclick="toggle1()"> <i>Show</i>
 
 							<div class="form-group">
-								<label for='pswd2'>Password Check</label> <input type="password"
-									id='pswd2' name='pswd2' class="form-control">
+								<label for='pswd2'>Confirm Password</label> <input type="password"
+									placeholder="Confirm your Password" id='pswd2' name='pswd2' class="form-control">
+									<input type="checkbox" onclick="toggle2()"> <i>Show</i>
 							</div>
 
 							<div class='text-center m-3'>
@@ -114,5 +118,28 @@
 			<div class="col-1"></div>
 		</div>
 	</div>
+
+
+	<!-- 	Da spostare in documento javascript -->
+	<script>
+		function toggle1() {
+			var temp = document.getElementById("pswd");
+			if (temp.type === "password") {
+				temp.type = "text";
+			} else {
+				temp.type = "password";
+			}
+		}
+	</script>
+	<script>
+		function toggle2() {
+			var temp = document.getElementById("pswd2");
+			if (temp.type === "password") {
+				temp.type = "text";
+			} else {
+				temp.type = "password";
+			}
+		}
+	</script>
 </body>
 </html>

@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 import dao.UserDao;
 import javaBeans.User;
 
-@WebServlet("/htmlAccess/Register")
+@WebServlet("/jsp/jspAccess/Register")
 public class RegisterServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -42,30 +42,32 @@ public class RegisterServlet extends HttpServlet {
 
 		try (UserDao dao = new UserDao(ds)) {
 			User matchingUser = dao.getUser(userName);
+			String error = "";
 
 			if (matchingUser.getUserName() != null) {
-				request.setAttribute("firstName", firstName);
-				request.setAttribute("lastName", lastName);
-				request.setAttribute("email", email);
-				request.setAttribute("phone", phone);
-				request.setAttribute("address", address);
-				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/wrongRegisterName.jsp");
-				rd.forward(request, response);
+				userName = "";
+				error = "Registration NOT successful!\n Username already existing";
 			} else if (matchingUser.getUserName() == null && !password.equals(password2)) {
-				request.setAttribute("userName", userName);
-				request.setAttribute("firstName", firstName);
-				request.setAttribute("lastName", lastName);
-				request.setAttribute("email", email);
-				request.setAttribute("phone", phone);
-				request.setAttribute("address", address);
-				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/wrongRegisterPass.jsp");
-				rd.forward(request, response);
+				error = "Registration NOT successful!\n The second password differs from the first one. Plaese type again.";
 			} else if (matchingUser.getUserName() == null && password.equals(password2)) {
 				dao.setUser(birthDate, userName, firstName, lastName, email, phone, address, password);
 				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
 				rd.forward(request, response);
+				return;
 			}
-		}
+			request.setAttribute("userName", userName);
+			request.setAttribute("firstName", firstName);
+			request.setAttribute("lastName", lastName);
+			request.setAttribute("email", email);
+			request.setAttribute("phone", phone);
+			request.setAttribute("address", address);
+			request.setAttribute("returnError", error);
+			request.setAttribute("birthdata", birthDate);
+			RequestDispatcher rd = request.getRequestDispatcher("Register.jsp");
+			rd.forward(request, response);
+			return;
+			}
+		
 
 	}
 	
