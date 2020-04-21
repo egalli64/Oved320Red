@@ -22,3 +22,19 @@ GAG
 	Lezione 1: https://www.youtube.com/watch?v=k5HJASj97nA
 	Lezione 2: https://www.youtube.com/watch?v=Vr86C_Qn7Ro
 	Lezione 3: https://www.youtube.com/watch?v=E8npzFAbJe4
+	
+	
+	  
+@charset "UTF-8";
+
+body {
+	background-color: #d9534f;
+}
+
+.reglink{
+	color: #d9534f;
+}
+.reglink:hover{
+	color: orange;
+	
+}
