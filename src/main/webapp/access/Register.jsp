@@ -7,11 +7,10 @@
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../../css/style1.css" />
-<link rel="stylesheet" type="text/css" href="../../css/Login.css" />
 <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <title>Register</title>
 </head>
+
 <body>
 	<div id="top">
 		<a href='../index.html'><img id='logo' src='../../img/logo.png'></a>
