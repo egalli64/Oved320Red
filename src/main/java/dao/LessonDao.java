@@ -14,6 +14,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import javaBeans.Lesson;
+import javaBeans.Staff;
 import javaBeans.User;
 
 public class LessonDao implements Closeable {
@@ -22,7 +23,8 @@ public class LessonDao implements Closeable {
 	private static final String GET_ALL_LESSON_USERS = "SELECT user_id, birth_date, user_name, first_name, " 
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw "
 			+ "FROM users JOIN users_lessons USING(user_id) JOIN lessons USING(lesson_id) where lesson_name = ?";
-
+	private static final String GET_LESSON_INSTRUCTOR = "SELECT user_name, first_name, last_name, job_name FROM staff JOIN lessons USING(staff_id)"
+			+ "JOIN jobs USING(job_id) WHERE lesson_name = ?";
 	
 	private static final String SET_LESSON = "INSERT INTO courses (course_id, duration, staff_id, URL"
 			+ ") values(?, ?, ?, ?)";
@@ -76,6 +78,28 @@ public class LessonDao implements Closeable {
 					results.add(new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
 							rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
 							rs.getString(11)));
+	            }
+	        }
+		} catch (SQLException se) {
+			se.printStackTrace();
+			
+		}
+
+		return results;
+	}
+	
+	public Staff getLessonStaff(String lesson_name) { // K
+		Staff results = new Staff();
+
+		try (PreparedStatement prepStmt = conn.prepareStatement(GET_LESSON_INSTRUCTOR)) {
+			prepStmt.setString(1, lesson_name);
+			
+	        try (ResultSet rs = prepStmt.executeQuery()) {
+				while (rs.next()) {
+					/*
+					 * N.B. nel job_id è contenuto il job_name per comodità
+					 */
+					results = new Staff(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
 	            }
 	        }
 		} catch (SQLException se) {

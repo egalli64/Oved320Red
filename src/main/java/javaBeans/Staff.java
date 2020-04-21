@@ -22,22 +22,23 @@ public class Staff {
 
 	}
 
-	public Staff(int staffID, LocalDate birthDate, String userName, String firstName, String email, String phoneNumber,
+	public Staff(int staffID, LocalDate birthDate, String userName, String firstName, String lastName, String email, String phoneNumber,
 			String streetAddress, String certificate, LocalDate hireDate, String password, String IBAN, int salary,
 			String jobID) {
-		this(birthDate, userName, firstName, email, phoneNumber, streetAddress, certificate, hireDate, 
+		this(birthDate, userName, firstName, lastName, email, phoneNumber, streetAddress, certificate, hireDate, 
 				password, IBAN, salary, jobID);
 		this.staffID = staffID;
 
 	}
 
 
-	public Staff(LocalDate birthDate, String userName, String firstName, String email, String phoneNumber,
+	public Staff(LocalDate birthDate, String userName, String firstName, String lastName, String email, String phoneNumber,
 			String streetAddress, String certificate, LocalDate hireDate, String password, String IBAN, int salary,
 			String jobID) {
 		this.birthDate = birthDate;
 		this.userName = userName;
 		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.streetAddress = streetAddress;
@@ -47,6 +48,13 @@ public class Staff {
 		this.IBAN = IBAN;
 		this.salary = salary;
 
+	}
+	
+	public Staff(String userName, String firstName, String lastName, String jobID) {
+		this.userName = userName;
+		this.firstName = firstName;
+		this.firstName = jobID;
+		
 	}
 	
 	public int getStaffID() {
