@@ -15,8 +15,7 @@ import javax.sql.DataSource;
 import dao.CourseDao;
 import javaBeans.Lesson;
 
-@WebServlet("access/UserCourses")
-
+@WebServlet("/access/UserCourses")
 public class UserCoursesServlet extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
