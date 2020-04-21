@@ -14,8 +14,8 @@
     </error-page>
     
     <error-page>
-        <error-code>505</error-code>
-        <location>/errorpages/505.jsp</location>
+        <error-code>500</error-code>
+        <location>/errorpages/500.jsp</location>
     </error-page>
     
     <context-param>

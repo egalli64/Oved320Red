@@ -8,7 +8,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../red/css/style1.css" />
 <link rel="stylesheet" type="text/css" href="../red/css/index.css" />
-<title>505</title>
+<title>500</title>
 </head>
 <body>
 
