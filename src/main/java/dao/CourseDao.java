@@ -14,14 +14,16 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import javaBeans.Course;
+import javaBeans.Lesson;
 import javaBeans.User;
 
 public class CourseDao implements Closeable {
-	private static final String GET_ALL = "SELECT course_id, course_name, category_id, price "
-			+ "FROM courses";
-	private static final String GET_ALL_COURSE_USERS = "SELECT user_id, birth_date, user_name, first_name, " 
+	private static final String GET_ALL = "SELECT course_id, course_name, category_id, price " + "FROM courses";
+	private static final String GET_ALL_COURSE_USERS = "SELECT user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw "
 			+ "FROM users JOIN users_courses USING(user_id) JOIN courses USING(course_id) where course_name = ?";
+	private static final String GET_ALL_COURSE_LESSONS = "SELECT lesson_id, course_id, duration, staff_id, URL "
+			+ "FROM lessons JOIN courses USING (course_id) where course_name = ?";
 
 	private static final String SET_COURSE = "INSERT INTO courses (course_name, category_id, price"
 			+ ") values(?, ?, ?)";
@@ -52,7 +54,7 @@ public class CourseDao implements Closeable {
 
 		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(GET_ALL)) {
 			while (rs.next()) {
-				Course course = new Course(rs.getInt(1), rs.getString(2), rs.getString(3) , rs.getInt(4));
+				Course course = new Course(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
 				results.add(course);
 			}
 		} catch (SQLException se) {
@@ -67,24 +69,42 @@ public class CourseDao implements Closeable {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_COURSE_USERS)) {
 			prepStmt.setString(1, courseName);
-			
-	        try (ResultSet rs = prepStmt.executeQuery()) {
+
+			try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
 					LocalDate birthDate = rs.getDate(2).toLocalDate();
 					LocalDate subscrDate = rs.getDate(10).toLocalDate();
 					results.add(new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
 							rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
 							rs.getString(11)));
-	            }
-	        }
+				}
+			}
 		} catch (SQLException se) {
 			se.printStackTrace();
-			
+
 		}
 
 		return results;
 	}
-	
+
+	public List<Lesson> getAllCourseLessons(String courseName) {
+		List<Lesson> results = new ArrayList<>();
+
+		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_COURSE_LESSONS)) {
+			prepStmt.setString(1, courseName);
+
+			try (ResultSet rs = prepStmt.executeQuery()) {
+				while (rs.next()) {
+					Lesson lesson = new Lesson(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getString(5));
+					results.add(lesson);
+				}
+			}
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+
+		return results;
+	}
 
 	public void setCourse(String course_name, String categoryID, int price) {
 
@@ -92,7 +112,7 @@ public class CourseDao implements Closeable {
 			prepStmt.setString(1, course_name);
 			prepStmt.setString(2, categoryID);
 			prepStmt.setInt(3, price);
-			
+
 			prepStmt.executeUpdate();
 		} catch (SQLException se) {
 			se.printStackTrace();

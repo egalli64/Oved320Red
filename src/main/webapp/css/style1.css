@@ -103,3 +103,11 @@ a.menu1:hover, a.menu1:active {
 .coursetablehover{
 	color:  #d9534f;
 }
+
+ img {
+  display: block;
+  width: auto;
+  higth: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
