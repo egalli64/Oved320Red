@@ -4,19 +4,20 @@ package javaBeans;
 
 public class Course {
 	private int courseID;	   //or String?
-	private String courseName;
-	private int frequency;     //non mi è chiaro cosa si intende per frequenza? 
-	private int categoryID;    //or String?
+	private String courseName; 
+	private String categoryID;    //or String?
 	private int cost;
 	
-	public Course(int courseID, String courseName, int frequency, int categoryID, int cost) {
-		this(courseName, frequency, categoryID, cost);
+	public Course() {
+	}
+	
+	public Course(int courseID, String courseName, String categoryID, int cost) {
+		this(courseName, categoryID, cost);
 		this.courseID = courseID;
 	}
 	
-	public Course(String courseName, int frequency, int categoryID, int cost) {
+	public Course(String courseName, String categoryID, int cost) {
 		this.courseName = courseName;
-		this.frequency = frequency;
 		this.categoryID = categoryID;
 		this.cost = cost;
 	}
@@ -33,16 +34,11 @@ public class Course {
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
-	public int getFrequency() {
-		return frequency;
-	}
-	public void setFrequency(int frequency) {
-		this.frequency = frequency;
-	}
-	public int getCategoryID() {
+	
+	public String getCategoryID() {
 		return categoryID;
 	}
-	public void setCategoryID(int categoryID) {
+	public void setCategoryID(String categoryID) {
 		this.categoryID = categoryID;
 	}
 	public int getCost() {

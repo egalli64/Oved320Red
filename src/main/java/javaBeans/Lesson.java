@@ -1,30 +1,25 @@
 package javaBeans;
 
-import java.sql.Time;
 
 public class Lesson {
-	private int lessonID;       //or String?
-	private int courseID;	    //or String?
-	private String lessonName;	
-	private int instructorID;	//or String?
-	private Time duration;
+	private int lessonID;      
+	private int courseID;	   	
+	private int staffID;	
+	private int duration;
 	private String URL;
 	
+	public Lesson() {
+		
+	}
 	
-	public Lesson(int lessonID, int courseID, String lessonName, int instructorID, Time duration, String URL) {
+	public Lesson(int lessonID, int courseID, int staffID, int duration, String URL) {
+		this(courseID, staffID, duration, URL);
 		this.lessonID = lessonID;
-		this.courseID = courseID;
-		this.lessonName = lessonName;
-		this.instructorID = instructorID;
-		this.duration = duration;
-		this.URL = URL;
 	}
 
-	public Lesson(int courseID, String lessonName, int instructorID, Time duration, String URL) {
-		this.lessonID = lessonID;
+	public Lesson(int courseID, int staffID, int duration, String URL) {
 		this.courseID = courseID;
-		this.lessonName = lessonName;
-		this.instructorID = instructorID;
+		this.staffID = staffID;
 		this.duration = duration;
 		this.URL = URL;
 	}
@@ -43,38 +38,26 @@ public class Lesson {
 		return courseID;
 	}
 
-
 	public void setCourseID(int courseID) {
 		this.courseID = courseID;
 	}
 
-
-	public String getLessonName() {
-		return lessonName;
+	public int getStaffID() {
+		return staffID;
 	}
 
 
-	public void setLessonName(String lessonName) {
-		this.lessonName = lessonName;
+	public void setInstructorID(int staffID) {
+		this.staffID = staffID;
 	}
 
 
-	public int getInstructorID() {
-		return instructorID;
-	}
-
-
-	public void setInstructorID(int instructorID) {
-		this.instructorID = instructorID;
-	}
-
-
-	public Time getDuration() {
+	public int getDuration() {
 		return duration;
 	}
 
 
-	public void setDuration(Time duration) {
+	public void setDuration(int duration) {
 		this.duration = duration;
 	}
 

@@ -14,9 +14,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import javaBeans.Course;
 import javaBeans.User;
-import javaBeans.UserCourses;
-
 
 public class UserDao implements Closeable {
 	private static final String GET_ALL = "SELECT user_id, birth_date, user_name, first_name, "
@@ -24,10 +23,12 @@ public class UserDao implements Closeable {
 	private static final String GET_USER = "SELECT user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users "
 			+ "where user_name = ?";
-
 	private static final String SET_USER = "INSERT INTO users (birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, subscr_date, passw) values(?, ?, ?, ?, ?, "
 			+ "?, ?, CURDATE(), ?)";
+	
+	private static final String GET_ALL_USER_COURSES = "select course_id, course_name, category_id, price "
+			+ "from courses join users_courses using (course_id) join users using (user_id) where user_name = ?";
 
 	private Connection conn;
 
@@ -58,8 +59,7 @@ public class UserDao implements Closeable {
 				LocalDate birthDate = rs.getDate(2).toLocalDate();
 				LocalDate subscrDate = rs.getDate(10).toLocalDate();
 				User user = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), subscrDate,
-						rs.getString(11));
+						rs.getString(6), rs.getString(7), rs.getString(8), subscrDate, rs.getString(11));
 				results.add(user);
 			}
 		} catch (SQLException se) {
@@ -74,28 +74,48 @@ public class UserDao implements Closeable {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_USER)) {
 			prepStmt.setString(1, name);
-			
-	        try (ResultSet rs = prepStmt.executeQuery()) {
+
+			try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
 					LocalDate birthDate = rs.getDate(2).toLocalDate();
 					LocalDate subscrDate = rs.getDate(10).toLocalDate();
 					results = new User(rs.getInt(1), birthDate, rs.getString(3), rs.getString(4), rs.getString(5),
 							rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), subscrDate,
-							rs.getString(11));;
-	            }
-	        }
+							rs.getString(11));
+					;
+				}
+			}
 		} catch (SQLException se) {
 			se.printStackTrace();
-			
+
 		}
 
 		return results;
 	}
-	
 
-/*
- * uso il costruttore senza certificato, per il momento non sappiamo come trattarlo
- */
+	public List<Course> getAllUserCourses(String userName) {
+
+		List<Course> results = new ArrayList<>();
+
+		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_USER_COURSES)) {
+			prepStmt.setString(1, userName);
+			System.out.println(prepStmt.toString());
+			try (ResultSet rs = prepStmt.executeQuery()) {
+				while (rs.next()) {
+					Course course = new Course(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+					results.add(course);
+				}
+			}
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+		return results;
+	}
+
+	/*
+	 * uso il costruttore senza certificato, per il momento non sappiamo come
+	 * trattarlo
+	 */
 	public void setUser(Date birthDate, String userName, String firstName, String lastName, String email,
 			String phoneNumber, String streetAddress, String password) {
 
@@ -108,39 +128,12 @@ public class UserDao implements Closeable {
 			prepStmt.setString(6, phoneNumber);
 			prepStmt.setString(7, streetAddress);
 			prepStmt.setString(8, password);
-			
+
 			prepStmt.executeUpdate();
 		} catch (SQLException se) {
 			se.printStackTrace();
 		}
 		return;
 	}
-
-//	private static final String GET_ALL_YOUR_COURSES = "SELECT user_id, course_id FROM users_courses where user_id = ?";
-//
-//	public List<UserCourses> getCoursesByUserID(int userID) {
-//		List<UserCourses> results = new ArrayList<>();
-//
-//		try (PreparedStatement pstmt = conn.prepareStatement(GET_USER);) {
-//			pstmt.setInt(1, userID);
-//
-//			try (ResultSet rs = pstmt.executeQuery();) {
-//				while (rs.next()) {
-//					results.add(new UserCourses(rs.getInt(1), rs.getInt(2)));
-//				}
-//			}
-//		} catch (SQLException se) {
-//			se.printStackTrace();
-//
-//		}
-//		return results;
-//	}
-	
-	
-//	private static final String GET_ALL_YOUR_COURSES = "SELECT user_id, course_id FROM users_courses where user_id = ?";
-//	public List<UserCourses> getCoursesByUsername(String username) {   //Courses
-//		List<UserCourses> nullresult = new ArrayList<>();      
-//		return nullresult;
-//	}
 
 }
