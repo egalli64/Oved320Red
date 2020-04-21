@@ -65,11 +65,11 @@ public class LessonDao implements Closeable {
 		return results;
 	}
 
-	public List<User> getAllLessonUsers(String lessonID) { // K
+	public List<User> getAllLessonUsers(int lessonID) { // K
 		List<User> results = new ArrayList<>();
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_LESSON_USERS)) {
-			prepStmt.setString(1, lessonID);
+			prepStmt.setInt(1, lessonID);
 			
 	        try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
@@ -89,11 +89,11 @@ public class LessonDao implements Closeable {
 	}
 	
 	//
-	public Staff getLessonStaff(String lessonID) { // K
+	public Staff getLessonStaff(int lessonID) { // K
 		Staff results = new Staff();
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_LESSON_INSTRUCTOR)) {
-			prepStmt.setString(1, lessonID);
+			prepStmt.setInt(1, lessonID);
 			
 	        try (ResultSet rs = prepStmt.executeQuery()) {
 				while (rs.next()) {
