@@ -37,10 +37,6 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("user", matchingUser);
 				
 				List<Course> courses = dao.getAllUserCourses(username);
-//						new ArrayList<>();
-//				courses.add(new Course(1, "Danza", "dnz", 60));
-//				courses.add(new Course(2, "Tennis", "tns", 80));
-				
 				request.setAttribute("userCourses", courses);
 				
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
