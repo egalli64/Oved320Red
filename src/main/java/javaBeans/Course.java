@@ -8,6 +8,9 @@ public class Course {
 	private String categoryID;    //or String?
 	private int cost;
 	
+	public Course() {
+	}
+	
 	public Course(int courseID, String courseName, String categoryID, int cost) {
 		this(courseName, categoryID, cost);
 		this.courseID = courseID;
