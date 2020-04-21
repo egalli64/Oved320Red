@@ -4,12 +4,12 @@ import java.time.LocalDate;
 
 public class User {
 	
-	private int userID;		        //or String?
+	private int userID;		       
 	private LocalDate birthDate;		
 	private String userName;	
     private String firstName;	   
     private String lastName;
-    private String email; 		    //				
+    private String email; 		    			
     private String phoneNumber; 	
     private String streetAddress;		
     private String certificate;    //giusto per verificare si o no. // come salvare il documento se salvare il documento?
