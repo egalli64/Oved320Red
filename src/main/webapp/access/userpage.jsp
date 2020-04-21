@@ -80,14 +80,14 @@
 
 	</div>
 	<br>
-<!-- 	<div class="script"> -->
-<!-- 		<h2 class="text-center text-danger text-bold">My Instructors</h2> -->
-<!-- 		<hr class='hr1'> -->
-<!-- 		<br> -->
-<!-- 		<p>call me if you have a problem</p> -->
+	<div class="script">
+		<h2 class="text-center text-danger text-bold">My Instructors</h2>
+		<hr class='hr1'>
+		<br>
+		<p>call me if you have a problem</p>
 
-<!-- 	</div> -->
-<!-- 	<br> -->
+	</div>
+	<br>
 
 	<div class="script">
 		<h2 class="text-center text-danger text-bold">Explore</h2>                  

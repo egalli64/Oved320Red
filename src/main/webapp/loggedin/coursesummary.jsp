@@ -62,17 +62,16 @@
 	<hr>
 
 	<div class="script">
-		<h2 class="text-center text-danger text-bold">My " ${courseName} " Lessons</h2>
+		<h2 class="text-center text-danger text-bold ">My " ${courseName} " Lessons</h2>
 		<hr class='hr1'>
 		<br>
-		<table class="table" id="tableofcourses">
+		<table class="table align-center" id="tableofcourses">
 			<thead class="thead-light">
 				<tr>
 					<th scope="col">Lesson ID</th>
 					<th scope="col">Staff ID</th>
 					<th scope="col">Link to video</th>
 				</tr>
-
 			</thead>
 			<tbody>
 				<c:forEach var="lesson" items="${courseLessons}">
