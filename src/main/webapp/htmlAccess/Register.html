@@ -32,27 +32,27 @@
 						<form action='Register' method='post'>
 							<div class="form-group">
 								<label for='usrn'> Username </label> <input id='usrn'
-									name='usrn' class="form-control">
+									placeholder="DireWolf" name='usrn' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='firstName'> First Name</label> <input id='firstName'
-									name='firstName' class="form-control">
+									placeholder="Jon" name='firstName' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='lastName'> Last Name</label> <input id='lastName'
-									name='lastName' class="form-control">
+									placeholder="Snow" name='lastName' required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='email'> Email</label> <input id='email' name='email'
-									class="form-control">
+									placeholder="Jon.Snow@example.org" required class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='phone'> Phone Number</label> <input id='phone'
-									name='phone' class="form-control">
+									placeholder="+39/ 892892" name='phone' class="form-control">
 							</div>
 							<div class="form-group">
 								<label for='address'> Address </label> <input id='address'
-									name='address' class="form-control">
+									placeholder="221B Baker Street" name='address' class="form-control">
 							</div>
 
 <!-- 							<div> -->
@@ -74,12 +74,14 @@
 
 							<div class="form-group">
 								<label for='pswd'>Password</label> <input type="password"
-									id='pswd' name='pswd' class="form-control">
+									placeholder="Choose a Password" id='pswd' name='pswd' class="form-control">
+									<input type="checkbox" onclick="Toggle1()"> <i>Show</i>
 							</div>
 
 							<div class="form-group">
-								<label for='pswd2'>Password Check</label> <input type="password"
-									id='pswd2' name='pswd2' class="form-control">
+								<label for='pswd2'>Confirm Password</label> <input type="password"
+									placeholder="Confirm your Password" id='pswd2' name='pswd2' class="form-control">
+									<input type="checkbox" onclick="Toggle2()"> <i>Show</i>
 							</div>
 
 							<div class='text-center m-3'>
@@ -102,5 +104,28 @@
 			<div class="col-1"></div>
 		</div>
 	</div>
+	
+	
+<!-- 	Da spostare in documento javascript -->
+	<script>
+		function Toggle1() {
+			var temp = document.getElementById("pswd");
+			if (temp.type === "password") {
+				temp.type = "text";
+			} else {
+				temp.type = "password";
+			}
+		}
+	</script>
+	<script>
+		function Toggle2() {
+			var temp = document.getElementById("pswd2");
+			if (temp.type === "password") {
+				temp.type = "text";
+			} else {
+				temp.type = "password";
+			}
+		}
+	</script>
 </body>
 </html>
