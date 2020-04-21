@@ -12,7 +12,6 @@ public class Lesson {
 	
 	
 	public Lesson(int lessonID, int courseID, String lessonName, int instructorID, Time duration, String URL) {
-		super();
 		this.lessonID = lessonID;
 		this.courseID = courseID;
 		this.lessonName = lessonName;
@@ -21,6 +20,14 @@ public class Lesson {
 		this.URL = URL;
 	}
 
+	public Lesson(int courseID, String lessonName, int instructorID, Time duration, String URL) {
+		this.lessonID = lessonID;
+		this.courseID = courseID;
+		this.lessonName = lessonName;
+		this.instructorID = instructorID;
+		this.duration = duration;
+		this.URL = URL;
+	}
 
 	public int getLessonID() {
 		return lessonID;
