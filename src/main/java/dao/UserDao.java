@@ -15,6 +15,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import javaBeans.User;
+import javaBeans.UserCourses;
 
 
 public class UserDao implements Closeable {
@@ -114,5 +115,32 @@ public class UserDao implements Closeable {
 		}
 		return;
 	}
+
+//	private static final String GET_ALL_YOUR_COURSES = "SELECT user_id, course_id FROM users_courses where user_id = ?";
+//
+//	public List<UserCourses> getCoursesByUserID(int userID) {
+//		List<UserCourses> results = new ArrayList<>();
+//
+//		try (PreparedStatement pstmt = conn.prepareStatement(GET_USER);) {
+//			pstmt.setInt(1, userID);
+//
+//			try (ResultSet rs = pstmt.executeQuery();) {
+//				while (rs.next()) {
+//					results.add(new UserCourses(rs.getInt(1), rs.getInt(2)));
+//				}
+//			}
+//		} catch (SQLException se) {
+//			se.printStackTrace();
+//
+//		}
+//		return results;
+//	}
+	
+	
+//	private static final String GET_ALL_YOUR_COURSES = "SELECT user_id, course_id FROM users_courses where user_id = ?";
+//	public List<UserCourses> getCoursesByUsername(String username) {   //Courses
+//		List<UserCourses> nullresult = new ArrayList<>();      
+//		return nullresult;
+//	}
 
 }
