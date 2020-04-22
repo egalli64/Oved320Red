@@ -32,9 +32,9 @@
 <body>
 
 <div id="top">
-<a href='../index.jsp'><img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='../img/logo.png'></a>
+<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='../img/logo.png'></a>
 	<c:if test = '${myUser.userName == null}'>	
-		<a href='./access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
+		<a href='/red/access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
 	</c:if>
 	<c:if test = '${myUser.userName != null}'>
 		<div class="topright">

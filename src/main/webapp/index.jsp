@@ -31,9 +31,9 @@
 <body>
 
 <div id="top">
-<a href='./index.jsp'><img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='./img/logo.png'></a>
+<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='/red/img/logo.png'></a>
 	<c:if test = '${myUser.userName == null}'>	
-		<a href='./access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
+		<a href='/red/access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
 	</c:if>
 	<c:if test = '${myUser.userName != null}'>
 		<div class="topright">
@@ -63,13 +63,13 @@
 <hr>
 <div class="row menu">
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Courses" href="./menu/courses.jsp">Courses</a>
+		<a class='menu' data-toggle="tooltip" title="Courses" href="/red/menu/courses.jsp">Courses</a>
 	</div>
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Instructors" href="./menu/instructors.jsp">Instructors</a>
+		<a class='menu' data-toggle="tooltip" title="Instructors" href="/red/menu/instructors.jsp">Instructors</a>
 	</div>
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="How to Join" href="./menu/howTo.jsp">How to join</a>
+		<a class='menu' data-toggle="tooltip" title="How to Join" href="/red/menu/howTo.jsp">How to join</a>
 	</div>
 	<div class="col-sm">
 		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
