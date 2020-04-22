@@ -59,35 +59,21 @@
 			<a class='menu' href="#contact">Contacts</a>
 		</div>
 	</div>
-	<hr>
+
 
 	<div class="script">
-		<h2 class="text-center text-danger text-bold ">My " ${courseName} " Lessons</h2>
+		<h2 class="text-center text-danger text-bold "> Lesson ${i} </h2>
 		<hr class='hr1'>
 		<br>
-		<table class="table align-center" id="tableofcourses">
-			<thead class="thead-light">
-				<tr>
-					<th scope="col">Lesson Name</th>
-					<th scope="col">Instructor </th>
-					<th scope="col">Link to video</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var = "i" begin = "1" end="${courseLessons.size()}">
-					<tr>
-						<td> Lesson  ${i}  </td>
-						<td>${instructors.get(i-1).firstName} ${instructors.get(i-1).lastName} <br>
-							<i>email:</i> ${instructors.get(i-1).email}  <br>
-							<i>Role:</i>  ${instructors.get(i-1).jobID}
-						</td>
-						<td><a href="./singlelesson/?id=${i}?lesson=${courseLessons.get(i-1)}?instructor=${instructors.get(i-1)}"}><button type="button"
-									class="btn btn-outline-danger">Start Lesson Now!</button></a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item"
+				src="${lesson.URL}"
+				allowfullscreen></iframe>
+		</div>
+		<h5> <i>Instructor:</i> ${instructors.firstName} ${instructors.lastName} </h5>
 
 	</div>
+
 </body>
+
 </html>
