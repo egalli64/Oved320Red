@@ -26,11 +26,11 @@
 
 <div id="top">
 <img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='./img/logo.png'>
-	<c:if test = '${myAccount == null}'>	
+	<c:if test = '${myUser.userName == null}'>	
 		<a href='./access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
 	</c:if>
-	<c:if test = '${myAccount != null}'>
-		<a href='./access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>Welcome ${myAccount}</button></a>
+	<c:if test = '${myUser.userName != null}'>
+		<a href='./access/userpage.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>Welcome ${myAccount}</button></a>
 	</c:if>
 </div>
 
