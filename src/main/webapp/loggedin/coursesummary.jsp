@@ -83,9 +83,17 @@
 							${instructors.get(i-1).email} <br> <i>Role:</i>
 							${instructors.get(i-1).jobID}
 						</td>
-						<td><a href="../loggedin/singlelesson.jsp?id=${i}?url=${courseLessons.get(i-1).URL}?instructorName=${instructors.get(i-1).firstName}?instructorLast=${instructors.get(i-1).lastName}"}> 
-							<button type="button" class="btn btn-outline-danger">Start
-									Lesson Now!</button></a></td>
+						<c:url value="../loggedin/singlelesson.jsp" var="lessonpage">
+							<c:param name="id" value="${i}" />
+							<c:param name="pippo" value="${courseLessons.get(i-1).URL}" />
+							<c:param name="instructorName" value="${instructors.get(i-1).firstName}" />
+							<c:param name="instructorLast" value="${instructors.get(i-1).lastName}" />
+						</c:url>
+						<td><a href="${lessonpage}">
+<%-- 							href="../loggedin/singlelesson.jsp?id=${i}?url=${courseLessons.get(i-1).URL}?instructorName=${instructors.get(i-1).firstName}?instructorLast=${instructors.get(i-1).lastName}"> --%>
+								<button type="button" class="btn btn-outline-danger">Start
+									Lesson Now!</button>
+						</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
