@@ -44,23 +44,21 @@
 		</div>
 	</div>
 
-	<hr>
-	<div class="row menu">
-		<div class="col-sm">
-			<a class='menu' href="#MyCourses">My Courses</a>
-		</div>
-		<!-- 		<div class="col-sm"> -->
-		<!-- 			<a class='menu' href="#MyINstructor">My Instructors</a> -->
-		<!-- 		</div> -->
-		<div class="col-sm">
-			<a class='menu' href="#contact">Explore</a>
-		</div>
-		<div class="col-sm">
-			<a class='menu' href="#contact">Contacts</a>
-		</div>
+<hr>
+<div class="row menu">
+	<div class="col-sm">
+		<a class='menu' data-toggle="tooltip" title="Courses" href="../access/userpage.jsp#MyCourses">My Courses</a>
 	</div>
+	<div class="col-sm">
+		<a class='menu' data-toggle="tooltip" title="Instructors" href="../access/userpage.jsp#explore">Explore</a>
+	</div>
+	<div class="col-sm">
+		<a class='menu' data-toggle="tooltip" title="Contacts" href="../access/userpage.jsp#contact">Contacts</a>
+	</div>
+</div>
+<hr>
 
-	<hr>
+<!-- non salva informazioni, si usa la session? -->
 
 	<div class="script">
 		<h2 class="text-center text-danger text-bold ">Lesson ${param.id}
