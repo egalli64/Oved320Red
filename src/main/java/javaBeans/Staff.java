@@ -53,6 +53,7 @@ public class Staff {
 	public Staff(String userName, String firstName, String lastName, String jobID, String email) {
 		this.userName = userName;
 		this.firstName = firstName;
+		this.lastName = lastName;
 		this.jobID = jobID;
 		this.email = email;		
 	}
