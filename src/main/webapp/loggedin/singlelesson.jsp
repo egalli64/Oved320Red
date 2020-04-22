@@ -53,7 +53,7 @@
 		<a class='menu' data-toggle="tooltip" title="Instructors" href="../access/userpage.jsp#explore">Explore</a>
 	</div>
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Contacts" href="../access/userpage.jsp#contact">Contacts</a>
+		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
 	</div>
 </div>
 <hr>
@@ -61,9 +61,10 @@
 <!-- non salva informazioni, si usa la session? -->
 
 	<div class="script">
-		<h2 class="text-center text-danger text-bold ">Lesson ${param.id}
-		</h2>
+		<h2 class="text-center text-danger text-bold ">${param.courseName} </h2>
+		<h2 class="text-center text-danger text-bold ">Lesson ${param.id} </h2>
 		<hr class='hr1'>
+		
 		<br>
 		<%-- 		<a href="${param.pippo}"> Click here!! </a> --%>
 		<div class="embed-responsive embed-responsive-16by9">
@@ -72,12 +73,30 @@
 				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen></iframe>
 		</div>
+		<br>
+		<hr class='hr1'>
+		
+		<div class='text-center'>
 		<h5>
 			<i>Instructor:</i> ${param.instructorName} ${param.instructorLast}
 		</h5>
+		<br>
+		<p><i>Email: </i><a href="mailto:${param.instructorEmail}">${param.instructorEmail}</a></p>
+		<p><i>Role: </i>${param.instructorJobID} </p>
+		</div>
 
 	</div>
 
-</body>
+<br>
+<br>
 
+<div id="contact" class='text-white text-center'>
+	<h5>Contacts</h5>
+	<p >
+		tel:<a href="tel:+39/3492464512">+39/3492464512</a>&emsp; &mdash; &emsp;E-mail
+		address: <a href="mailto:info@fitnett.com">info@fitnett.com</a>
+	</p>
+</div>
+
+</body>
 </html>
