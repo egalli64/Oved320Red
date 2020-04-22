@@ -85,7 +85,7 @@
 						</td>
 						<c:url value="../loggedin/singlelesson.jsp" var="lessonpage">
 							<c:param name="id" value="${i}" />
-							<c:param name="pippo" value="${courseLessons.get(i-1).URL}" />
+							<c:param name="url" value="${courseLessons.get(i-1).URL}" />
 							<c:param name="instructorName" value="${instructors.get(i-1).firstName}" />
 							<c:param name="instructorLast" value="${instructors.get(i-1).lastName}" />
 						</c:url>

@@ -70,7 +70,7 @@
 		<%-- 		<a href="${param.pippo}"> Click here!! </a> --%>
 		<div class="embed-responsive embed-responsive-16by9">
 			<iframe width="560" height="315"
-				src="https://www.youtube.com/embed/OJoExsA7884" frameborder="0"
+				src="${param.url}" frameborder="0"
 				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen></iframe>
 		</div>
