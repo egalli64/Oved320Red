@@ -59,7 +59,8 @@
 			<a class='menu' href="#contact">Contacts</a>
 		</div>
 	</div>
-
+ 
+ <hr>
 
 	<div class="script">
 		<h2 class="text-center text-danger text-bold "> Lesson ${i} </h2>
@@ -67,7 +68,7 @@
 		<br>
 		<div class="embed-responsive embed-responsive-16by9">
 			<iframe class="embed-responsive-item"
-				src="${lesson.URL}"
+				src="${url}"
 				allowfullscreen></iframe>
 		</div>
 		<h5> <i>Instructor:</i> ${instructors.firstName} ${instructors.lastName} </h5>
