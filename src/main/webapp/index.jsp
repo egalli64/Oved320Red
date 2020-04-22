@@ -10,8 +10,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="./css/style1.css" />
-<link rel="stylesheet" type="text/css" href="./css/index.css" />
+<link rel="stylesheet" type="text/css" href="/red/css/style1.css" /> 
+<link rel="stylesheet" type="text/css" href="/red/css/index.css" />
 <%--JavaScript --%>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -77,43 +77,43 @@
   
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./img/classic-dance-2079980_1920.jpg" data-toggle="tooltip" title="Ballet" alt="Danza" width="500" height="500">
+      <img src="/red/img/classic-dance-2079980_1920.jpg" data-toggle="tooltip" title="Ballet" alt="Danza" width="500" height="500">
       <div class="carousel-caption">
         <h3>Ballet</h3>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="./img/sport-2250970_1920.jpg" data-toggle="tooltip" title="Gag" alt="un bella gnocca" width="500" height="500">
+      <img src="/red/img/sport-2250970_1920.jpg" data-toggle="tooltip" title="Gag" alt="un bella gnocca" width="500" height="500">
       <div class="carousel-caption">
         <h3>Gag</h3>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="./img/young-woman-2699780_1920.jpg" data-toggle="tooltip" title="Yoga" alt="Yoga" width="500" height="500">
+      <img src="/red/img/young-woman-2699780_1920.jpg" data-toggle="tooltip" title="Yoga" alt="Yoga" width="500" height="500">
       <div class="carousel-caption">
         <h3>Yoga</h3>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="./img/box-1514845_1920.jpg" data-toggle="tooltip" title="Boxe" alt="Boxe" width="500" height="500">
+      <img src="/red/img/box-1514845_1920.jpg" data-toggle="tooltip" title="Boxe" alt="Boxe" width="500" height="500">
       <div class="carousel-caption">
         <h3>Boxe</h3>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="./img/karate-1665747_1920.jpg" data-toggle="tooltip" title="Martial Arts" alt="Arti Marziali" width="500" height="500">
+      <img src="/red/img/karate-1665747_1920.jpg" data-toggle="tooltip" title="Martial Arts" alt="Arti Marziali" width="500" height="500">
       <div class="carousel-caption">
         <h3>Martial Arts</h3>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="./img/crossfit-534615_1920.jpg" data-toggle="tooltip" title="Crossfit" alt="da sposare" width="500" height="500">
+      <img src="/red/img/crossfit-534615_1920.jpg" data-toggle="tooltip" title="Crossfit" alt="da sposare" width="500" height="500">
       <div class="carousel-caption">
         <h3>Crossfit</h3>
       </div>   
     </div>
      <div class="carousel-item">
-      <img src="./img/shoes-5015809_1920.jpg" data-toggle="tooltip" title="Aerobic" alt="fa sport con le nike che si illumina e i risvoltini..." width="500" height="500">
+      <img src="/red/img/shoes-5015809_1920.jpg" data-toggle="tooltip" title="Aerobic" alt="fa sport con le nike che si illumina e i risvoltini..." width="500" height="500">
       <div class="carousel-caption">
         <h3>Aerobic</h3>
       </div>   
