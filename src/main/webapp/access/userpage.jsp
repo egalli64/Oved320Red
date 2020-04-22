@@ -25,7 +25,7 @@
 
 
 	<div id="top">
-		<img id='logo' src='../img/logo.png'>
+		<a href='../index.html'><img id='logo' src='../img/logo.png'></a>
 		<div class="topright">
 			<div class="row">
 				<a href='.....'><button class='btn logaccbtn m-1' type='button'>My
