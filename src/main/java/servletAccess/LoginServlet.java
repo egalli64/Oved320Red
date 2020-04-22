@@ -39,9 +39,8 @@ public class LoginServlet extends HttpServlet {
 				
 				List<Course> courses = dao.getAllUserCourses(username);
 				request.setAttribute("userCourses", courses);
-//				
-//				HttpSession session = request.getSession();
-//				session.setAttribute(courses, );
+				
+
 			
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
 				rdright.forward(request, response);

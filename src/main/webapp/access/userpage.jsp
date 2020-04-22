@@ -28,8 +28,7 @@
 		<img id='logo' src='../img/logo.png'>
 		<div class="topright">
 			<div class="row">
-				<a href='.....'><button class='btn logaccbtn m-1' type='button'>My
-						Account</button></a>
+				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome '${userName}'</button></a>
 			</div>
 			<div class="row">
 				<a href='.....'><button class='btn logaccbtn m-1' type='button'>
