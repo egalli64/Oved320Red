@@ -59,19 +59,24 @@
 			<a class='menu' href="#contact">Contacts</a>
 		</div>
 	</div>
- 
- <hr>
+
+	<hr>
 
 	<div class="script">
-		<h2 class="text-center text-danger text-bold "> Lesson ${i} </h2>
+		<h2 class="text-center text-danger text-bold ">Lesson ${param.id}
+		</h2>
 		<hr class='hr1'>
 		<br>
+		<%-- 		<a href="${param.pippo}"> Click here!! </a> --%>
 		<div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item"
-				src="${url}"
+			<iframe width="560" height="315"
+				src="https://www.youtube.com/embed/OJoExsA7884" frameborder="0"
+				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen></iframe>
 		</div>
-		<h5> <i>Instructor:</i> ${instructors.firstName} ${instructors.lastName} </h5>
+		<h5>
+			<i>Instructor:</i> ${param.instructorName} ${param.instructorLast}
+		</h5>
 
 	</div>
 
