@@ -26,7 +26,7 @@ passw varchar(15));
 
 
 insert into users (birth_date, user_name, first_name, last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw) 
-values("1994/04/21", "Lory", "Lorenzo", "Cefala", "lorenzo.cefala@polimi.mail.it", "3381324433", "Milano, via Corso Como 23", "YES", "2019/04/13", "Sonoscemolol"),
+values("1994/04/21", "Lory", "Lorenzo", "Cefala", "lorenzo.cefala@polimi.mail.it", "3381324433", "Milano, via Corso Como 23", "YES", "2019/04/13", "Lorylory"),
 ("1994/05/11", "Felice", "Felice", "Initalia", "felice.initalia@gmail.com", "3351344432", "Milano, via Quadrio 23", "YES", "2018/04/13", "Ill99tti"),
 ("1995/01/26", "Lilia", "Lilia", "Dissi", "lilia.dissi@hotmail.com", "3324624422", "Milano, viale Romagna 3", "YES", "2019/04/13", "provapassw22"),
 ("1992/04/30", "Fittime", "Lorenzo", "Cefala", "lorenzo.cefala@gmail.com", "333499433", "Milano, via Corso Sempione 14", "YES", "2019/04/13", "ciccio74"),
@@ -110,7 +110,7 @@ foreign key(job_id) references jobs(job_id));
 
 insert into staff
 (birth_date, user_name, first_name, last_name, e_mail, phone_number, address, certificate, hire_date, passw, IBAN, salary, job_id)
-values("1994/04/21", "Sana", "Sara", "Naro", "sara.naro@polimi.mail.it", "3381324433", "Milano, via Corso Como 23", "YES", "2019/04/13", "Sonoscemolol", "IT60X0542811101000000123456", 1800, "INST"),
+values("1994/04/21", "Sana", "Sara", "Naro", "sara.naro@polimi.mail.it", "3381324433", "Milano, via Corso Como 23", "YES", "2019/04/13", "Lorylory", "IT60X0542811101000000123456", 1800, "INST"),
 ("1994/05/11", "Titty", "Tatiana", "Svina", "tatiana.svina@gmail.com", "3351344432", "Milano, via Quadrio 23", "YES", "2018/04/13", "Ill99tti", "IT60X0542811101000000123456", 1700, "AD_CL"),
 ("1995/01/26", "Bilo", "Lorenzo", "Bitta", "lorenzo.bitta@hotmail.com", "3324624422", "Milano, viale Romagna 3", "YES", "2019/04/13", "provapassw22", "IT60X0542811101000000123456", 2500, "INST"),
 ("1992/04/30", "Lana", "Loredana", "Nita", "loredana.nita@gmail.com", "333499433", "Milano, via Corso Sempione 14", "YES", "2019/04/13", "ciccio74", "IT60X0542811101000000123456", 2200, "PRES"),
