@@ -25,7 +25,7 @@
 
 
 	<div id="top">
-		<img id='logo' src='../img/logo.png'>
+		<a href='../index.html'><img id='logo' src='../img/logo.png'></a>
 		<div class="topright">
 			<div class="row">
 				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome '${userName}'</button></a>
@@ -39,26 +39,23 @@
 	</div>
 
 
-	<hr>
-	<div class="row menu">
-		<div class="col-sm">
-			<a class='menu' href="#MyCourses">My Courses</a>
-		</div>
-<!-- 		<div class="col-sm"> -->
-<!-- 			<a class='menu' href="#MyINstructor">My Instructors</a> -->
-<!-- 		</div> -->
-		<div class="col-sm">
-			<a class='menu' href="#contact">Explore</a>
-		</div>
-		<div class="col-sm">
-			<a class='menu' href="#contact">Contacts</a>
-		</div>
+<hr>
+<div class="row menu">
+	<div class="col-sm">
+		<a class='menu' data-toggle="tooltip" title="Courses" href="#MyCourses">My Courses</a>
 	</div>
-	<hr>
+	<div class="col-sm">
+		<a class='menu' data-toggle="tooltip" title="Instructors" href="#explore">Explore</a>
+	</div>
+	<div class="col-sm">
+		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
+	</div>
+</div>
+<hr>
 
 	<br>
 	
-	<div class="script">
+	<div id='MyCourses' class="script">
 		<h2 class="text-center text-danger text-bold">My Courses</h2>
 		<hr class='hr1'>
 		<br>
@@ -88,7 +85,7 @@
 	</div>
 	<br>
 
-	<div class="script">
+	<div id='explore' class="script">
 		<h2 class="text-center text-danger text-bold">Explore</h2>                  
 		<hr class='hr1'>
 		<br>
