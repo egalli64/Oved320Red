@@ -27,11 +27,11 @@
 	<div id="top">
 		<a href='../index.jsp'><img id='logo' src='../img/logo.png'></a>
 		<div class="topright">
-			<div class="row">
-				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome ${myUser.userName}</button></a>
-			</div>
-			<div class="row">
-				<a href='Logout'><button class='btn logaccbtn m-1' type='button'>
+			<div class="row"> <!-- modificare stile -->
+				<a href='.....'>Welcome, ${myUser.userName} &nbsp; </a>
+				</div>
+				<div class="row">
+				<a href='.....'><button class='btn logaccbtn m-1' type='button'>
 						<span class="m-2">LOG OUT</span>
 					</button></a>
 			</div>
