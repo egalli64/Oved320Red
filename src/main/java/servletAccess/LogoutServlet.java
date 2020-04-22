@@ -17,7 +17,7 @@ import dao.UserDao;
 import javaBeans.Course;
 import javaBeans.User;
 
-@WebServlet(urlPatterns = {"/access/Logout", "/loggedin/Logout"})
+@WebServlet(urlPatterns = {"/access/Logout", "/loggedin/Logout", "/menu/Logout"})
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
