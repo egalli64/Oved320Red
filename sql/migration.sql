@@ -133,21 +133,30 @@ foreign key(course_id) references courses(course_id),
 foreign key(staff_id) references staff(staff_id));
 
 insert into lessons (course_id,duration,staff_id,URL)
-values (6,90,3,"https://www.youtube.com/embed/OJoExsA7884"),
+values (1,55,4,"https://www.youtube.com/embed/ujREEgxEP7g"),
+(2,25,7,"https://www.youtube.com/embed/2t3Ab7a2ZM4"),
+(3,40,5,"https://www.youtube.com/embed/ymbHqhp3dZs"),
+(8, 24, 6,"https://www.youtube.com/embed/CXSuc4Q2t0E"),
+(9, 39, 8, "https://www.youtube.com/embed/s3F6R92s6_o"),
+(10, 50, 9, "https://www.youtube.com/embed/T4Y9iVCEthU"),
+(11, 40, 1, "https://www.youtube.com/embed/nH-NsajI2tM"),
+(12, 50, 2, "https://www.youtube.com/embed/AuIdv9Q7MTc"),
+(6,90,3,"https://www.youtube.com/embed/OJoExsA7884"),
 (6,50,3,"https://www.youtube.com/embed/8LWcZlU3AH0"),
 (6,70,10,"https://www.youtube.com/embed/noCrzvAxmew"),
-(7,70,10,"https://www.youtube.com/watch?v=8igkEIBxI7s&list=PLJcOFqZkViHPdMmwPacivoc64P3_BKceI&index=4"),
-(7,70,10,"https://www.youtube.com/watch?v=hYBUidwfKbk&list=PLJcOFqZkViHOHYwfxG80zrM01K31lGaO3&index=3"),
-(7,70,10,"https://www.youtube.com/watch?v=WYPgmtFG0AI&list=PLJcOFqZkViHPdMmwPacivoc64P3_BKceI&index=3"),
-(4,70,10,"https://www.youtube.com/watch?v=Q1Piq_vMh5g"),
-(4,70,10,"https://www.youtube.com/watch?v=jCTEVKRTuS8"),
-(4,70,10,"https://www.youtube.com/watch?v=Q1Piq_vMh5g"),
-(13,70,10,"https://www.youtube.com/watch?v=AuIdv9Q7MTc"),
-(13,70,10,"https://www.youtube.com/watch?v=8uqjPvL019c"),
-(13,70,10,"https://www.youtube.com/watch?v=BcXZ49__fKc"),
-(5,70,10,"https://www.youtube.com/watch?v=k5HJASj97nA"),
-(5,70,10,"https://www.youtube.com/watch?v=Vr86C_Qn7Ro"),
-(5,70,10,"https://www.youtube.com/watch?v=E8npzFAbJe4");
+(7,70,10,"https://www.youtube.com/embed/8igkEIBxI7"),
+(7,70,10,"https://www.youtube.com/embed/hYBUidwfKbk"),
+(7,70,10,"https://www.youtube.com/embed/WYPgmtFG0AI"),
+(4,70,10,"https://www.youtube.com/embed/Q1Piq_vMh5g"),
+(4,70,10,"https://www.youtube.com/embed/jCTEVKRTuS8"),
+(4,70,10,"https://www.youtube.com/embed/Q1Piq_vMh5g"),
+(13,70,10,"https://www.youtube.com/embed/AuIdv9Q7MTc"),
+(13,70,10,"https://www.youtube.com/embed/8uqjPvL019c"),
+(13,70,10,"https://www.youtube.com/embed/BcXZ49__fKc"),
+(5,70,10,"https://www.youtube.com/embed/k5HJASj97nA"),
+(5,70,10,"https://www.youtube.com/embed/Vr86C_Qn7Ro"),
+(5,70,10,"https://www.youtube.com/embed/E8npzFAbJe4");
+
 
 
 
