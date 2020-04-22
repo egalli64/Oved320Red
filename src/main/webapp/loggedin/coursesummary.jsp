@@ -47,10 +47,10 @@
 <hr>
 <div class="row menu">
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Courses" href="../access/userpage.jsp#MyCourses">My Courses</a>
+		<a class='menu' data-toggle="tooltip" title="Courses" href="red/access/userpage.jsp#MyCourses">My Courses</a>
 	</div>
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Instructors" href="../access/userpage.jsp#explore">Explore</a>
+		<a class='menu' data-toggle="tooltip" title="Instructors" href="red/access/userpage.jsp#explore">Explore</a>
 	</div>
 	<div class="col-sm">
 		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
