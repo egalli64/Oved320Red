@@ -36,10 +36,9 @@ public class LoginServlet extends HttpServlet {
 			if (matchingUser.getUserName() != null && matchingUser.getPassword().equals(password)) { // login successful
 				request.setAttribute("user", matchingUser);
 				
-				List<Course> courses = dao.getAllUserCourses(username);
-				request.setAttribute("userCourses", courses);
-				
 				HttpSession session = request.getSession();
+				List<Course> courses = dao.getAllUserCourses(username);
+				session.setAttribute("myCourses", courses);
 				session.setAttribute("myUser",matchingUser);
 			
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");

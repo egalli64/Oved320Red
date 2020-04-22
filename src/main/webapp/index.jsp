@@ -30,7 +30,7 @@
 		<a href='./access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
 	</c:if>
 	<c:if test = '${myUser.userName != null}'>
-		<a href='./access/userpage.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>Welcome ${myAccount}</button></a>
+		<a href='./access/userpage.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>Welcome ${myUser.userName}</button></a>
 	</c:if>
 </div>
 

@@ -28,7 +28,7 @@
 		<a href='../index.jsp'><img id='logo' src='../img/logo.png'></a>
 		<div class="topright">
 			<div class="row">
-				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome ${myAccount}</button></a>
+				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome ${myUser.userName}</button></a>
 			</div>
 			<div class="row">
 				<a href='.....'><button class='btn logaccbtn m-1' type='button'>
