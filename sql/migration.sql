@@ -133,9 +133,9 @@ foreign key(course_id) references courses(course_id),
 foreign key(staff_id) references staff(staff_id));
 
 insert into lessons (course_id,duration,staff_id,URL)
-values (6,90,3,"https://www.youtube.com/watch?v=OJoExsA7884&list=PLJcOFqZkViHOGnIzPAYsfLM9-WuS0pbee&index=2"),
-(6,50,3,"https://www.youtube.com/watch?v=8LWcZlU3AH0&list=PLJcOFqZkViHPkZJEUouirWgp09SGufUHN&index=4"),
-(6,70,10,"https://www.youtube.com/watch?v=noCrzvAxmew&list=PLJcOFqZkViHMYoUt_zNJn42_GvFWPTP69&index=2"),
+values (6,90,3,"https://www.youtube.com/embed/OJoExsA7884"),
+(6,50,3,"https://www.youtube.com/embed/8LWcZlU3AH0"),
+(6,70,10,"https://www.youtube.com/embed/noCrzvAxmew"),
 (7,70,10,"https://www.youtube.com/watch?v=8igkEIBxI7s&list=PLJcOFqZkViHPdMmwPacivoc64P3_BKceI&index=4"),
 (7,70,10,"https://www.youtube.com/watch?v=hYBUidwfKbk&list=PLJcOFqZkViHOHYwfxG80zrM01K31lGaO3&index=3"),
 (7,70,10,"https://www.youtube.com/watch?v=WYPgmtFG0AI&list=PLJcOFqZkViHPdMmwPacivoc64P3_BKceI&index=3"),
