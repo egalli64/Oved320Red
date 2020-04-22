@@ -31,7 +31,7 @@
 				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome ${myUser.userName}</button></a>
 			</div>
 			<div class="row">
-				<a href='.....'><button class='btn logaccbtn m-1' type='button'>
+				<a href='Logout'><button class='btn logaccbtn m-1' type='button'>
 						<span class="m-2">LOG OUT</span>
 					</button></a>
 			</div>
