@@ -68,17 +68,20 @@
 		<table class="table align-center" id="tableofcourses">
 			<thead class="thead-light">
 				<tr>
-					<th scope="col">Lesson ID</th>
-					<th scope="col">Staff ID</th>
+					<th scope="col">Lesson Name</th>
+					<th scope="col">Instructor </th>
 					<th scope="col">Link to video</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="lesson" items="${courseLessons}">
+				<c:forEach var = "i" begin = "1" end="${courseLessons.size()}">
 					<tr>
-						<td>${lesson.lessonID}</td>
-						<td>${lesson.staffID}</td>
-						<td><a href="${lesson.URL}"><button type="button"
+						<td> Lesson  ${i}  </td>
+						<td>${instructors.get(i-1).firstName} ${instructors.get(i-1).lastName} <br>
+							<i>email:</i> ${instructors.get(i-1).email}  <br>
+							<i>Role:</i>  ${instructors.get(i-1).jobID}
+						</td>
+						<td><a href="${courseLessons.get(i-1).URL}"><button type="button"
 									class="btn btn-outline-danger">Start Lesson Now!</button></a></td>
 					</tr>
 				</c:forEach>
