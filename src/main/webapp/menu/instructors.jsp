@@ -42,7 +42,7 @@
 				<a href='/red/access/userpage.jsp'>Welcome, ${myUser.userName} &nbsp; </a>
 				</div>
 				<div class="row">
-				<a href='/red/index.jsp'><button class='btn logaccbtn m-1' type='button'>
+				<a href='Logout'><button class='btn logaccbtn m-1' type='button'>
 						<span class="m-2">LOG OUT</span>
 					</button></a>
 			</div>
@@ -57,13 +57,13 @@
 <hr>
 <div class="row menu">
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Courses" href="courses.jsp">Courses</a>
+		<a class='menu' data-toggle="tooltip" title="Courses" href="/red/menu/courses.jsp">Courses</a>
 	</div>
 	<div class="col-sm">
-		<a class='menu1' data-toggle="tooltip" title="Instructors" href="instructors.jsp">Instructors</a>
+		<a class='menu1' data-toggle="tooltip" title="Instructors" href="/red/menu/instructors.jsp">Instructors</a>
 	</div>
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="How to Join" href="howTo.jsp">How to join</a>
+		<a class='menu' data-toggle="tooltip" title="How to Join" href="/red/menu/howTo.jsp">How to join</a>
 	</div>
 	<div class="col-sm">
 		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
