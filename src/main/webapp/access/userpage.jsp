@@ -75,7 +75,7 @@
 		<tbody>
 			<c:forEach var="course" items="${myCourses}">
 				<tr id='courserow' class="">
-					<td><a href="UserCourses?courseName=${course.courseName}">${course.courseName}</a></td> 
+					<td onclick="location='UserCourses?courseName=${course.courseName}'"> ${course.courseName} </td> 
 				</tr>
 			</c:forEach>
 		</tbody>

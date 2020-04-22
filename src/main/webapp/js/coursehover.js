@@ -8,3 +8,7 @@ $('#tableofcourses tbody tr').mouseover(function() {
 $('#tableofcourses tbody tr').mouseout(function() {
     $(this).removeClass('coursetablehover');
 });
+
+
+
+
