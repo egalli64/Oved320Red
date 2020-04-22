@@ -22,7 +22,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src="./js/coursehover.js" defer></script>
+<script type="text/javascript" src="/red/js/coursehover.js" defer></script>
 <%--Rest --%>
 <meta charset="UTF-8">
 <title>Personal Page</title>
@@ -32,9 +32,9 @@
 <body>
 
 <div id="top">
-<a href='../index.jsp'><img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='../img/logo.png'></a>
+<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='/red/img/logo.png'></a>
 	<c:if test = '${myUser.userName == null}'>	
-		<a href='./access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
+		<a href='/red/access/Login.jsp'><button data-toggle="tooltip" title="Login" class='btn logbt' type='button'>LOGIN</button></a>
 	</c:if>
 	<c:if test = '${myUser.userName != null}'>
 		<div class="topright">
@@ -92,7 +92,7 @@
 </div>
 <hr>
 	<div class ='text-center'>
-		<a href="../index.jsp">Back to homepage</a>
+		<a href="/red/index.jsp">Back to homepage</a>
 	</div>
 	
 </body>
