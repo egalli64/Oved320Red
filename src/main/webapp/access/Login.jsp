@@ -15,7 +15,7 @@
 
 <body>
 	<div id="top">
-		<a href='../index.jsp'><img id='logo' src='../img/logo.png'></a>
+		<a href='/red/index.jsp'><img id='logo' src='/red/img/logo.png'></a>
 	</div>
 	
 	<c:if test='${returnError != null}'>
@@ -58,11 +58,11 @@
 						</form>
 						<p>
 							<i>Don't have an account? <a class='reglink'
-								href="./Register.jsp">Register here</a></i>
+								href="/red/access/Register.jsp">Register here</a></i>
 						</p>
 						<div>
-							<a class="reglink" href="../index.html"><i>Back to Home</i></a>
-							<a class="reglink" href="../space.html"><i>Back to Space</i></a>
+							<a class="reglink" href="/red/index.jsp"><i>Back to Home</i></a>
+							<a class="reglink" href="/red/space.jsp"><i>Back to Space</i></a>
 						</div>
 
 						<!-- Back to homepage -->

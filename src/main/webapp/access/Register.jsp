@@ -13,7 +13,7 @@
 
 <body>
 	<div id="top">
-		<a href='../index.jsp'><img id='logo' src='../img/logo.png'></a>
+		<a href='/red/index.jsp'><img id='logo' src='/red/img/logo.png'></a>
 	</div>
 	
 <c:if test = '${returnError != null}'>
@@ -103,8 +103,8 @@
 						</form>
 						<div class="text-center">
 							<p>
-								<i> <a class='reglink m-2' href="./Login.jsp">Back to
-										Login</a></i> or <i><a class="reglink m-2" href="../index.html">
+								<i> <a class='reglink m-2' href="/red/access/Login.jsp">Back to
+										Login</a></i> or <i><a class="reglink m-2" href="/red/index.jsp">
 										Back to Home</a></i>
 							</p>
 						</div>
