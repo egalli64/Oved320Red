@@ -23,12 +23,16 @@ public class UserDao implements Closeable {
 	private static final String GET_USER = "SELECT user_id, birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, med_certificate, subscr_date, passw FROM users "
 			+ "where user_name = ?";
+	private static final String GET_ALL_USER_COURSES = "select course_id, course_name, category_id, price "
+			+ "from courses join users_courses using (course_id) join users using (user_id) where user_name = ?";
+
 	private static final String SET_USER = "INSERT INTO users (birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, subscr_date, passw) values(?, ?, ?, ?, ?, "
 			+ "?, ?, CURDATE(), ?)";
-	
-	private static final String GET_ALL_USER_COURSES = "select course_id, course_name, category_id, price "
-			+ "from courses join users_courses using (course_id) join users using (user_id) where user_name = ?";
+	private static final String UPDATE_USER = "UPDATE birth_date, user_name, first_name, last_name, "
+			+ "e_mail, phone_number, address, subscr_date, passw FROM users SET birth_date = ?, user_name = ?, first_name = ?, last_name = ? "
+			+ "e_mail = ?, phone_number = ?, address = ?, subscr_date = ?, passw = ? "
+			+ "WHERE user_name = ?";
 
 	private Connection conn;
 
@@ -119,6 +123,26 @@ public class UserDao implements Closeable {
 			String phoneNumber, String streetAddress, String password) {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(SET_USER)) {
+			prepStmt.setDate(1, birthDate);
+			prepStmt.setString(2, userName);
+			prepStmt.setString(3, firstName);
+			prepStmt.setString(4, lastName);
+			prepStmt.setString(5, email);
+			prepStmt.setString(6, phoneNumber);
+			prepStmt.setString(7, streetAddress);
+			prepStmt.setString(8, password);
+
+			prepStmt.executeUpdate();
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+		return;
+	}
+	
+	public void updateUser(Date birthDate, String userName, String firstName, String lastName, String email,
+			String phoneNumber, String streetAddress, String password) {
+
+		try (PreparedStatement prepStmt = conn.prepareStatement(UPDATE_USER)) {
 			prepStmt.setDate(1, birthDate);
 			prepStmt.setString(2, userName);
 			prepStmt.setString(3, firstName);
