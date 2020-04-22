@@ -89,8 +89,8 @@
 			<tbody>
 				<c:forEach var="i" begin="1" end="${courseLessons.size()}">
 					<tr>
-						<td>Lesson ${i}</td>
-						<td>${instructors.get(i-1).firstName}
+						<td class="align-middle">Lesson ${i}</td>
+						<td class="align-middle" >${instructors.get(i-1).firstName}
 							${instructors.get(i-1).lastName} <br> <i>Email: </i><a
 							href="mailto:${instructors.get(i-1).email}">${instructors.get(i-1).email}</a>
 							<br> <i>Role: </i> ${instructors.get(i-1).jobID}
@@ -108,7 +108,7 @@
 							<c:param name="instructorJobID"
 								value="${instructors.get(i-1).jobID}" />
 						</c:url>
-						<td><a href="${lessonpage}"> <%-- 							href="../loggedin/singlelesson.jsp?id=${i}?url=${courseLessons.get(i-1).URL}?instructorName=${instructors.get(i-1).firstName}?instructorLast=${instructors.get(i-1).lastName}"> --%>
+						<td class="align-middle"><a href="${lessonpage}"> <%-- 							href="../loggedin/singlelesson.jsp?id=${i}?url=${courseLessons.get(i-1).URL}?instructorName=${instructors.get(i-1).firstName}?instructorLast=${instructors.get(i-1).lastName}"> --%>
 								<button type="button" class="btn btn-outline-danger">Start
 									Lesson Now!</button>
 						</a></td>
@@ -120,11 +120,9 @@
 			<br>
 	<a href='/red/access/userpage.jsp'><button type="button"
 			class="btn btn-outline-danger text-center">Back to my page</button></a>
-
+			
+			
 	</div>
-
-
-
 
 
 	<div id="contact" class='text-white text-center'>
