@@ -1,7 +1,6 @@
 package servletAccess;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -40,7 +39,14 @@ public class LoginServlet extends HttpServlet {
 				List<Course> courses = dao.getAllUserCourses(username);
 				request.setAttribute("userCourses", courses);
 				
-
+				String firstName = matchingUser.getFirstName();
+				String lastName = matchingUser.getLastName();
+				
+				HttpSession session = request.getSession(); 
+				session.setAttribute("myAccount",username);
+				session.setAttribute("myPassword",password);
+				session.setAttribute("myFirstName",firstName);
+				session.setAttribute("myLastName",lastName);		
 			
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
 				rdright.forward(request, response);

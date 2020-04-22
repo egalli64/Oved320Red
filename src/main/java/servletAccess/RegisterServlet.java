@@ -10,12 +10,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import dao.UserDao;
 import javaBeans.User;
 
-@WebServlet("/jsp/jspAccess/Register")
+@WebServlet("/access/Register")
 public class RegisterServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -50,8 +51,15 @@ public class RegisterServlet extends HttpServlet {
 			} else if (matchingUser.getUserName() == null && !password.equals(password2)) {
 				error = "Registration NOT successful! <br> The second password differs from the first one. Plaese type again.";
 			} else if (matchingUser.getUserName() == null && password.equals(password2)) {
+				
+				HttpSession session = request.getSession(); 
+				session.setAttribute("myAccount",userName);
+				session.setAttribute("myPassword",password);
+				session.setAttribute("myFirstName",firstName);
+				session.setAttribute("myLastName",lastName);
+				
 				dao.setUser(birthDate, userName, firstName, lastName, email, phone, address, password);
-				RequestDispatcher rd = request.getRequestDispatcher("../jsp/jspAccess/userpage.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("userpage.jsp");
 				rd.forward(request, response);
 				return;
 			}

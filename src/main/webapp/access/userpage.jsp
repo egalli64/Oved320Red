@@ -25,10 +25,10 @@
 
 
 	<div id="top">
-		<a href='../index.html'><img id='logo' src='../img/logo.png'></a>
+		<a href='../index.jsp'><img id='logo' src='../img/logo.png'></a>
 		<div class="topright">
 			<div class="row">
-				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome '${userName}'</button></a>
+				<a href='.....'><button class='btn logaccbtn m-1' type='button'>Welcome ${myAccount}</button></a>
 			</div>
 			<div class="row">
 				<a href='.....'><button class='btn logaccbtn m-1' type='button'>

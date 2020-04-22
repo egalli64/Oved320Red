@@ -13,7 +13,7 @@
 
 <body>
 	<div id="top">
-		<a href='../index.html'><img id='logo' src='../img/logo.png'></a>
+		<a href='../index.jsp'><img id='logo' src='../img/logo.png'></a>
 	</div>
 	
 <c:if test = '${returnError != null}'>
