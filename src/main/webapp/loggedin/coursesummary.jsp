@@ -53,7 +53,7 @@
 		<a class='menu' data-toggle="tooltip" title="Instructors" href="../access/userpage.jsp#explore">Explore</a>
 	</div>
 	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Contacts" href="../access/userpage.jsp#contact">Contacts</a>
+		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
 	</div>
 </div>
 <hr>
@@ -77,15 +77,18 @@
 					<tr>
 						<td>Lesson ${i}</td>
 						<td>${instructors.get(i-1).firstName}
-							${instructors.get(i-1).lastName} <br> <i>email:</i>
-							${instructors.get(i-1).email} <br> <i>Role:</i>
-							${instructors.get(i-1).jobID}
+							${instructors.get(i-1).lastName} <br> 
+							<i>Email: </i><a href="mailto:${instructors.get(i-1).email}">${instructors.get(i-1).email}</a> <br> 
+							<i>Role: </i> ${instructors.get(i-1).jobID}
 						</td>
 						<c:url value="../loggedin/singlelesson.jsp" var="lessonpage">
+							<c:param name="courseName" value="${courseName}" />
 							<c:param name="id" value="${i}" />
 							<c:param name="url" value="${courseLessons.get(i-1).URL}" />
 							<c:param name="instructorName" value="${instructors.get(i-1).firstName}" />
 							<c:param name="instructorLast" value="${instructors.get(i-1).lastName}" />
+							<c:param name="instructorEmail" value="${instructors.get(i-1).email}" />
+							<c:param name="instructorJobID" value="${instructors.get(i-1).jobID}" />
 						</c:url>
 						<td><a href="${lessonpage}">
 <%-- 							href="../loggedin/singlelesson.jsp?id=${i}?url=${courseLessons.get(i-1).URL}?instructorName=${instructors.get(i-1).firstName}?instructorLast=${instructors.get(i-1).lastName}"> --%>
@@ -98,5 +101,15 @@
 		</table>
 
 	</div>
+
+
+<div id="contact" class='text-white text-center'>
+	<h5>Contacts</h5>
+	<p >
+		tel:<a href="tel:+39/3492464512">+39/3492464512</a>&emsp; &mdash; &emsp;E-mail
+		address: <a href="mailto:info@fitnett.com">info@fitnett.com</a>
+	</p>
+</div>
+
 </body>
 </html>
