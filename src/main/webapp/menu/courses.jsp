@@ -39,10 +39,10 @@
 	<c:if test = '${myUser.userName != null}'>
 		<div class="topright">
 			<div class="row"> <!-- modificare stile -->
-				<a href='.....'>Welcome, ${myUser.userName} &nbsp; </a>
+				<a href='/red/access/userpage.jsp'>Welcome, ${myUser.userName} &nbsp; </a>
 				</div>
 				<div class="row">
-				<a href='.....'><button class='btn logaccbtn m-1' type='button'>
+				<a href='/red/index.jsp'><button class='btn logaccbtn m-1' type='button'>
 						<span class="m-2">LOG OUT</span>
 					</button></a>
 			</div>
@@ -92,7 +92,7 @@
 </div>
 <hr>
 	<div class ='text-center'>
-		<a href="../index.jsp">Back to homepage</a>
+		<a href="/red/index.jsp">Back to homepage</a>
 	</div>
 	
 </body>
