@@ -44,7 +44,8 @@ public class UpdateUserServlet extends HttpServlet {
 			myUser.setUserName(request.getParameter("userName"));
 		}
 		
-		if (request.getParameter("control").equals("ps")) {
+		if (request.getParameter("control").equals("ps") 
+				&& request.getParameter("password1").equals(request.getParameter("password1"))) {
 			myUser.setPassword(request.getParameter("password1"));
 		}
 		

@@ -42,8 +42,8 @@
 
 <body>
 
-	<div >
-		<div class='container' id="top">
+
+		<div  id="top">
 			<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip"
 				title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!"
 				src='/red/img/logo.png'></a>
@@ -57,7 +57,7 @@
 						<a class='link1' href='/red/access/userpage.jsp'>Welcome,
 							${myUser.userName}!</a>
 					</div>
-					<div class="container row">
+					<div class="row">
 						<a href='/red/access/Logout'><button class='btn logaccbtn m-1'
 								type='button'>
 								<span class="m-2">LOGOUT</span>
@@ -66,7 +66,6 @@
 				</div>
 			</c:if>
 		</div>
-	</div>
 
 	<div class="icon-bar">
 		<a href="" data-toggle="tooltip" title="Login with Facebook"
