@@ -18,7 +18,7 @@ import javaBeans.Course;
 public class CategoryDao implements Closeable {
 	private static final String GET_ALL = "SELECT category_id, category_name FROM categories";
 	private static final String GET_ALL_CATEGORY_COURSES = "SELECT course_id, course_name, category_id, price "
-			+ "FROM categories JOIN courses USING(category_id) where course_name = ?";
+			+ "FROM categories JOIN courses USING(category_id) where category_name = ?";
 
 	private static final String SET_CATEGORY = "INSERT INTO categories (category_id, category_name) values(?, ?)";
 

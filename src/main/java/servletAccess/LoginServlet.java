@@ -1,6 +1,7 @@
 package servletAccess;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
+import dao.CategoryDao;
 import dao.UserDao;
+import javaBeans.Category;
 import javaBeans.Course;
 import javaBeans.User;
 
@@ -40,10 +43,20 @@ public class LoginServlet extends HttpServlet {
 				List<Course> courses = dao.getAllUserCourses(username);
 				session.setAttribute("myCourses", courses);
 				session.setAttribute("myUser",matchingUser);
-			
+				
+				try(CategoryDao daoCat = new CategoryDao(ds);){
+				List<Category> categories = daoCat.getAll();
+//				List<String> categoryNames = new ArrayList<>();
+//				for(Category item : categoriesObj) {
+//					categoryNames.add(item.getCategoryName());
+//				}
+				
+				session.setAttribute("allCategories", categories);
+				
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
 				rdright.forward(request, response);
 				return;
+			}
 
 			} else {
 				request.setAttribute("userName", username);
@@ -53,6 +66,7 @@ public class LoginServlet extends HttpServlet {
 				rdwrong.forward(request, response);
 
 			}
+			
 		}
 	}
 
