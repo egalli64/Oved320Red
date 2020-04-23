@@ -18,7 +18,7 @@ import com.google.gson.Gson;
 import dao.CategoryDao;
 import javaBeans.Course;
 
-@WebServlet("/index")
+@WebServlet("/menu/AllCoursesMenu")
 public class AllCoursesMenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -28,7 +28,8 @@ public class AllCoursesMenuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String categoryName = request.getParameter("choice");
+		//String categoryName = request.getParameter("choice");
+		String categoryName = "Aerobic";		
 
 		try (CategoryDao categoryDao = new CategoryDao(ds);) {
 
