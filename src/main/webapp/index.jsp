@@ -30,6 +30,7 @@
 
 <body>
 
+
 <div id="top">
 <a href='/red/index.jsp'><img id='logo' data-toggle="tooltip" title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!" src='/red/img/logo.png'></a>
 	<c:if test = '${myUser.userName == null}'>	
@@ -61,6 +62,7 @@
 <!-- </div> -->
 
 <hr>
+<div class='container'>
 <div class="row menu">
 	<div class="col-sm">
 		<a class='menu' data-toggle="tooltip" title="Courses" href="/red/menu/courses.jsp">Courses</a>
@@ -74,6 +76,7 @@
 	<div class="col-sm">
 		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
 	</div>
+</div>
 </div>
 <hr>
 
@@ -168,4 +171,7 @@
 		address: <a class='link1' href="mailto:info@fitnett.com">info@fitnett.com</a>
 	</p>
 </div>
+
+
 </body>
+</html>
