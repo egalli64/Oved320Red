@@ -42,8 +42,8 @@
 
 <body>
 
-	<div >
-		<div class='container' id="top">
+
+		<div  id="top">
 			<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip"
 				title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!"
 				src='/red/img/logo.png'></a>
@@ -66,7 +66,6 @@
 				</div>
 			</c:if>
 		</div>
-	</div>
 
 	<div class="icon-bar">
 		<a href="" data-toggle="tooltip" title="Login with Facebook"
