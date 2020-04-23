@@ -178,7 +178,7 @@
 			<div id='personal2' style="display: none">
 
 				<br>
-				<form action='UpdateUser=control=psn' method='post'>
+				<form action='UpdateUser?control=psn' method='post'>
 					<div class="form-group row">
 						<label for="firstName" class="col-3 col-form-label">First
 							Name:</label>

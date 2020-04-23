@@ -56,11 +56,13 @@ public class UpdateUserServlet extends HttpServlet {
 		String phoneNumber = myUser.getPhoneNumber();
 		String streetAddress = myUser.getStreetAddress();
 		Date birthDate = Date.valueOf(myUser.getBirthDate());
+		int id = myUser.getUserID();
 		
 		try (UserDao daoU = new UserDao(ds);) {
+			
+			daoU.updateUser(birthDate, userName, firstName, lastName, email, 
+					phoneNumber, streetAddress, password, id);
 
-			daoU.updateUser(birthDate, userName, firstName, lastName, email, phoneNumber, 
-					streetAddress, password);
 
 			session.setAttribute("myUser", myUser);
 			RequestDispatcher rd = request.getRequestDispatcher("myAccount.jsp");
