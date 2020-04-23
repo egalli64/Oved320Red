@@ -12,6 +12,10 @@ hr {
 	border: 4px double #d9534f;
 }
 
+.hrtable{
+	border: 0.5px solid black;
+}
+
 #logo {
 	width: 100%;
 	height: auto;

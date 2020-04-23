@@ -37,22 +37,30 @@ public class UpdateUserServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String phoneNumber = request.getParameter("phoneNumber");
 		String streetAddress = request.getParameter("streetAddress");
-		Date birthDate = Date.valueOf(request.getParameter("birthDate")); 
+		Date birthDate = Date.valueOf(request.getParameter("birthDate"));
 
 		try (UserDao daoU = new UserDao(ds);) {
 
-			daoU.updateUser(birthDate, userName,  firstName, lastName, email, phoneNumber,
+			daoU.updateUser(birthDate, userName, firstName, lastName, email, phoneNumber, 
 					streetAddress, password);
-	
-			myUser.setUserName(userName);
-			myUser.setPassword(password);
-			myUser.setFirstName(firstName);
-			myUser.setLastName(lastName);
-			myUser.setEmail(email);
-			myUser.setPhoneNumber(phoneNumber);
-			myUser.setStreetAddress(streetAddress);
-			myUser.setBirthDate(birthDate.toLocalDate());
-			
+
+			if (userName == null && password == null) {
+				myUser.setFirstName(firstName);
+				myUser.setLastName(lastName);
+				myUser.setEmail(email);
+				myUser.setPhoneNumber(phoneNumber);
+				myUser.setStreetAddress(streetAddress);
+				myUser.setBirthDate(birthDate.toLocalDate());
+			}
+
+			if (userName != null) {
+				myUser.setUserName(userName);
+			}
+
+			if (password != null) {
+				myUser.setPassword(password);
+			}
+
 			session.setAttribute("myUser", myUser);
 			RequestDispatcher rd = request.getRequestDispatcher("myAccount.jsp");
 			rd.forward(request, response);
