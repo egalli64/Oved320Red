@@ -61,40 +61,56 @@
   <a href="#" data-toggle="tooltip" title="Click 100 times to Win a...strong finger!" class="twitter"><i class="fa fa-twitter"></i></a>
 </div>
 <hr>
-<div class='container'>
-<div class="row menu">
-	<div class="col-sm">
-		<a class='menu1' data-toggle="tooltip" title="Courses" href="/red/menu/courses.jsp">Courses</a>
+	<div class='container'>
+		<div class="row menu">
+			<div class="col-sm">
+				<a class='menu1' data-toggle="tooltip" title="Courses"
+					href="/red/menu/courses.jsp">Courses</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Instructors"
+					href="/red/menu/instructors.jsp">Instructors</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="How to Join"
+					href="/red/menu/howTo.jsp">How to join</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Contacts"
+					href="#contact">Contacts</a>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Instructors" href="/red/menu/instructors.jsp">Instructors</a>
-	</div>
-	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="How to Join" href="/red/menu/howTo.jsp">How to join</a>
-	</div>
-	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
-	</div>
-</div>
-</div>
-<hr>
+	<hr>
 <br>
 <br>
 
-<div class="script">
-		<h2 class="text-center text-danger text-bold">Explore</h2>                  
+	<div class='script text-center'>
+		<h2 class="text-center text-danger text-bold">Explore</h2>
 		<hr class='hr1'>
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
 
-		<div class="dropdown show">
-			<a class="btn btn-secondary btn-lg btn-block" onclick = "allCategories();" role="button" aria-haspopup="true"
-				aria-expanded="false">Categories</a>				
-		<br>
-		</div>
-		<div id = "categories"></div>
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 dropdown show text-center">
+				<a class="btn btn-secondary btn-lg btn-block"
+					onclick="allCategories();" role="button" aria-haspopup="true"
+					aria-expanded="false">Categories</a> <br>
+			</div>
+			<div class="col-sm-4"></div>
+
 		</div>
 
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 dropdown show text-center">
+				<div id="categories"></div>
+			</div>
+			<div class="col-sm-4"></div>
+
+		</div>
+	</div>
 
 	<br>
     <hr>
