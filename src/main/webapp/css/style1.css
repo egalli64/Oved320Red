@@ -54,37 +54,49 @@ a.menu:hover, a.menu:active {
 	border-radius: 5px;
 }
 
-/* .menu1 { */
-/* 	text-align: center; */
-/* 	font-family: Arial; */
-/* 	font-weight: bold; */
-/* } */
+.menu1 {
+	text-align: center;
+	font-family: Arial;
+	font-weight: bold;
+}
 
-/* a.menu1:link, a.menu1:visited { */
-/* 	background-color: white; */
-/* 	color: #d9534f; */
-/* 	padding: 7%; */
-/* 	border-radius: 5px; */
-/* } */
+a.menu1:link, a.menu1:visited {
+	background-color: white;
+	color: #d9534f;
+	padding: 3%;
+	border-radius: 5px;
+}
 
-/* a.menu1:hover, a.menu1:active { */
-/* 	background-color: white; */
-/* 	color: #d9534f; */
-/* 	padding: 7%; */
-/* 	border-radius: 5px; */
-/* } */
+a.menu1:hover, a.menu1:active {
+	background-color: white;
+	color: #d9534f;
+	padding: 3%;
+	border-radius: 5px;
+}
 
-/* a:link, a:visited { */
-/* 	color: #ffffff; */
-/* 	text-align: center; */
-/* 	text-decoration: none; */
-/* } */
+a.link1:link, a.link1:visited {
+	border-bottom: 1px solid #ffffff;
+	color: #ffffff;
+	text-decoration: none;
+}
 
-/* a:hover, a:active { */
-/* 	background-color: white; */
-/* 	color: #d9534f; */
-/* 	border-radius: 5px; */
-/* } */
+/* prova */
+
+a.link1:hover, a.link1:active {
+	background-color: white;
+	color: #d9534f;
+	border-radius: 5px;
+}
+
+a.link2:link, a.link2:visited {
+	text-decoration: underline;
+	color: #000000;
+	text-decoration: none;
+}
+
+a.link2:hover, a.link2:active {
+	color: #d9534f;
+}
 
 .warning {
 	text-align: center;

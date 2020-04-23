@@ -38,17 +38,19 @@
 	</c:if>
 	<c:if test = '${myUser.userName != null}'>
 		<div class="topright">
-			<div class="row"> <!-- modificare stile -->
-				<a href='/red/access/userpage.jsp'>Welcome, ${myUser.userName} &nbsp; </a>
+			<div class="row">
+				<a class='link1' href='/red/access/userpage.jsp'>Welcome, ${myUser.userName}!</a>
 				</div>
 				<div class="row">
-				<a href='Logout'><button class='btn logaccbtn m-1' type='button'>
-						<span class="m-2">LOG OUT</span>
+				<a href='/red/access/Logout'><button class='btn logaccbtn m-1' type='button'>
+						<span class="m-2">LOGOUT</span>
 					</button></a>
 			</div>
 		</div>
 	</c:if>
 </div>
+
+
 
 <div class="icon-bar">
   <a href="#" data-toggle="tooltip" title="Login with Facebook" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -75,24 +77,53 @@
 <br>
 
 <div class="script">
-	<h2 class="text-center text-danger text-bold">Our courses</h2>
-	<hr class='hr1'>
-	<br>
-	<p>lista dei corsi e costo</p>
-</div>
+		<h2 class="text-center text-danger text-bold">Explore</h2>                  
+		<hr class='hr1'>
+		<br>
+		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
+
+		<div class="dropdown">
+			<button id="categorychoice" class="btn btn-danger dropdown-toggle" type="button"
+				id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Course Category</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">        
+				<a class="dropdown-item" href="CourseCategory?choice=Aerobic">Aerobica</a> 
+				<a class="dropdown-item" href="CourseCategory?choice=Dance">Danza</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Martial%20Arts">Arti Marziali</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Powerlifting">Powerlifting</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Boxe">Boxe</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Pilates">Pilates</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Yoga">Yoga</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Zumba">Zumba</a>
+			</div>
+		</div>
+		<div id = "categories"></div>
+	</div>
+	
+	<script>
+	$(document).on("click", "#categorychoice", function(){
+		$.get("AllCoursesMenuServlet.java", function(responseCoursesList){
+			var $ul = $("<ul>").appendTo($("<#categories"));
+			$.each(responseCoursesList, function(index, item) {
+				$("<li>").text(item.categoryName).appendTo($ul);
+			})
+		});
+	});
+		
+</script>
 
 <br><br>
 <hr>
 <div id="contact" class='text-white text-center'>
 	<h5>Contacts</h5>
 	<p >
-		tel:<a href="tel:+39/3492464512">+39/3492464512</a>&emsp; &mdash; &emsp;E-mail
-		address: <a href="mailto:info@fitnett.com">info@fitnett.com</a>
+		tel:<a class='link1' href="tel:+39/3492464512">+39/3492464512</a>&emsp; &mdash; &emsp;E-mail
+		address: <a class='link1' href="mailto:info@fitnett.com">info@fitnett.com</a>
 	</p>
 </div>
 <hr>
 	<div class ='text-center'>
-		<a href="/red/index.jsp">Back to homepage</a>
+		<a class='link1' href="/red/index.jsp">Back to homepage</a>
 	</div>
 	
 </body>

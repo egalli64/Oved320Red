@@ -41,20 +41,24 @@
 </head>
 
 <body>
-
-	<div id="top">
-		<a href='/red/index.jsp'><img id='logo' src='/red/img/logo.png'></a>
+<div id="top">
+		<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip"
+			title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!"
+			src='/red/img/logo.png'></a>
 		<div class="topright">
-			<div class="row"> <!-- modificare stile -->
-				<a href='/red/access/userpage.jsp'>Welcome, ${myUser.userName} &nbsp; </a>
-				</div>
-				<div class="row">
-				<a href='/red/access/Logout'><button class='btn logaccbtn m-1' type='button'>
-						<span class="m-2">LOG OUT</span>
+			<div class="row">
+				<a class='link1' href='/red/access/userpage.jsp'>Welcome,
+					${myUser.userName}!</a>
+			</div>
+			<div class="row">
+				<a href='/red/access/Logout'><button class='btn logaccbtn m-1'
+						type='button'>
+						<span class="m-2">LOGOUT</span>
 					</button></a>
 			</div>
 		</div>
 	</div>
+
 
 	<hr>
 	<div class="row menu">
@@ -124,18 +128,19 @@
 			
 	</div>
 
-
+<br>
+<hr>
 	<div id="contact" class='text-white text-center'>
 		<h5>Contacts</h5>
 		<p>
-			tel:<a href="tel:+39/3492464512">+39/3492464512</a>&emsp; &mdash;
-			&emsp;E-mail address: <a href="mailto:info@fitnett.com">info@fitnett.com</a>
+			tel:<a class='link1' href="tel:+39/3492464512">+39/3492464512</a>&emsp;
+			&mdash; &emsp;E-mail address: <a class='link1'
+				href="mailto:info@fitnett.com">info@fitnett.com</a>
 		</p>
 	</div>
-
 	<hr>
 	<div class='text-center'>
-		<a href="/red/index.jsp">Back to homepage</a>
+		<a class='link1' href="/red/index.jsp">Back to homepage</a>
 	</div>
 
 </body>
