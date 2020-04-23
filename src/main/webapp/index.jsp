@@ -42,6 +42,7 @@
 
 <body>
 
+
 		<div  id="top">
 			<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip"
 				title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!"
