@@ -168,4 +168,5 @@
 		address: <a class='link1' href="mailto:info@fitnett.com">info@fitnett.com</a>
 	</p>
 </div>
+</div>
 </body>
