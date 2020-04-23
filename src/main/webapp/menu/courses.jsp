@@ -125,18 +125,8 @@
     }
     </script>	
     
-    <script>
-    function allCategories(){
-        $.getJSON("/red/menu/AllCategoriesMenu", function(categoriesList){
-            console.log(categoriesList);
-            $.each(coursesList, function(index, item) {
-                $("<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">").text(item.categoryName).appendTo("#categories");
-            })
-        });
-    }
-    </script>
     
-        <script>
+    <script>
     function allCategories(){
         $.getJSON("/red/menu/AllCategoriesMenu", function(categoriesList){
             console.log(categoriesList);
