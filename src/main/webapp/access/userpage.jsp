@@ -111,7 +111,6 @@
 	</div>
 	<br>
 
-
 	<div id="manageCourses" class="script">
 		<h2 class="text-center text-danger text-bold">Manage Courses</h2>
 		<hr class='hr1'>
@@ -120,7 +119,7 @@
 		<div class="dropdown show">
 			<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
 				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Course Category </a> 
+				aria-expanded="false"> Course Category </a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 				<c:forEach var="category" items="${allCategories}">
 					<a class="dropdown-item"
@@ -137,13 +136,17 @@
 				<table class="table" id="tableofcourses">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col">New Courses</th>
+							<th scope="col-5">Available Courses</th>
+							<th scope="col-5">Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="course" items="${newCourses}">
 							<tr id='courserow' class="">
 								<td>${course.courseName}</td>
+								<td>
+									<button type="button" class="btn btn-outline-danger">Sign
+										Up!</button>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -151,16 +154,38 @@
 			</c:if>
 
 			<c:if test="${oldCourses.size() != 0}">
+<!-- 				<div class="container rounded shadow p-3 mb-5 bg-white border border-dark"> -->
+<!-- 					<div class="row"> -->
+<!-- 						<div class="col-9"><b>Your Subscriptions</b></div> -->
+<!-- 						<div class="col-3"><b>Action</b></div> -->
+<!-- 					</div> -->
+<!-- 					<hr class="hrtable"> -->
+<!-- 					<br> -->
+<%-- 					<c:forEach var="course" items="${oldCourses}"> --%>
+<!-- 					<div class="row"> -->
+<%-- 							<div class="col-9">${course.courseName}</div> --%>
+<!-- 							<div class="col-3"><button type="button" class="btn btn-outline-danger ">  -->
+<!-- 							Cancel Subscription</button></div> -->
+							
+<!-- 					</div> -->
+<!-- 					<br> -->
+<%-- 					</c:forEach> --%>
+<!-- 				</div> -->
 				<table class="table" id="tableofcourses">
 					<thead class="thead-light">
 						<tr>
-							<th scope="col">Old Courses</th>
+							<th scope="col">Your Subscriptions</th>
+							<th scope="col">Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="course" items="${oldCourses}">
 							<tr id='courserow' class="">
 								<td>${course.courseName}</td>
+								<td class="table-warning">
+									<button type="button" class="btn btn-outline-danger ">
+										Cancel Subscription</button>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
