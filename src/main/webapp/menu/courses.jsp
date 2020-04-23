@@ -88,24 +88,16 @@
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
 
-		<div class="dropdown show">
-			<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+		<div class="dropdown show" id = "categories">
+			<a class="btn btn-secondary dropdown-toggle" onclick = "allCategories()" href="#" role="button"
 				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> Course Category </a> 
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<c:forEach var="category" items="${allCategories}">
-					<a class="dropdown-item"
-						href="CourseCategory?choice=${category.categoryName}">
-						${category.categoryName}</a>
-				</c:forEach>
 			</div>
 		</div>
 
-		<div id = "categories"></div>
 
 	<button id = "testest" onclick = "test();" name ="choice" value="Aerobic"> CLIKK </button>
 
-</div>
 
 <br><br>
 <hr>
@@ -122,16 +114,27 @@
 	</div>
 
     <script>
-
     function test(){
         $.getJSON("/red/menu/AllCoursesMenu", function(coursesList){
             console.log(coursesList);
-            var ul = $("<ul>").appendTo($("#categories"));
+            var ul = $("<ul>").appendTo($("#courses"));
             $.each(coursesList, function(index, item) {
                 $("<li>").text(item.courseName).appendTo(ul);
             })
         });
     }
     </script>	
+    
+    
+    <script>
+    function allCategories(){
+        $.getJSON("/red/menu/AllCategoriesMenu", function(categoriesList){
+            console.log(categoriesList);
+            $.each(coursesList, function(index, item) {
+                $("<div class="dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">").text(item.categoryName).appendTo("#categories");
+            })
+        });
+    }
+    </script>
 
 </body>
