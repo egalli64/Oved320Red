@@ -81,7 +81,7 @@
 		<hr class='hr1'>
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
-		<div id = "test"></div>
+
 		<div class="dropdown">
 			<button id="categorychoice" class="btn btn-danger dropdown-toggle" type="button"
 				id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -97,15 +97,19 @@
 				<a class="dropdown-item" href="CourseCategory?choice=Zumba">Zumba</a>
 			</div>
 		</div>
+		<div id = "categories"></div>
 	</div>
 	
 	<script>
-	$(document).ready(function(){
-		$("#categorychoice").click(function(){
-			$("#test").load(AllCategoryCourses.jsp, "?=");
+	$(document).on("click", "#categorychoice", function(){
+		$.get("AllCoursesMenuServlet.java", function(responseCoursesList){
+			var $ul = $("<ul>").appendTo($("<#categories"));
+			$.each(responseCoursesList, function(index, item) {
+				$("<li>").text(item.categoryName).appendTo($ul);
+			})
 		});
-
-	})
+	});
+		
 </script>
 
 <br><br>
