@@ -113,28 +113,27 @@
 		<hr class='hr1'>
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
-<!-- 		<div class="dropdown show"> -->
-<!-- 			<a class="btn btn-secondary dropdown-toggle" href="#" role="button" -->
-<!-- 				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" -->
-<!-- 				aria-expanded="false"> Course Category </a>  -->
+		<div class="dropdown show">
+			<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> Course Category </a> 
 				
-			<select name="category">
-				<c:forEach var="catergory" items="${allCategories}">
-					<option>${category.categoryName}</option>
-				</c:forEach>
-			</select>
-			
-<!-- 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> -->
-<%-- 				<c:forEach var="catergory" items="${allCategories}"> --%>
-<!-- 					<a class="dropdown-item" -->
-<%-- 						href="CourseCategory?choice=${category.categoryName}"> --%>
-<%-- 						${category.categoryName}</a> --%>
+<!-- 			<select name="category"> -->
+<%-- 				<c:forEach var="category" items="${allCategories}"> --%>
+<%-- 					<option>${category.categoryName}</option> --%>
 <%-- 				</c:forEach> --%>
-<!-- 			</div> -->
+<!-- 			</select> -->
+			
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<c:forEach var="category" items="${allCategories}">
+					<a class="dropdown-item"
+						href="CourseCategory?choice=${category.categoryName}">
+						${category.categoryName}</a>
+				</c:forEach>
+			</div>
 		</div>
 
 		<br>
-
 		<c:if test="${param.choice != null}">
 			<c:if test="${newCourses.size() != 0}">
 				<table class="table" id="tableofcourses">
