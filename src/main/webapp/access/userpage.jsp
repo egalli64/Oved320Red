@@ -117,17 +117,10 @@
 		<hr class='hr1'>
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
-<!-- 		<div class="dropdown show"> -->
-<!-- 			<a class="btn btn-secondary dropdown-toggle" href="#" role="button" -->
-<!-- 				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" -->
-<!-- 				aria-expanded="false"> Course Category </a>  -->
-				
-<!-- 			<select name="category"> -->
-<%-- 				<c:forEach var="category" items="${allCategories}"> --%>
-<%-- 					<option>${category.categoryName}</option> --%>
-<%-- 				</c:forEach> --%>
-<!-- 			</select> -->
-			
+		<div class="dropdown show">
+			<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> Course Category </a> 
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 				<c:forEach var="category" items="${allCategories}">
 					<a class="dropdown-item"
