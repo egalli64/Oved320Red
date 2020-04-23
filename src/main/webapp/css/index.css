@@ -5,15 +5,15 @@
 	color: #ffffff;
 	border: 2px solid #ffffff;
 	font-weight: bold;
-
 }
 
 .logaccbtn {
+	position: absolute;
 	color: #ffffff;
 	border: 2px solid #ffffff;
 	font-weight: bold;
-
 }
+
 
 .topright{
 	position: absolute;
