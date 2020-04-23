@@ -61,6 +61,7 @@
   <a href="#" data-toggle="tooltip" title="Click 100 times to Win a...strong finger!" class="twitter"><i class="fa fa-twitter"></i></a>
 </div>
 <hr>
+<div class='container'>
 <div class="row menu">
 	<div class="col-sm">
 		<a class='menu1' data-toggle="tooltip" title="Courses" href="/red/menu/courses.jsp">Courses</a>
@@ -74,6 +75,7 @@
 	<div class="col-sm">
 		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
 	</div>
+</div>
 </div>
 <hr>
 

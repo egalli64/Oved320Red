@@ -29,37 +29,40 @@ public class UpdateUserServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		User myUser = (User) session.getAttribute("myUser");
-
-		String userName = request.getParameter("userName");
-		String password = request.getParameter("password");
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		String email = request.getParameter("email");
-		String phoneNumber = request.getParameter("phoneNumber");
-		String streetAddress = request.getParameter("streetAddress");
-		Date birthDate = Date.valueOf(request.getParameter("birthDate"));
-
+		
+		if (request.getParameter("control").equals("psn")) {
+			myUser.setFirstName(request.getParameter("firstName"));
+			myUser.setLastName(request.getParameter("lastName"));
+			myUser.setEmail(request.getParameter("email"));
+			myUser.setPhoneNumber(request.getParameter("phoneNumber"));
+			myUser.setStreetAddress(request.getParameter("streetAddress"));
+			Date date = Date.valueOf(request.getParameter("birthDate"));
+			myUser.setBirthDate(date.toLocalDate());
+		}
+		
+		if (request.getParameter("control").equals("un")) {
+			myUser.setUserName(request.getParameter("userName"));
+		}
+		
+		if (request.getParameter("control").equals("ps")) {
+			myUser.setPassword(request.getParameter("password1"));
+		}
+		
+		String userName = myUser.getUserName();
+		String password = myUser.getPassword();
+		String firstName = myUser.getFirstName();
+		String lastName = myUser.getLastName();
+		String email = myUser.getEmail();
+		String phoneNumber = myUser.getPhoneNumber();
+		String streetAddress = myUser.getStreetAddress();
+		Date birthDate = Date.valueOf(myUser.getBirthDate());
+		int id = myUser.getUserID();
+		
 		try (UserDao daoU = new UserDao(ds);) {
+			
+			daoU.updateUser(birthDate, userName, firstName, lastName, email, 
+					phoneNumber, streetAddress, password, id);
 
-			daoU.updateUser(birthDate, userName, firstName, lastName, email, phoneNumber, 
-					streetAddress, password);
-
-			if (userName == null && password == null) {
-				myUser.setFirstName(firstName);
-				myUser.setLastName(lastName);
-				myUser.setEmail(email);
-				myUser.setPhoneNumber(phoneNumber);
-				myUser.setStreetAddress(streetAddress);
-				myUser.setBirthDate(birthDate.toLocalDate());
-			}
-
-			if (userName != null) {
-				myUser.setUserName(userName);
-			}
-
-			if (password != null) {
-				myUser.setPassword(password);
-			}
 
 			session.setAttribute("myUser", myUser);
 			RequestDispatcher rd = request.getRequestDispatcher("myAccount.jsp");
