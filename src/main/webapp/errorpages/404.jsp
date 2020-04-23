@@ -24,7 +24,7 @@
 
 	<div>
 		<p class="m-5 error">
-			Go back to <a href="/red/index.jsp"> Home</a>.
+			Back to <a href="/red/index.jsp"> Home</a>.
 		</p>
 	
 

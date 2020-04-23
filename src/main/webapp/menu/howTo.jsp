@@ -82,18 +82,33 @@
 	<p>istruzioni</p>
 </div>
 
-<br><br>
-<hr>
-<div id="contact" class='text-white text-center'>
-	<h5>Contacts</h5>
-	<p >
-		tel:<a class='link1' href="tel:+39/3492464512">+39/3492464512</a>&emsp; &mdash; &emsp;E-mail
-		address: <a class='link1' href="mailto:info@fitnett.com">info@fitnett.com</a>
-	</p>
-</div>
-<hr>
-	<div class ='text-center'>
-		<a class='link1' href="/red/index.jsp">Back to homepage</a>
+	<br>
+    <hr>
+	<div id="contact" class='text-white container-fluid text-center'>
+		<h5>Contacts</h5>
+		<div class="row">
+			<div class="col-sm-5 text-right">
+				tel: <a class='link1' href="tel:+39/3492464512"> +39/ 3492464512
+				</a>
+			</div>
+			<div class="col-sm-2 text-center">&mdash;</div>
+			<div class="col-sm-5 text-left">
+				e-mail address: <a class='link1' href="mailto:info@fitnett.com">
+					info@fitnett.com</a>
+			</div>
+		</div>
 	</div>
-	
+	<hr>
+	<div class='text-white container-fluid text-center'>
+		<div class="row">
+			<div class='col-sm-6 text-right'>
+				<a class='link1' href="#top"><i>Back to Top</i></a>
+			</div>
+			<div class='col-sm-6 text-left'>
+				<a class='link1' href="/red/index.jsp"><i>Back to Home</i></a>
+			</div>
+		</div>
+	</div>
+	<br>
+
 </body>
