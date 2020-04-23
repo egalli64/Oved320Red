@@ -35,6 +35,7 @@
 	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="/red/js/coursehover.js" defer></script>
+<script type="text/javascript" src="/red/js/showHide.js" defer></script>
 <%--Rest --%>
 <meta charset="UTF-8">
 <title>Personal Page</title>
@@ -88,7 +89,6 @@
 			${myUser.firstName} ${myUser.lastName} -</h2>
 		<hr class='hr1'>
 		<br>
-		<!-- inserire bottone modifica dati che rimanda a altra jsp -->
 
 
 		<div class="container">
@@ -105,41 +105,106 @@
 		<br>
 		<hr class='hr1'>
 		<br>
-		<div class='container'>
+
+		<div id='hide1'>
 			<div class='text-right'>
-				<a href='/red/loggedin/modifyAccount.jsp'><button type="button"
-						class="btn btn-outline-danger">Modify personal
-						informations</button></a>
+				<button type="button" onclick="showHide()"
+					class="btn btn-outline-danger">Modify personal
+					informations</button>
 			</div>
-			<!-- inserire password - se facciamo cose separate? una per modificare username, una per password e una per tutti i dati personali? -->
-			<div class="row">
-				<div class="col-3">First Name:</div>
-				<div class="col">${myUser.firstName}</div>
+			<div class='container'>
+				<div class="row">
+					<div class="col-3">First Name:</div>
+					<div class="col">${myUser.firstName}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Last Name:</div>
+					<div class="col">${myUser.lastName}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Birth Date:</div>
+					<div class="col">${myUser.birthDate}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">E-mail:</div>
+					<div class="col">${myUser.email}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Phone number:</div>
+					<div class="col">${myUser.phoneNumber}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Address:</div>
+					<div class="col">${myUser.streetAddress}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Subscription date:</div>
+					<div class="col">${myUser.subscrDate}</div>
+				</div>
 			</div>
-			<div class="row">
-				<div class="col-3">Last Name:</div>
-				<div class="col">${myUser.lastName}</div>
-			</div>
-			<div class="row">
-				<div class="col-3">Birth Date:</div>
-				<div class="col">${myUser.birthDate}</div>
-			</div>
-			<div class="row">
-				<div class="col-3">E-mail:</div>
-				<div class="col">${myUser.email}</div>
-			</div>
-			<div class="row">
-				<div class="col-3">Phone number:</div>
-				<div class="col">${myUser.phoneNumber}</div>
-			</div>
-			<div class="row">
-				<div class="col-3">Address:</div>
-				<div class="col">${myUser.streetAddress}</div>
-			</div>
-			<div class="row">
-				<div class="col-3">Subscription date:</div>
-				<div class="col">${myUser.subscrDate}</div>
-			</div>
+		</div>
+
+		<div id='show1' style="display: none">
+
+			<br>
+			<form action='UpdateUser' method='post'>
+				<div class="form-group row">
+					<label for="firstName" class="col-3 col-form-label">First
+						Name:</label>
+					<div class="col-9">
+						<input id='firstName' value='${myUser.getFirstName()}'
+							name='firstName' required class="form-control">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="lastName" class="col-3 col-form-label">Last
+						Name:</label>
+					<div class="col-9">
+						<input id='lastName' value='${myUser.getLastName()}'
+							name='lastName' required class="form-control">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="birthDate" class="col-3 col-form-label">Birth
+						Date:</label>
+					<div class="col-9">
+						<input id='birthdate' type="date" value='${myUser.getBirthDate()}'
+							name='birthDate' required class="form-control">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="email" class="col-3 col-form-label">E-mail:</label>
+					<div class="col-9">
+						<input type="email" id='email' value='${myUser.getEmail()}'
+							name='email' required class="form-control">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="phoneNumber" class="col-3 col-form-label">Phone
+						number:</label>
+					<div class="col-9">
+						<input id='phoneNumber' value='${myUser.getPhoneNumber()}'
+							name='phoneNumber' required class="form-control">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="streetAddress" class="col-3 col-form-label">Address:</label>
+					<div class="col-9">
+						<input id='streetAddress' value='${myUser.getStreetAddress()}'
+							name='streetAddress' required class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class='col-aauto text-center m-3'>
+						<button type="submit" class="btn btn-outline-danger">Submit</button>
+					</div>
+<!-- 					<div class='col-auto text-center m-3'> -->
+<!-- 						<button type="button" onclick="showHide()" -->
+<!-- 							class="btn btn-outline-danger">Close</button> -->
+<!-- 					</div> -->
+				</div>
+			</form>
 		</div>
 
 

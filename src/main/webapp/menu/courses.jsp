@@ -102,21 +102,6 @@
 		<div id = "categories"></div>
 
 	<button id = "testest" onclick = "test()" name ="choice" value="Aerobic"> CLIKK </button>
-	
-	<script>
-	function test(){
-		$.getJSON("/red/servletMenu/AllCoursesMenu", function(coursesList){
-			console.log(coursesList);
-			var ul = $("<ul>").appendTo($("#categories"));
-			$.each(coursesList, function(index, item) {
-				$("<li>").text(item.courseName).appendTo(ul);
-			})
-		});
-	}
-	</script>
-
-
-
 <br><br>
 <hr>
 <div id="contact" class='text-white text-center'>
@@ -130,6 +115,18 @@
 	<div class ='text-center'>
 		<a class='link1' href="/red/index.jsp">Back to homepage</a>
 	</div>
-	
+
+    <script>
+
+    function test(){
+        $.getJSON("/red/menu/AllCoursesMenu", function(coursesList){
+            console.log(coursesList);
+            var ul = $("<ul>").appendTo($("#categories"));
+            $.each(coursesList, function(index, item) {
+                $("<li>").text(item.courseName).appendTo(ul);
+            })
+        });
+    }
+    </script>	
 
 </body>

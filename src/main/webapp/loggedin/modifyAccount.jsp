@@ -90,7 +90,7 @@
 		<hr class='hr1'>
 		<br>
 
-		<form action='UpdateUser?current=personal' method='post'>
+		<form action='UpdateUser' method='post'>
 			<div class="form-group row">
 				<label for="firstName" class="col-3 col-form-label">First
 					Name:</label>
