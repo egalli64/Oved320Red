@@ -17,7 +17,7 @@ import com.google.gson.Gson;
 import dao.CategoryDao;
 import javaBeans.Category;
 
-@WebServlet("/menu/AllCoursesMenu")
+@WebServlet("/menu/AllCategoriesMenu")
 public class AllCategoriesMenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
