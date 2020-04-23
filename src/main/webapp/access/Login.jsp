@@ -80,7 +80,6 @@
 		</div>
 	</div>
 
-
 	<!-- 	va spostato in un documento javascript -->
 	<script>
 		function toggle() {
