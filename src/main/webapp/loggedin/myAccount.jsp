@@ -72,7 +72,7 @@
 				href="/red/access/userpage.jsp#manageCourses">Manage courses</a>
 		</div>
 		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Personal account"
+			<a class='menu1' data-toggle="tooltip" title="Personal account"
 				href="/red/loggedin/myAccount.jsp">My account</a>
 		</div>
 		<div class="col-sm">
@@ -80,50 +80,76 @@
 				href="#contact">Contacts</a>
 		</div>
 	</div>
+
 	<hr>
 
-
 	<div class="script">
-		<h2 class="text-center text-danger text-bold ">${param.courseName}
-		</h2>
-		<h2 class="text-center text-danger text-bold ">Lesson ${param.id}
-		</h2>
-		<hr class='hr1'>
-
-		<br>
-		<div class="embed-responsive embed-responsive-16by9">
-			<iframe width="560" height="315" src="${param.url}" frameborder="0"
-				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
-		</div>
-		<br>
-		<hr class='hr1'>
-
-		<div class='text-center'>
-			<p>
-				<i>Instructor:</i> ${param.instructorName} ${param.instructorLast}
-			<p>
-			<p>
-				<i>Email: </i><a href="mailto:${param.instructorEmail}">${param.instructorEmail}</a>
-			</p>
-			<p>
-				<i>Role: </i>${param.instructorJobID}
-			</p>
-		</div>
+		<h2 class="text-center text-danger text-bold ">-
+			${myUser.firstName} ${myUser.lastName} -</h2>
 		<hr class='hr1'>
 		<br>
+		<!-- inserire bottone modifica dati che rimanda a altra jsp -->
 
-		<div class='text-center'>
-			<a href="/red/access/UserCourses?courseName=${param.courseName}"><button
-					type="button" class="btn btn-outline-danger text-center">Back
-					to ${param.courseName}</button></a>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-3">Username:</div>
+				<div class="col">${myUser.userName}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Password:</div>
+				<div class="col">****</div>
+			</div>
 		</div>
+
+		<br>
+		<hr class='hr1'>
+		<br>
+		<div class='container'>
+			<div class='text-right'>
+				<a href='/red/loggedin/modifyAccount.jsp'><button type="button"
+						class="btn btn-outline-danger">Modify personal
+						informations</button></a>
+			</div>
+			<!-- inserire password - se facciamo cose separate? una per modificare username, una per password e una per tutti i dati personali? -->
+			<div class="row">
+				<div class="col-3">First Name:</div>
+				<div class="col">${myUser.firstName}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Last Name:</div>
+				<div class="col">${myUser.lastName}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Birth Date:</div>
+				<div class="col">${myUser.birthDate}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">E-mail:</div>
+				<div class="col">${myUser.email}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Phone number:</div>
+				<div class="col">${myUser.phoneNumber}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Address:</div>
+				<div class="col">${myUser.streetAddress}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Subscription date:</div>
+				<div class="col">${myUser.subscrDate}</div>
+			</div>
+		</div>
+
+
+
 	</div>
 
 	<br>
 	<br>
-<hr>
-<div id="contact" class='text-white text-center'>
+	<hr>
+	<div id="contact" class='text-white text-center'>
 		<h5>Contacts</h5>
 		<p>
 			tel:<a class='link1' href="tel:+39/3492464512">+39/3492464512</a>&emsp;
@@ -135,6 +161,7 @@
 	<div class='text-center'>
 		<a class='link1' href="/red/index.jsp">Back to homepage</a>
 	</div>
+
 
 </body>
 </html>

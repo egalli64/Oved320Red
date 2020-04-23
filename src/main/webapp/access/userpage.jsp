@@ -68,11 +68,15 @@
 	<div class="row menu">
 		<div class="col-sm">
 			<a class='menu' data-toggle="tooltip" title="Courses"
-				href="#MyCourses">My Courses</a>
+				href="/red/access/userpage.jsp#MyCourses">My Courses</a>
 		</div>
 		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Instructors"
-				href="#explore">Explore</a>
+			<a class='menu' data-toggle="tooltip" title="Manage your courses"
+				href="/red/access/userpage.jsp#manageCourses">Manage courses</a>
+		</div>
+		<div class="col-sm">
+			<a class='menu' data-toggle="tooltip" title="Personal account"
+				href="/red/loggedin/myAccount.jsp">My account</a>
 		</div>
 		<div class="col-sm">
 			<a class='menu' data-toggle="tooltip" title="Contacts"

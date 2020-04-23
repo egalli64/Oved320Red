@@ -72,7 +72,7 @@
 				href="/red/access/userpage.jsp#manageCourses">Manage courses</a>
 		</div>
 		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Personal account"
+			<a class='menu1' data-toggle="tooltip" title="Personal account"
 				href="/red/loggedin/myAccount.jsp">My account</a>
 		</div>
 		<div class="col-sm">
@@ -80,50 +80,77 @@
 				href="#contact">Contacts</a>
 		</div>
 	</div>
-	<hr>
 
+	<hr>
+	<br>
 
 	<div class="script">
-		<h2 class="text-center text-danger text-bold ">${param.courseName}
-		</h2>
-		<h2 class="text-center text-danger text-bold ">Lesson ${param.id}
-		</h2>
-		<hr class='hr1'>
-
-		<br>
-		<div class="embed-responsive embed-responsive-16by9">
-			<iframe width="560" height="315" src="${param.url}" frameborder="0"
-				allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
-		</div>
-		<br>
-		<hr class='hr1'>
-
-		<div class='text-center'>
-			<p>
-				<i>Instructor:</i> ${param.instructorName} ${param.instructorLast}
-			<p>
-			<p>
-				<i>Email: </i><a href="mailto:${param.instructorEmail}">${param.instructorEmail}</a>
-			</p>
-			<p>
-				<i>Role: </i>${param.instructorJobID}
-			</p>
-		</div>
+		<h2 class="text-center text-danger text-bold ">-
+			${myUser.firstName} ${myUser.lastName} -</h2>
 		<hr class='hr1'>
 		<br>
 
-		<div class='text-center'>
-			<a href="/red/access/UserCourses?courseName=${param.courseName}"><button
-					type="button" class="btn btn-outline-danger text-center">Back
-					to ${param.courseName}</button></a>
-		</div>
+		<form action='UpdateUser?current=personal' method='post'>
+			<div class="form-group row">
+				<label for="firstName" class="col-3 col-form-label">First
+					Name:</label>
+				<div class="col-9">
+					<input id='firstName' value='${myUser.getFirstName()}'
+						name='firstName' required class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="lastName" class="col-3 col-form-label">Last
+					Name:</label>
+				<div class="col-9">
+					<input id='lastName' value='${myUser.getLastName()}'
+						name='lastName' required class="form-control">
+				</div>
+			</div>
+						<div class="form-group row">
+				<label for="birthDate" class="col-3 col-form-label">Birth Date:</label>
+				<div class="col-9">
+					<input id='birthdate' type="date" value='${myUser.getBirthDate()}'
+						name='birthDate' required class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="email" class="col-3 col-form-label">E-mail:</label>
+				<div class="col-9">
+					<input type="email" id='email' value='${myUser.getEmail()}'
+						name='email' required class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="phoneNumber" class="col-3 col-form-label">Phone
+					number:</label>
+				<div class="col-9">
+					<input id='phoneNumber' value='${myUser.getPhoneNumber()}'
+						name='phoneNumber' required class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="streetAddress" class="col-3 col-form-label">Address:</label>
+				<div class="col-9">
+					<input id='streetAddress' value='${myUser.getStreetAddress()}'
+						name='streetAddress' required class="form-control">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class='text-center m-3'>
+					<button type="submit" class="btn btn-danger">Modify</button>
+				</div>
+			</div>
+		</form>
+
+
 	</div>
 
 	<br>
 	<br>
-<hr>
-<div id="contact" class='text-white text-center'>
+	<hr>
+	<div id="contact" class='text-white text-center'>
 		<h5>Contacts</h5>
 		<p>
 			tel:<a class='link1' href="tel:+39/3492464512">+39/3492464512</a>&emsp;
@@ -135,6 +162,7 @@
 	<div class='text-center'>
 		<a class='link1' href="/red/index.jsp">Back to homepage</a>
 	</div>
+
 
 </body>
 </html>
