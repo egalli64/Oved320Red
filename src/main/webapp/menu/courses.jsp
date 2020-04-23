@@ -98,19 +98,19 @@
 			</div>
 		</div>
 		<div id = "categories"></div>
-	</div>
-	
+
+	<button id = "testest" name = "choice" value = "Aerobic"> CLIKK </button>
+
 	<script>
-	$(document).on("click", "#categorychoice", function(){
-		$.get("AllCoursesMenuServlet.java", function(responseCoursesList){
-			var $ul = $("<ul>").appendTo($("<#categories"));
-			$.each(responseCoursesList, function(index, item) {
-				$("<li>").text(item.categoryName).appendTo($ul);
+	$(document).on("click", "#testest", function(){
+		$.get("/AllCoursesMenuServlet", function(coursesList){
+			var ul = $("<ul>").appendTo($("#categories"));
+			$.each(coursesList, function(index, item) {
+				$("<li>").text(item.categoryName).appendTo(ul);
 			})
 		});
-	});
-		
-</script>
+	});		
+	</script>
 
 <br><br>
 <hr>

@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 import dao.UserDao;
 import javaBeans.User;
 
-@WebServlet("/access/UpdateUser")
+@WebServlet("/loggedin/UpdateUser")
 public class UpdateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -45,6 +45,7 @@ public class UpdateUserServlet extends HttpServlet {
 					streetAddress, password);
 	
 			myUser.setUserName(userName);
+			myUser.setPassword(password);
 			myUser.setFirstName(firstName);
 			myUser.setLastName(lastName);
 			myUser.setEmail(email);
@@ -53,7 +54,7 @@ public class UpdateUserServlet extends HttpServlet {
 			myUser.setBirthDate(birthDate.toLocalDate());
 			
 			session.setAttribute("myUser", myUser);
-			RequestDispatcher rd = request.getRequestDispatcher("XXXXX.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("myAccount.jsp");
 			rd.forward(request, response);
 
 		}

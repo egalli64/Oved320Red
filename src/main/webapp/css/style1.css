@@ -80,8 +80,6 @@ a.link1:link, a.link1:visited {
 	text-decoration: none;
 }
 
-/* prova */
-
 a.link1:hover, a.link1:active {
 	background-color: white;
 	color: #d9534f;

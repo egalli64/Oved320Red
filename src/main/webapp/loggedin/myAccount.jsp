@@ -12,25 +12,24 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/red/css/style1.css" />
 <link rel="stylesheet" type="text/css" href="/red/css/index.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <%--JavaScript --%>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 	crossorigin="anonymous"></script>
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-<script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 	crossorigin="anonymous"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
@@ -40,7 +39,6 @@
 <meta charset="UTF-8">
 <title>Personal Page</title>
 </head>
-
 
 
 <body>
@@ -63,7 +61,6 @@
 		</div>
 	</div>
 
-
 	<hr>
 	<div class="row menu">
 		<div class="col-sm">
@@ -75,7 +72,7 @@
 				href="/red/access/userpage.jsp#manageCourses">Manage courses</a>
 		</div>
 		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Personal account"
+			<a class='menu1' data-toggle="tooltip" title="Personal account"
 				href="/red/loggedin/myAccount.jsp">My account</a>
 		</div>
 		<div class="col-sm">
@@ -83,105 +80,74 @@
 				href="#contact">Contacts</a>
 		</div>
 	</div>
+
 	<hr>
 
-	<br>
-
-	<div id='MyCourses' class="script">
-		<h2 class="text-center text-danger text-bold">My Courses</h2>
+	<div class="script">
+		<h2 class="text-center text-danger text-bold ">-
+			${myUser.firstName} ${myUser.lastName} -</h2>
 		<hr class='hr1'>
 		<br>
-		<table class="table" id="tableofcourses">
-			<!-- 		 <thead class="thead-light"> -->
-			<!-- 			<tr> -->
-			<!-- 				<th scope="col">#</th> -->
-			<!-- 			</tr> -->
-			<!-- 		</thead> -->
-			<tbody>
-				<c:forEach var="course" items="${myCourses}">
-					<tr id='courserow' class="">
-						<td
-							onclick="location='UserCourses?courseName=${course.courseName}'">
-							${course.courseName}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-
-	</div>
-	<br>
+		<!-- inserire bottone modifica dati che rimanda a altra jsp -->
 
 
-	<div id="manageCourses" class="script">
-		<h2 class="text-center text-danger text-bold">Manage Courses</h2>
-		<hr class='hr1'>
-		<br>
-		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
-<!-- 		<div class="dropdown show"> -->
-<!-- 			<a class="btn btn-secondary dropdown-toggle" href="#" role="button" -->
-<!-- 				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" -->
-<!-- 				aria-expanded="false"> Course Category </a>  -->
-				
-<!-- 			<select name="category"> -->
-<%-- 				<c:forEach var="category" items="${allCategories}"> --%>
-<%-- 					<option>${category.categoryName}</option> --%>
-<%-- 				</c:forEach> --%>
-<!-- 			</select> -->
-			
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<c:forEach var="category" items="${allCategories}">
-					<a class="dropdown-item"
-						href="CourseCategory?choice=${category.categoryName}">
-						${category.categoryName}</a>
-				</c:forEach>
+		<div class="container">
+			<div class="row">
+				<div class="col-3">Username:</div>
+				<div class="col">${myUser.userName}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Password:</div>
+				<div class="col">****</div>
 			</div>
 		</div>
 
 		<br>
+		<hr class='hr1'>
+		<br>
+		<div class='container'>
+			<div class='text-right'>
+				<a href='/red/loggedin/modifyAccount.jsp'><button type="button"
+						class="btn btn-outline-danger">Modify personal
+						informations</button></a>
+			</div>
+			<!-- inserire password - se facciamo cose separate? una per modificare username, una per password e una per tutti i dati personali? -->
+			<div class="row">
+				<div class="col-3">First Name:</div>
+				<div class="col">${myUser.firstName}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Last Name:</div>
+				<div class="col">${myUser.lastName}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Birth Date:</div>
+				<div class="col">${myUser.birthDate}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">E-mail:</div>
+				<div class="col">${myUser.email}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Phone number:</div>
+				<div class="col">${myUser.phoneNumber}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Address:</div>
+				<div class="col">${myUser.streetAddress}</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Subscription date:</div>
+				<div class="col">${myUser.subscrDate}</div>
+			</div>
+		</div>
 
-		<c:if test="${param.choice != null}">
-			<c:if test="${newCourses.size() != 0}">
-				<table class="table" id="tableofcourses">
-					<thead class="thead-light">
-						<tr>
-							<th scope="col">New Courses</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="course" items="${newCourses}">
-							<tr id='courserow' class="">
-								<td>${course.courseName}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
 
-			<c:if test="${oldCourses.size() != 0}">
-				<table class="table" id="tableofcourses">
-					<thead class="thead-light">
-						<tr>
-							<th scope="col">Old Courses</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="course" items="${oldCourses}">
-							<tr id='courserow' class="">
-								<td>${course.courseName}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-
-		</c:if>
 
 	</div>
 
-
 	<br>
-
-
+	<br>
 	<hr>
 	<div id="contact" class='text-white text-center'>
 		<h5>Contacts</h5>
@@ -194,8 +160,8 @@
 	<hr>
 	<div class='text-center'>
 		<a class='link1' href="/red/index.jsp">Back to homepage</a>
-
 	</div>
+
 
 </body>
 </html>

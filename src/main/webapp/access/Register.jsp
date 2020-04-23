@@ -51,7 +51,7 @@
 									value='${lastName}' name='lastName' required class="form-control">
 							</div>
 							<div class="form-group">
-								<label for='email'> Email</label> <input id='email' name='email'
+								<label for='email'> Email</label> <input type="email"  id='email' name='email'
 									value='${email}' required class="form-control">
 							</div>
 							<div class="form-group">
