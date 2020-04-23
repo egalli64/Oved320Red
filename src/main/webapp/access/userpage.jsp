@@ -51,16 +51,6 @@
 			src='/red/img/logo.png'></a>
 		<div class="topright">
 			<div class="row">
-<<<<<<< HEAD
-				<!-- modificare stile -->
-				<a href='/red/access/userpage.jsp'>Welcome, ${myUser.userName}
-					&nbsp; </a>
-			</div>
-			<div class="row">
-				<a href='/red/access/Logout'><button class='btn logaccbtn m-1'
-						type='button'>
-						<span class="m-2">LOG OUT</span>
-=======
 				<a class='link1' href='/red/access/userpage.jsp'>Welcome,
 					${myUser.userName}!</a>
 			</div>
@@ -68,7 +58,6 @@
 				<a href='/red/access/Logout'><button class='btn logaccbtn m-1'
 						type='button'>
 						<span class="m-2">LOGOUT</span>
->>>>>>> branch 'master' of https://github.com/egalli64/Oved320Red
 					</button></a>
 			</div>
 		</div>
