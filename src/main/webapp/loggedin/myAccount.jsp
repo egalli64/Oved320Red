@@ -63,6 +63,7 @@
 	</div>
 
 	<hr>
+	<div class='container'>
 	<div class="row menu">
 		<div class="col-sm">
 			<a class='menu' data-toggle="tooltip" title="Courses"
@@ -81,6 +82,7 @@
 				href="#contact">Contacts</a>
 		</div>
 	</div>
+	</div>
 
 	<hr>
 
@@ -90,123 +92,149 @@
 		<hr class='hr1'>
 		<br>
 
-
-		<div class="container">
-			<div class="row">
-				<div class="col-3">Username:</div>
-				<div class="col">${myUser.userName}</div>
+		<div>
+			<div id='userName1'>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-3 align-middle">Username:</div>
+						<div class="col-auto align-middle">${myUser.userName}</div>
+						<div class='col-auto align-middle'>
+							<button type="button"
+								onclick="showHide('userName1', 'userName2')"
+								class="btn btn-outline-danger">Modify Username</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="row">
-				<div class="col-3">Password:</div>
-				<div class="col">****</div>
+			<div id='userName2' style="display: none">
+				<br>
+				<form action='UpdateUser?control=un' method='post'>
+					<div class="form-group row">
+						<label for="userName" class="col-3 col-form-label">Username:</label>
+						<div class="col">
+							<input id='userName' value='${myUser.getUserName()}'
+								name='userName' required class="form-control">
+						</div>
+						<div class='col-auto'>
+							<button type="submit" class="btn btn-outline-danger">Submit</button>
+						</div>
+					</div>
+				</form>
+
 			</div>
 		</div>
+
+		<br>
+
+		<div class="row">
+			<div class="col-3">Password:</div>
+			<div class="col">****</div>
+		</div>
+
 
 		<br>
 		<hr class='hr1'>
 		<br>
 
-		<div id='hide1'>
-			<div class='text-right'>
-				<button type="button" onclick="showHide()"
-					class="btn btn-outline-danger">Modify personal
-					informations</button>
+		<div>
+			<div id='personal1'>
+				<div class='text-right'>
+					<button type="button" onclick="showHide('personal1', 'personal2')"
+						class="btn btn-outline-danger">Modify personal
+						informations</button>
+				</div>
+				<div class='container-fluid'>
+					<div class="row">
+						<div class="col-3">First Name:</div>
+						<div class="col">${myUser.firstName}</div>
+					</div>
+					<div class="row">
+						<div class="col-3">Last Name:</div>
+						<div class="col">${myUser.lastName}</div>
+					</div>
+					<div class="row">
+						<div class="col-3">Birth Date:</div>
+						<div class="col">${myUser.birthDate}</div>
+					</div>
+					<div class="row">
+						<div class="col-3">E-mail:</div>
+						<div class="col">${myUser.email}</div>
+					</div>
+					<div class="row">
+						<div class="col-3">Phone number:</div>
+						<div class="col">${myUser.phoneNumber}</div>
+					</div>
+					<div class="row">
+						<div class="col-3">Address:</div>
+						<div class="col">${myUser.streetAddress}</div>
+					</div>
+					<div class="row">
+						<div class="col-3">Subscription date:</div>
+						<div class="col">${myUser.subscrDate}</div>
+					</div>
+				</div>
 			</div>
-			<div class='container'>
-				<div class="row">
-					<div class="col-3">First Name:</div>
-					<div class="col">${myUser.firstName}</div>
-				</div>
-				<div class="row">
-					<div class="col-3">Last Name:</div>
-					<div class="col">${myUser.lastName}</div>
-				</div>
-				<div class="row">
-					<div class="col-3">Birth Date:</div>
-					<div class="col">${myUser.birthDate}</div>
-				</div>
-				<div class="row">
-					<div class="col-3">E-mail:</div>
-					<div class="col">${myUser.email}</div>
-				</div>
-				<div class="row">
-					<div class="col-3">Phone number:</div>
-					<div class="col">${myUser.phoneNumber}</div>
-				</div>
-				<div class="row">
-					<div class="col-3">Address:</div>
-					<div class="col">${myUser.streetAddress}</div>
-				</div>
-				<div class="row">
-					<div class="col-3">Subscription date:</div>
-					<div class="col">${myUser.subscrDate}</div>
-				</div>
+
+			<div id='personal2' style="display: none">
+
+				<br>
+				<form action='UpdateUser?control=psn' method='post'>
+					<div class="form-group row">
+						<label for="firstName" class="col-3 col-form-label">First
+							Name:</label>
+						<div class="col-9">
+							<input id='firstName' value='${myUser.getFirstName()}'
+								name='firstName' required class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="lastName" class="col-3 col-form-label">Last
+							Name:</label>
+						<div class="col-9">
+							<input id='lastName' value='${myUser.getLastName()}'
+								name='lastName' required class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="birthDate" class="col-3 col-form-label">Birth
+							Date:</label>
+						<div class="col-9">
+							<input id='birthdate' type="date"
+								value='${myUser.getBirthDate()}' name='birthDate' required
+								class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="email" class="col-3 col-form-label">E-mail:</label>
+						<div class="col-9">
+							<input type="email" id='email' value='${myUser.getEmail()}'
+								name='email' required class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="phoneNumber" class="col-3 col-form-label">Phone
+							number:</label>
+						<div class="col-9">
+							<input id='phoneNumber' value='${myUser.getPhoneNumber()}'
+								name='phoneNumber' required class="form-control">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="streetAddress" class="col-3 col-form-label">Address:</label>
+						<div class="col-9">
+							<input id='streetAddress' value='${myUser.getStreetAddress()}'
+								name='streetAddress' required class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class='col-aauto text-center m-3'>
+							<button type="submit" class="btn btn-outline-danger">Submit</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
-
-		<div id='show1' style="display: none">
-
-			<br>
-			<form action='UpdateUser' method='post'>
-				<div class="form-group row">
-					<label for="firstName" class="col-3 col-form-label">First
-						Name:</label>
-					<div class="col-9">
-						<input id='firstName' value='${myUser.getFirstName()}'
-							name='firstName' required class="form-control">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="lastName" class="col-3 col-form-label">Last
-						Name:</label>
-					<div class="col-9">
-						<input id='lastName' value='${myUser.getLastName()}'
-							name='lastName' required class="form-control">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="birthDate" class="col-3 col-form-label">Birth
-						Date:</label>
-					<div class="col-9">
-						<input id='birthdate' type="date" value='${myUser.getBirthDate()}'
-							name='birthDate' required class="form-control">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="email" class="col-3 col-form-label">E-mail:</label>
-					<div class="col-9">
-						<input type="email" id='email' value='${myUser.getEmail()}'
-							name='email' required class="form-control">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="phoneNumber" class="col-3 col-form-label">Phone
-						number:</label>
-					<div class="col-9">
-						<input id='phoneNumber' value='${myUser.getPhoneNumber()}'
-							name='phoneNumber' required class="form-control">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="streetAddress" class="col-3 col-form-label">Address:</label>
-					<div class="col-9">
-						<input id='streetAddress' value='${myUser.getStreetAddress()}'
-							name='streetAddress' required class="form-control">
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<div class='col-aauto text-center m-3'>
-						<button type="submit" class="btn btn-outline-danger">Submit</button>
-					</div>
-<!-- 					<div class='col-auto text-center m-3'> -->
-<!-- 						<button type="button" onclick="showHide()" -->
-<!-- 							class="btn btn-outline-danger">Close</button> -->
-<!-- 					</div> -->
-				</div>
-			</form>
-		</div>
-
 
 
 	</div>
@@ -226,7 +254,5 @@
 	<div class='text-center'>
 		<a class='link1' href="/red/index.jsp">Back to homepage</a>
 	</div>
-
-
 </body>
 </html>

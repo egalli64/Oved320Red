@@ -29,10 +29,9 @@ public class UserDao implements Closeable {
 	private static final String SET_USER = "INSERT INTO users (birth_date, user_name, first_name, "
 			+ "last_name, e_mail, phone_number, address, subscr_date, passw) values(?, ?, ?, ?, ?, "
 			+ "?, ?, CURDATE(), ?)";
-	private static final String UPDATE_USER = "UPDATE birth_date, user_name, first_name, last_name, "
-			+ "e_mail, phone_number, address, subscr_date, passw FROM users SET birth_date = ?, user_name = ?, first_name = ?, last_name = ? "
-			+ "e_mail = ?, phone_number = ?, address = ?, subscr_date = ?, passw = ? "
-			+ "WHERE user_name = ?";
+	private static final String UPDATE_USER = "UPDATE users SET birth_date = ?, user_name = ?, first_name = ?, last_name = ?,"
+			+ "e_mail = ?, phone_number = ?, address = ?, passw = ? "
+			+ "WHERE user_id= ?";
 
 	private Connection conn;
 
@@ -140,7 +139,7 @@ public class UserDao implements Closeable {
 	}
 	
 	public void updateUser(Date birthDate, String userName, String firstName, String lastName, String email,
-			String phoneNumber, String streetAddress, String password) {
+			String phoneNumber, String streetAddress, String password, int id) {
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(UPDATE_USER)) {
 			prepStmt.setDate(1, birthDate);
@@ -151,6 +150,7 @@ public class UserDao implements Closeable {
 			prepStmt.setString(6, phoneNumber);
 			prepStmt.setString(7, streetAddress);
 			prepStmt.setString(8, password);
+			prepStmt.setInt(9, id);
 
 			prepStmt.executeUpdate();
 		} catch (SQLException se) {

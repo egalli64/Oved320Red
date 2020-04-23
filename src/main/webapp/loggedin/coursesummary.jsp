@@ -61,6 +61,7 @@
 
 
 	<hr>
+	<div class='container'>
 	<div class="row menu">
 		<div class="col-sm">
 			<a class='menu' data-toggle="tooltip" title="Courses"
@@ -78,6 +79,7 @@
 			<a class='menu' data-toggle="tooltip" title="Contacts"
 				href="#contact">Contacts</a>
 		</div>
+	</div>
 	</div>
 	<hr>
 
