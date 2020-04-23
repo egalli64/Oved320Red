@@ -50,6 +50,8 @@
 	</c:if>
 </div>
 
+
+
 <div class="icon-bar">
   <a href="#" data-toggle="tooltip" title="Login with Facebook" class="facebook"><i class="fa fa-facebook"></i></a>
   <a href="#" data-toggle="tooltip" title="Click 100 times to Win a...strong finger!" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -75,11 +77,36 @@
 <br>
 
 <div class="script">
-	<h2 class="text-center text-danger text-bold">Our courses</h2>
-	<hr class='hr1'>
-	<br>
-	<p>lista dei corsi e costo</p>
-</div>
+		<h2 class="text-center text-danger text-bold">Explore</h2>                  
+		<hr class='hr1'>
+		<br>
+		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
+		<div id = "test"></div>
+		<div class="dropdown">
+			<button id="categorychoice" class="btn btn-danger dropdown-toggle" type="button"
+				id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Course Category</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">        
+				<a class="dropdown-item" href="CourseCategory?choice=Aerobic">Aerobica</a> 
+				<a class="dropdown-item" href="CourseCategory?choice=Dance">Danza</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Martial%20Arts">Arti Marziali</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Powerlifting">Powerlifting</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Boxe">Boxe</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Pilates">Pilates</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Yoga">Yoga</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Zumba">Zumba</a>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	$(document).ready(function(){
+		$("#categorychoice").click(function(){
+			$("#test").load(AllCategoryCourses.jsp, "?=");
+		});
+
+	})
+</script>
 
 <br><br>
 <hr>
