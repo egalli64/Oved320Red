@@ -182,7 +182,7 @@
 						<c:forEach var="course" items="${oldCourses}">
 							<tr id='courserow' class="">
 								<td>${course.courseName}</td>
-								<td class="table-warning">
+								<td>
 									<button type="button" class="btn btn-outline-danger ">
 										Cancel Subscription</button>
 								</td>
