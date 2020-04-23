@@ -88,15 +88,13 @@
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
 
-		<div class="dropdown show" id = "categories">
-			<a class="btn btn-secondary dropdown-toggle" onclick = "allCategories()" href="#" role="button"
-				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Course Category </a> 
-			</div>
+		<div class="dropdown show">
+			<a class="btn btn-secondary btn-lg btn-block" onclick = "allCategories();" role="button" aria-haspopup="true"
+				aria-expanded="false">Categories</a>				
+		<br>
 		</div>
-
-
-	<button id = "testest" onclick = "test();" name ="choice" value="Aerobic"> CLIKK </button>
+		<div id = "categories"></div>
+		</div>
 
 
 <br><br>
@@ -114,9 +112,8 @@
 	</div>
 
     <script>
-    function test(){
+    function allCourses(){
         $.getJSON("/red/menu/AllCoursesMenu", function(coursesList){
-            console.log(coursesList);
             var ul = $("<ul>").appendTo($("#courses"));
             $.each(coursesList, function(index, item) {
                 $("<li>").text(item.courseName).appendTo(ul);
@@ -130,8 +127,9 @@
     function allCategories(){
         $.getJSON("/red/menu/AllCategoriesMenu", function(categoriesList){
             console.log(categoriesList);
-            $.each(coursesList, function(index, item) {
-                $("<div class="dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">").text(item.categoryName).appendTo("#categories");
+            var ul = $("<div>").appendTo($("#categories"));
+            $.each(categoriesList, function(index, item) {
+                $("<button type='button' onclick = 'allCourses();' name = 'choice' value = '{{$item.categoryName->id}}' class='btn btn-danger btn-lg btn-block'>"item.categoryName"</button>".appendTo(ul);
             })
         });
     }
