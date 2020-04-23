@@ -58,7 +58,7 @@ public class CategoryDao implements Closeable {
 		return results;
 	}
 
-	public List<Course> getAllLessonUsers(String categoryName) { // K
+	public List<Course> getAllCategoryCourses(String categoryName) { // K
 		List<Course> results = new ArrayList<>();
 
 		try (PreparedStatement prepStmt = conn.prepareStatement(GET_ALL_CATEGORY_COURSES)) {

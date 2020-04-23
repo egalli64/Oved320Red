@@ -113,31 +113,28 @@
 	</div>
 	<br>
 
-	<div id='explore' class="script">
-		<h2 class="text-center text-danger text-bold">Explore</h2>
+	<div class="script">
+		<h2 class="text-center text-danger text-bold">Explore</h2>                
 		<hr class='hr1'>
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
 		<div class="dropdown">
-			<button id="categirychoice" class="btn btn-danger dropdown-toggle"
-				type="button" id="dropdownMenuButton" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false">Course Category</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="#">Aerobica</a> <a
-					class="dropdown-item" href="#">Danza</a> <a class="dropdown-item"
-					href="#">Arti Marziali</a> <a class="dropdown-item" href="#">Powerlifting</a>
+			<button id="categirychoice" class="btn btn-danger dropdown-toggle" type="button"
+				id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Course Category</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">        
+				<a class="dropdown-item" href="CourseCategory?choice=Aerobic">Aerobica</a> 
+				<a class="dropdown-item" href="CourseCategory?choice=Dance">Danza</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Martial%20Arts">Arti Marziali</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Powerlifting">Powerlifting</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Boxe">Boxe</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Pilates">Pilates</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Yoga">Yoga</a>
+				<a class="dropdown-item" href="CourseCategory?choice=Zumba">Zumba</a>
 			</div>
 		</div>
 	</div>
-	<%-- 	<c:if>   Se c'è una category choice, ovver se è Aerobica o Danza o Arti Marziali o powerlifting --%>
-	<%-- 				 Fai vedere la lista dei corsi all'interno di quella categoria alla quale NON si è iscritto con la possibilità di iscriversi --%>
-	<%-- 				 Fai vedere la lista dei corsi all'interno di quella categoria  alla quale SI è iscritto con la possibilità di disiscriversi --%>
-	<%-- 				 usa i corsi nella session --%>
 
-
-
-
-	<%-- 	</c:if> --%>
 
 	<br>
 
