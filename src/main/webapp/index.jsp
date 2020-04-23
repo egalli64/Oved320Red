@@ -57,7 +57,7 @@
 						<a class='link1' href='/red/access/userpage.jsp'>Welcome,
 							${myUser.userName}!</a>
 					</div>
-					<div class="container row">
+					<div class="row">
 						<a href='/red/access/Logout'><button class='btn logaccbtn m-1'
 								type='button'>
 								<span class="m-2">LOGOUT</span>
