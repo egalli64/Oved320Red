@@ -28,7 +28,8 @@ public class AllCoursesMenuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String categoryName = request.getParameter("choice");		
+		// String categoryName = request.getParameter("choice");	
+		String categoryName = "Aerobic";
 
 		try (CategoryDao categoryDao = new CategoryDao(ds);) {
 

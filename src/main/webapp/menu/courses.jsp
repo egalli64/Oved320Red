@@ -101,7 +101,10 @@
 
 		<div id = "categories"></div>
 
-	<button id = "testest" onclick = "test()" name ="choice" value="Aerobic"> CLIKK </button>
+	<button id = "testest" onclick = "test();" name ="choice" value="Aerobic"> CLIKK </button>
+
+</div>
+
 <br><br>
 <hr>
 <div id="contact" class='text-white text-center'>
