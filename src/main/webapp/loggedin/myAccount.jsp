@@ -109,7 +109,6 @@
 
 		<jsp:include page="personalInfo.jsp" />
 
-
 	</div>
 
 	<br>
