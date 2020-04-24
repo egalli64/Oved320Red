@@ -45,7 +45,6 @@ public class SubscribeUnsubscribeCourseServlet extends HttpServlet {
 			if (opt.equals("1")) {
 				daouc.setCourse(user.getUserID(), courseID);
 			}
-			
 		
 			// unsubscribe
 			else if (opt.equals("2")) {
