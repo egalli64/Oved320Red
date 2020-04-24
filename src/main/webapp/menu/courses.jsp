@@ -159,7 +159,7 @@
             console.log(categoriesList);
             var ul = $("<div>").appendTo($("#categories"));
             $.each(categoriesList, function(index, item) {
-            $("<button type='button' onclick = 'allCourses();' name = 'choice' value ='" + item.categoryName + "' class='btn btn-danger btn-lg btn-block'>").text(item.categoryName).appendTo(ul);
+            $("<button type='button' onclick = 'allCourses();' name = 'choice' value = " + item.categoryName + " class='btn btn-danger btn-lg btn-block'>").text(item.categoryName).appendTo(ul);
             })
         });
     }
