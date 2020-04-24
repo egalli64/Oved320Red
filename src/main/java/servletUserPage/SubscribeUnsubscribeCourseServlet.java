@@ -17,11 +17,13 @@ import javax.sql.DataSource;
 import dao.CourseDao;
 import dao.LessonDao;
 import dao.UserCourseDao;
+import dao.UserDao;
+import javaBeans.Course;
 import javaBeans.Lesson;
 import javaBeans.Staff;
 import javaBeans.User;
 
-@WebServlet(urlPatterns = { "/access/Subscribe", "/access/Usubscribe" })
+@WebServlet(urlPatterns = { "/access/Subscribe", "/access/Unsubscribe" })
 public class SubscribeUnsubscribeCourseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,48 +33,32 @@ public class SubscribeUnsubscribeCourseServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String path = request.getParameter("opt");
+		String opt = request.getParameter("opt");
 		String dum = request.getParameter("courseID");
 		int courseID = Integer.parseInt(dum);
-		String courseName = request.getParameter("courseName");
 
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("myUser");
 
-		try (UserCourseDao daouc = new UserCourseDao(ds);) {
+		try (UserCourseDao daouc = new UserCourseDao(ds); UserDao daou = new UserDao(ds);) {
 			// subscribe
-			if (path == "1") {
+			if (opt.equals("1")) {
 				daouc.setCourse(user.getUserID(), courseID);
-
-				try (CourseDao daoC = new CourseDao(ds); LessonDao daoL = new LessonDao(ds)) {
-					// versione base senza controlli sulla correttezza del nome del corso
-					// serve aggiungere get course by name per inserire il controllo sul fatto che
-					// il corso esista
-
-					List<Lesson> lessons = daoC.getAllCourseLessons(courseName);
-
-					List<Staff> instructors = new ArrayList<Staff>();
-
-					for (Lesson lesson : lessons) {
-						Staff instructor = daoL.getLessonStaff(lesson.getLessonID());
-						instructors.add(instructor);
-					}
-
-					request.setAttribute("courseID", courseID);
-					request.setAttribute("courseName", courseName);
-					request.setAttribute("courseLessons", lessons);
-					request.setAttribute("instructors", instructors);
-				}
-
 			}
+			
+		
 			// unsubscribe
-			else if (path == "2") {
+			else if (opt.equals("2")) {
 				daouc.deleteCourse(user.getUserID(), courseID);
 			}
+		
+		List<Course> courses = daou.getAllUserCourses(user.getUserName());
+		session.setAttribute("myCourses", courses);
 
-			RequestDispatcher rdright = request.getRequestDispatcher("../access/userpage.jsp");
-			rdright.forward(request, response);
-		}
+		RequestDispatcher rdright = request.getRequestDispatcher("../access/userpage.jsp");
+		rdright.forward(request, response);
+
 	}
 
+}
 }

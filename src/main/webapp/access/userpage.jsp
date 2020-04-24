@@ -66,24 +66,24 @@
 
 	<hr>
 	<div class='container'>
-	<div class="row menu">
-		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Courses"
-				href="/red/access/userpage.jsp#MyCourses">My Courses</a>
+		<div class="row menu">
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Courses"
+					href="/red/access/userpage.jsp#MyCourses">My Courses</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Manage your courses"
+					href="/red/access/userpage.jsp#manageCourses">Manage courses</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Personal account"
+					href="/red/loggedin/myAccount.jsp">My account</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Contacts"
+					href="#contact">Contacts</a>
+			</div>
 		</div>
-		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Manage your courses"
-				href="/red/access/userpage.jsp#manageCourses">Manage courses</a>
-		</div>
-		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Personal account"
-				href="/red/loggedin/myAccount.jsp">My account</a>
-		</div>
-		<div class="col-sm">
-			<a class='menu' data-toggle="tooltip" title="Contacts"
-				href="#contact">Contacts</a>
-		</div>
-	</div>
 	</div>
 	<hr>
 
@@ -146,10 +146,14 @@
 						<c:forEach var="course" items="${newCourses}">
 							<tr id='courserow' class="">
 								<td>${course.courseName}</td>
-								<td>
-								<a href="Subscribe?opt=1?courseID=${course.courseID}?courseName=${course.courseName}"><button type="button" class="btn btn-outline-danger">Sign
-										Up!</button></a>
-								</td>
+								<c:url value="../access/Subscribe" var="subscribe">
+									<c:param name="courseName" value="${course.courseName}" />
+									<c:param name="opt" value="1" />
+									<c:param name="courseID" value="${course.courseID}" />
+								</c:url>
+								<td><a href="${subscribe}"><button type="button"
+											class="btn btn-outline-danger">Sign Up!</button></a></td>
+
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -157,23 +161,23 @@
 			</c:if>
 
 			<c:if test="${oldCourses.size() != 0}">
-<!-- 				<div class="container rounded shadow p-3 mb-5 bg-white border border-dark"> -->
-<!-- 					<div class="row"> -->
-<!-- 						<div class="col-9"><b>Your Subscriptions</b></div> -->
-<!-- 						<div class="col-3"><b>Action</b></div> -->
-<!-- 					</div> -->
-<!-- 					<hr class="hrtable"> -->
-<!-- 					<br> -->
-<%-- 					<c:forEach var="course" items="${oldCourses}"> --%>
-<!-- 					<div class="row"> -->
-<%-- 							<div class="col-9">${course.courseName}</div> --%>
-<!-- 							<div class="col-3"><button type="button" class="btn btn-outline-danger ">  -->
-<!-- 							Cancel Subscription</button></div> -->
-							
-<!-- 					</div> -->
-<!-- 					<br> -->
-<%-- 					</c:forEach> --%>
-<!-- 				</div> -->
+				<!-- 				<div class="container rounded shadow p-3 mb-5 bg-white border border-dark"> -->
+				<!-- 					<div class="row"> -->
+				<!-- 						<div class="col-9"><b>Your Subscriptions</b></div> -->
+				<!-- 						<div class="col-3"><b>Action</b></div> -->
+				<!-- 					</div> -->
+				<!-- 					<hr class="hrtable"> -->
+				<!-- 					<br> -->
+				<%-- 					<c:forEach var="course" items="${oldCourses}"> --%>
+				<!-- 					<div class="row"> -->
+				<%-- 							<div class="col-9">${course.courseName}</div> --%>
+				<!-- 							<div class="col-3"><button type="button" class="btn btn-outline-danger ">  -->
+				<!-- 							Cancel Subscription</button></div> -->
+
+				<!-- 					</div> -->
+				<!-- 					<br> -->
+				<%-- 					</c:forEach> --%>
+				<!-- 				</div> -->
 				<table class="table" id="tableofcourses">
 					<thead class="thead-light">
 						<tr>
@@ -185,11 +189,16 @@
 						<c:forEach var="course" items="${oldCourses}">
 							<tr id='courserow' class="">
 								<td>${course.courseName}</td>
-								<td><button type="button" class="btn btn-outline-danger" onclick="location='Unsubscribe?courseName=${course.courseName}?opt=2?courseID=${course.courseID}'">
-										Cancel Subscription</button>
-								</td>
+								<c:url value="../access/Unsubscribe" var="unsubscribe">
+									<c:param name="courseName" value="${course.courseName}" />
+									<c:param name="opt" value="2" />
+									<c:param name="courseID" value="${course.courseID}" />
+								</c:url>
+								<td><a href="${unsubscribe}"><button type="button"
+											class="btn btn-outline-danger">Cancel Subscription</button></a></td>
 							</tr>
 						</c:forEach>
+
 					</tbody>
 				</table>
 			</c:if>
@@ -200,7 +209,7 @@
 
 
 	<br>
-    <hr>
+	<hr>
 	<div id="contact" class='text-white container-fluid text-center'>
 		<h5>Contacts</h5>
 		<div class="row">
