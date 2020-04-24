@@ -61,62 +61,89 @@
   <a href="#" data-toggle="tooltip" title="Click 100 times to Win a...strong finger!" class="twitter"><i class="fa fa-twitter"></i></a>
 </div>
 <hr>
-<div class='container'>
-<div class="row menu">
-	<div class="col-sm">
-		<a class='menu1' data-toggle="tooltip" title="Courses" href="/red/menu/courses.jsp">Courses</a>
+	<div class='container'>
+		<div class="row menu">
+			<div class="col-sm">
+				<a class='menu1' data-toggle="tooltip" title="Courses"
+					href="/red/menu/courses.jsp">Courses</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Instructors"
+					href="/red/menu/instructors.jsp">Instructors</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="How to Join"
+					href="/red/menu/howTo.jsp">How to join</a>
+			</div>
+			<div class="col-sm">
+				<a class='menu' data-toggle="tooltip" title="Contacts"
+					href="#contact">Contacts</a>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Instructors" href="/red/menu/instructors.jsp">Instructors</a>
-	</div>
-	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="How to Join" href="/red/menu/howTo.jsp">How to join</a>
-	</div>
-	<div class="col-sm">
-		<a class='menu' data-toggle="tooltip" title="Contacts" href="#contact">Contacts</a>
-	</div>
-</div>
-</div>
-<hr>
-
+	<hr>
 <br>
 <br>
 
-<div class="script">
-		<h2 class="text-center text-danger text-bold">Explore</h2>                  
+	<div class='script text-center'>
+		<h2 class="text-center text-danger text-bold">Explore</h2>
 		<hr class='hr1'>
 		<br>
 		<p>Scegli la categoria per scegliere i corsi ai quali iscriverti:</p>
 
-		<div class="dropdown show" id = "categories">
-			<a class="btn btn-secondary dropdown-toggle" onclick = "allCategories()" href="#" role="button"
-				id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Course Category </a> 
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 dropdown show text-center">
+				<a class="btn btn-secondary btn-lg btn-block"
+					onclick="allCategories();" role="button" aria-haspopup="true"
+					aria-expanded="false">Categories</a> <br>
 			</div>
+			<div class="col-sm-4"></div>
+
 		</div>
 
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4 dropdown show text-center">
+				<div id="categories"></div>
+			</div>
+			<div class="col-sm-4"></div>
 
-	<button id = "testest" onclick = "test();" name ="choice" value="Aerobic"> CLIKK </button>
-
-
-<br><br>
-<hr>
-<div id="contact" class='text-white text-center'>
-	<h5>Contacts</h5>
-	<p >
-		tel:<a class='link1' href="tel:+39/3492464512">+39/3492464512</a>&emsp; &mdash; &emsp;E-mail
-		address: <a class='link1' href="mailto:info@fitnett.com">info@fitnett.com</a>
-	</p>
-</div>
-<hr>
-	<div class ='text-center'>
-		<a class='link1' href="/red/index.jsp">Back to homepage</a>
+		</div>
 	</div>
 
+	<br>
+    <hr>
+	<div id="contact" class='text-white container-fluid text-center'>
+		<h5>Contacts</h5>
+		<div class="row">
+			<div class="col-sm-5 text-right">
+				tel: <a class='link1' href="tel:+39/3492464512"> +39/ 3492464512
+				</a>
+			</div>
+			<div class="col-sm-2 text-center">&mdash;</div>
+			<div class="col-sm-5 text-left">
+				e-mail address: <a class='link1' href="mailto:info@fitnett.com">
+					info@fitnett.com</a>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class='text-white container-fluid text-center'>
+		<div class="row">
+			<div class='col-sm-6 text-right'>
+				<a class='link1' href="#top"><i>Back to Top</i></a>
+			</div>
+			<div class='col-sm-6 text-left'>
+				<a class='link1' href="/red/index.jsp"><i>Back to Home</i></a>
+			</div>
+		</div>
+	</div>
+	<br>
+
     <script>
-    function test(){
+    function allCourses(){
         $.getJSON("/red/menu/AllCoursesMenu", function(coursesList){
-            console.log(coursesList);
             var ul = $("<ul>").appendTo($("#courses"));
             $.each(coursesList, function(index, item) {
                 $("<li>").text(item.courseName).appendTo(ul);
@@ -130,8 +157,9 @@
     function allCategories(){
         $.getJSON("/red/menu/AllCategoriesMenu", function(categoriesList){
             console.log(categoriesList);
-            $.each(coursesList, function(index, item) {
-                $("<div class="dropdown-menu\" aria-labelledby=\"dropdownMenuLink\">").text(item.categoryName).appendTo("#categories");
+            var ul = $("<div>").appendTo($("#categories"));
+            $.each(categoriesList, function(index, item) {
+                $("<button type='button' onclick = 'allCourses();' name = 'choice' value = '{{$item.categoryName->id}}' class='btn btn-danger btn-lg btn-block'>").text(item.categoryName).appendTo(ul);
             })
         });
     }

@@ -42,29 +42,29 @@
 
 <body>
 
-		<div  id="top">
-			<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip"
-				title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!"
-				src='/red/img/logo.png'></a>
-			<c:if test='${myUser.userName == null}'>
-				<a href='/red/access/Login.jsp'><button data-toggle="tooltip"
-						title="Login" class='btn logbt' type='button'>LOGIN</button></a>
-			</c:if>
-			<c:if test='${myUser.userName != null}'>
-				<div class="topright">
-					<div class="row">
-						<a class='link1' href='/red/access/userpage.jsp'>Welcome,
-							${myUser.userName}!</a>
-					</div>
-					<div class="row">
-						<a href='/red/access/Logout'><button class='btn logaccbtn m-1'
-								type='button'>
-								<span class="m-2">LOGOUT</span>
-							</button></a>
-					</div>
+	<div id="top">
+		<a href='/red/index.jsp'><img id='logo' data-toggle="tooltip"
+			title="&nbsp; &nbsp; &nbsp; &nbsp; FitNett &NewLine; Don't Sit, Get Fit!"
+			src='/red/img/logo.png'></a>
+		<c:if test='${myUser.userName == null}'>
+			<a href='/red/access/Login.jsp'><button data-toggle="tooltip"
+					title="Login" class='btn logbt' type='button'>LOGIN</button></a>
+		</c:if>
+		<c:if test='${myUser.userName != null}'>
+			<div class="topright">
+				<div class="row">
+					<a class='link1' href='/red/access/userpage.jsp'>Welcome,
+						${myUser.userName}!</a>
 				</div>
-			</c:if>
-		</div>
+				<div class="row">
+					<a href='/red/access/Logout'><button class='btn logaccbtn m-1'
+							type='button'>
+							<span class="m-2">LOGOUT</span>
+						</button></a>
+				</div>
+			</div>
+		</c:if>
+	</div>
 
 	<div class="icon-bar">
 		<a href="" data-toggle="tooltip" title="Login with Facebook"
@@ -194,17 +194,27 @@
 	<br>
 	<br>
 	<hr>
-	<br>
 
-	<div id="contact" class='text-white text-center'>
+	<div id="contact" class='text-white container-fluid text-center'>
 		<h5>Contacts</h5>
-		<p>
-			tel:<a class='link1' href="tel:+39/3492464512">+39/3492464512</a>&emsp;
-			&mdash; &emsp;E-mail address: <a class='link1'
-				href="mailto:info@fitnett.com">info@fitnett.com</a>
-		</p>
+		<div class="row">
+			<div class="col-sm-5 text-right">
+				tel: <a class='link1' href="tel:+39/3492464512"> +39/ 3492464512
+				</a>
+			</div>
+			<div class="col-sm-2 text-center">&mdash;</div>
+			<div class="col-sm-5 text-left">
+				e-mail address: <a class='link1' href="mailto:info@fitnett.com">
+					info@fitnett.com</a>
+			</div>
+		</div>
 	</div>
 
+	<hr>
+	<div class='text-center'>
+		<a class='link1' href="#top"><i>Back to Top</i></a>
+	</div>
+	<br>
 
 </body>
 </html>
