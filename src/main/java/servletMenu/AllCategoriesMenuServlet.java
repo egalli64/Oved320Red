@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +15,10 @@ import javax.sql.DataSource;
 import com.google.gson.Gson;
 
 import dao.CategoryDao;
-import javaBeans.Course;
+import javaBeans.Category;
 
-@WebServlet("/menu/AllCoursesMenu")
-public class AllCoursesMenuServlet extends HttpServlet {
+@WebServlet("/menu/AllCategoriesMenu")
+public class AllCategoriesMenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	@Resource(name = "jdbc/red")
@@ -28,14 +27,11 @@ public class AllCoursesMenuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// String categoryName = request.getParameter("choice");	
-		String categoryName = "Aerobic";
-
 		try (CategoryDao categoryDao = new CategoryDao(ds);) {
 
-			List<Course> categoryCourses = categoryDao.getAllCategoryCourses(categoryName);
+			List<Category> categories = categoryDao.getAll();
 
-			String JsonCategoryCourses = new Gson().toJson(categoryCourses);
+			String JsonCategoryCourses = new Gson().toJson(categories);
 			
 			PrintWriter out = response.getWriter();
 			response.setContentType("application/json");
@@ -45,4 +41,5 @@ public class AllCoursesMenuServlet extends HttpServlet {
 		}
 
 	}
+
 }

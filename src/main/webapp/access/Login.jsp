@@ -26,7 +26,7 @@
 		</div>
 	</c:if>
 
-	<div class="container m-5">
+	<div class="container">
 		<div class="row">
 
 			<div class="col-3"></div>
@@ -44,25 +44,28 @@
 								<label for='usrn'> Username </label> <input id='usrn'
 									placeholder="Enter Username" name='usrn' required
 									class="form-control" value='${userName}'>
-
 							</div>
 							<div class="form-group">
 								<label for='pswd'>Password</label> <input type="password"
 									id='pswd' placeholder="Password" name='pswd' required
-									class="form-control"> <input type="checkbox"
-									onclick="toggle()"> <i>Show</i>
+									class="form-control"> 
+									<input type="checkbox"
+									onclick="toggle()"> <i> Show</i>
+									
 							</div>
 							<div class='text-center m-3'>
 								<button type="submit" class="btn btn-danger">Login</button>
 							</div>
 						</form>
-						<p>
-							<i>Don't have an account? <a class='reglink'
+						
+							<span><i>Don't have an account? &nbsp;<a class='reglink text-center'
 								href="/red/access/Register.jsp">Register here</a></i>
-						</p>
+						</span>
+						<br>
+						<br>
 						<div>
 							<a class="reglink" href="/red/index.jsp"><i>Back to Home</i></a>
-							<a class="reglink" href="/red/space.jsp"><i>Back to Space</i></a>
+							<br><a class="reglink" href="/red/space.jsp"><i>Back to Space</i></a>
 						</div>
 
 						<!-- Back to homepage -->
@@ -76,7 +79,6 @@
 			<div class="col-3"></div>
 		</div>
 	</div>
-
 
 	<!-- 	va spostato in un documento javascript -->
 	<script>

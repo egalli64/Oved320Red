@@ -17,7 +17,7 @@
 </div>
 
 <h3 class="m-5 error"> There was an internal error... <br> something went wrong in your code :( </h3>
-<div> <p class="m-5 error"> Go back to <a href="/red/index.jsp"> Home</a>.</p> </div>
+<div> <p class="m-5 error"> Back to <a href="/red/index.jsp"> Home</a>.</p> </div>
 <h4 class="m-5 error"><br> here's what happened:</h4>   
 												
 <h5 class="m-5 error"> <b>Exception:</b>  ${pageContext.exception["class"]} 
