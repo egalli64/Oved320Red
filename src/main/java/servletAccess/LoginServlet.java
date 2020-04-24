@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				List<Course> courses = dao.getAllUserCourses(username);
 				session.setAttribute("myCourses", courses);
-				session.setAttribute("myUser",matchingUser);
+				session.setAttribute("myUser", matchingUser);
 				
 				try(CategoryDao daoCat = new CategoryDao(ds);){
 				List<Category> categories = daoCat.getAll();
@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 				
 				RequestDispatcher rdright = request.getRequestDispatcher("userpage.jsp");
 				rdright.forward(request, response);
-				return;
+//				return;
 			}
 
 			} else {

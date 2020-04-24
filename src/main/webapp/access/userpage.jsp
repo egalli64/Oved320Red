@@ -145,8 +145,9 @@
 							<tr id='courserow' class="">
 								<td>${course.courseName}</td>
 								<td>
-									<button type="button" class="btn btn-outline-danger">Sign
-										Up!</button>
+								<a href="Subscribe?opt=1?courseID=${course.courseID}?courseName=${course.courseName}"><button type="button" class="btn btn-outline-danger">Sign
+										Up!</button></a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -182,8 +183,7 @@
 						<c:forEach var="course" items="${oldCourses}">
 							<tr id='courserow' class="">
 								<td>${course.courseName}</td>
-								<td>
-									<button type="button" class="btn btn-outline-danger ">
+								<td><button type="button" class="btn btn-outline-danger" onclick="location='Unsubscribe?courseName=${course.courseName}?opt=2?courseID=${course.courseID}'">
 										Cancel Subscription</button>
 								</td>
 							</tr>
