@@ -4,7 +4,7 @@ Final project of 6-week training program on Java, JavaEE, mySQL, HTML, CSS, Java
 Carried out in 1 week by 4 people. 
 
 Owners:
-Francesca Argenziano
-Lorenzo Davide Vittorio Cefalà
-Federica Galbiati
-Renato Paterlini 
+Francesca Argenziano,
+Lorenzo Davide Vittorio Cefalà,
+Federica Galbiati,
+Renato Paterlini.
