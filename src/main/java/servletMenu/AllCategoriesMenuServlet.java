@@ -28,7 +28,6 @@ public class AllCategoriesMenuServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		try (CategoryDao categoryDao = new CategoryDao(ds);) {
-
 			List<Category> categories = categoryDao.getAll();
 
 			String JsonCategoryCourses = new Gson().toJson(categories);
